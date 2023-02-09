@@ -1,15 +1,18 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import {Pages, Home, About, Projects} from './pages';
+import {Outlet, Link} from "react-router-dom";
+import {ThemeProvider} from 'styled-components';
+import theme from './theme';
 
-export default function App() {
+export default function app() {
   return (
-    <Pages />
-    // <Router>
-    //   <Routes>
-    //     <Route path='/' element={<Home />} exact />
-    //     <Route path='/about' element={<About />} exact />
-    //     <Route path='/projects' element={<Projects />} exact />
-    //   </Routes>
-    // </Router>
+    <ThemeProvider theme={theme}>
+      <nav>
+        <ul>
+          <li><Link to={'/'}>Home</Link></li>
+          <li><Link to={'/about'}>About</Link></li>
+          <li><Link to={'/projects'}>Projects</Link></li>
+        </ul>
+      </nav>
+      <Outlet />
+    </ThemeProvider>
   );
 }

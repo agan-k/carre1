@@ -1,14 +1,11 @@
 import {createRoot} from 'react-dom/client';
-import {ThemeProvider} from 'styled-components';
-import App from './App';
-import theme from './theme';
+import {RouterProvider} from 'react-router-dom';
+import router from './router';
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>
+  <RouterProvider router={router} />
 );
 
 if (module.hot) {
