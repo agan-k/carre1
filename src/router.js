@@ -2,7 +2,7 @@ import {createBrowserRouter} from 'react-router-dom';
 import App from './app';
 import {Bio, Projects, Home, Music, TourDates, Contact} from './pages';
 
-export default routes = createBrowserRouter([
+export const routes = createBrowserRouter([
   {
     path: '/',
     element: <App />,
@@ -30,7 +30,7 @@ export default routes = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />, 
-      }, 
+      },
     ],
   },
 ]);

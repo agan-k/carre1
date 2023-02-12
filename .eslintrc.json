@@ -20,6 +20,7 @@
   "rules": {
     "object-curly-spacing": "error",
     "no-unused-vars": "error",
+    "no-undef": "error",
     "comma-dangle": ["error", 
     {
     "arrays": "always-multiline",
