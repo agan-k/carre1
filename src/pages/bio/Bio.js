@@ -1,5 +1,5 @@
 import {bioFrench} from "~src/assets/content/bio";
-import {MultiParagraphText} from "~src/components/multi-paragraph-text";
+import {MultiParagraphText} from "~src/shared";
 import bioPic from '~src/assets/images/carre-bio.jpg';
 export default function Bio() {
   return(

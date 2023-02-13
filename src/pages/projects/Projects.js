@@ -1,5 +1,5 @@
 import {projects} from '~src/assets/content/projects';
-import {MultiParagraphText} from '~src/components';
+import {MultiParagraphText} from '~src/shared';
 export default function Projects() {
   return(
     <>
