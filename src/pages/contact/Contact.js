@@ -1,3 +1,7 @@
+import {useOutletContext} from "react-router-dom";
+
 export default function Contact() {
-  return <h4>Contact..</h4>;
+  const [language, content, onChange] = useOutletContext();
+  return (
+  );
 };
