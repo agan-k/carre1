@@ -1,9 +1,9 @@
-import {projects} from '~src/assets/content/projects';
+import {projectsFrench} from '~src/assets/content/projects';
 import {MultiParagraphText} from '~src/shared';
 export default function Projects() {
   return(
     <>
-      {projects.map(item => 
+      {projectsFrench.map(item => 
         <div key={item.name}>
           <h2>{item.name}</h2>
           {item.img ? 

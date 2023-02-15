@@ -9,23 +9,23 @@ import Header from "./layout/Header";
 
 export default function app() {
   const [language, setLanguage] = useState('french');
-  const [content, setContent] = useState();
+  const [data, setData] = useState();
 
   const onChange = ({language}) => {
     setLanguage(language);
   };
 
   useEffect(() => {
-    if(language === 'french') setContent(contentFrench);
-    if(language === 'english') setContent(contentEnglish);
+    if(language === 'french') setData(contentFrench);
+    if(language === 'english') setData(contentEnglish);
   }, [language]);
   return (
     <ThemeProvider theme={theme}>
       <Header>
-        <Nav />
+        <Nav language={language} />
         <LanguageSelector />
       </Header>
-      <Outlet context={[language, content, onChange]}/>
+      <Outlet context={[language, data, onChange]}/>
     </ThemeProvider>
   );
 }

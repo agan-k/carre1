@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
 import social from './social';
 
-export default function Nav() {
-
+export default function Nav({language}) {
   const navLinks = routes.map((item) => 
     <li key={item.id}>
       <Link to={item.path}>
-        {item.element.type.name}
+        {item.element.props.name[`${language}`]}
       </Link>
     </li>
   );
@@ -27,3 +27,7 @@ export default function Nav() {
     </nav>
   );
 }
+
+Nav.propTypes = {
+  language: PropTypes.string.isRequired,
+};

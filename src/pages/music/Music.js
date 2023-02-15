@@ -1,5 +1,5 @@
 import {MultiLineText} from "~src/shared";
-import {albums} from "~src/assets/content/albums";
+import {albums} from "~src/assets/content/music";
 export default function Music() {
   return(
     <>

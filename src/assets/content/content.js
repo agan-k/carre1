@@ -1,18 +1,29 @@
 import {bioEnglish, bioFrench} from "./bio";
-import {statementEnglish, statementFrench} from "./statement";
-import {pressFrench, pressEnglish} from "./contactPress";
+// import {statementEnglish, statementFrench} from "./statement";
+import {pressFrench, pressEnglish} from "./press";
 import {projectsFrench, projectsEnglish} from "./projects";
+import {bookingEnglish, bookingFrench} from "./booking";
+import {
+  pageCategoriesEnglish as english,
+  pageCategoriesFrench as french
+} from "~src/pages/constants";
 
 export const contentFrench = [
-  bioFrench,
-  statementFrench,
-  pressFrench,
-  projectsFrench,
+  {category: french.BIO, bio: bioFrench},
+  {
+    category: french.PRESSKIT_CONTACT,
+    press: pressFrench, 
+    booking: bookingFrench,
+  },
+  {category: french.PROJECTS, projects: projectsFrench},
 ];
 
 export const contentEnglish = [
-  bioEnglish,
-  statementEnglish,
-  pressEnglish,
-  projectsEnglish,
+  {category: english.BIO, bio: bioEnglish},
+  {
+    category: english.PRESSKIT_CONTACT,
+    press: pressEnglish,
+    booking: bookingEnglish,
+  },
+  {category: 'Projects', projects: projectsEnglish},
 ];

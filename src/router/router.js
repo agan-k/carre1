@@ -1,6 +1,10 @@
 import {createBrowserRouter} from 'react-router-dom';
 import App from '../app';
-import {Bio, Projects, Home, Music, TourDates, Contact} from '../pages';
+import {Bio, Projects, Home, Music, TourDates, PresskitContact} from '../pages';
+import {
+  pageCategoriesEnglish as english,
+  pageCategoriesFrench as french
+} from '~src/pages/constants';
 
 const router = createBrowserRouter([
   {
@@ -9,27 +13,34 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home />, 
+        element: <Home name={{french: french.HOME, english: english.HOME}}/>, 
       }, 
       {
         path: '/bio',
-        element: <Bio />, 
+        element: <Bio name={{french: french.BIO, english: english.BIO}} />, 
       }, 
       {
         path: '/projects',
-        element: <Projects />, 
+        element: <Projects 
+          name={{french: french.PROJECTS, english: english.PROJECTS}} />, 
       }, 
       {
         path: '/music',
-        element: <Music />, 
+        element: <Music 
+          name={{french: french.MUSIC, english: english.MUSIC}} />, 
       }, 
       {
         path: '/tour-dates',
-        element: <TourDates />, 
+        element: <TourDates 
+          name={{french: french.TOUR_DATES, english: english.TOUR_DATES}} />, 
       }, 
       {
-        path: '/contact',
-        element: <Contact />, 
+        path: '/booking-press',
+        element: <PresskitContact 
+          name={{
+            french: french.PRESSKIT_CONTACT,
+            english: english.PRESSKIT_CONTACT,
+          }} />, 
       },
     ],
   },
