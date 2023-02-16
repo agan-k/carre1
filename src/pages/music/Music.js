@@ -12,8 +12,7 @@ export default function Music() {
               width="300" 
               height="200" 
               src={item.video} 
-              title="YouTube video player" 
-              allowfullscreen
+              title="YouTube video player"
             /> : null
           }
         </div>
