@@ -1,7 +1,7 @@
 import nyCarre from '~src/assets/images/nyc-carre.jpg';
 import randesVouz from '~src/assets/images/randes-vouz.jpg';
 
-export const albums = [
+export default [
   {
     title: 'NyCarre',
     personel: `
@@ -26,3 +26,4 @@ export const albums = [
     video: 'https://www.youtube.com/embed/1vn-idfKMgo',
   },
 ];
+
