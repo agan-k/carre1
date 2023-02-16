@@ -6,6 +6,7 @@ import {contentFrench, contentEnglish} from "~src/assets/content/content";
 
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";
+import {AudioPlayer} from "~src/components/audio-player";
 
 export default function App() {
   const [language, setLanguage] = useState('french');
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header>
+        <AudioPlayer />
         <Nav language={language} />
         <LanguageSelector language={language} onChange={onChange} />
       </Header>

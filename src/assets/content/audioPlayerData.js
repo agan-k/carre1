@@ -9,13 +9,13 @@ const track3 =
     'url:~src/assets/audio/my-blue-heaven.mp3');
 const track4 =
   require(
-    'url:~src/assets/nuages.mp3');
+    'url:~src/assets/audio/nuages.mp3');
 const track5 =
   require(
     'url:~src/assets/audio/flechedor.mp3');
 const track6 =
   require(
-    'url:~src/assets/audio/ruissian-lullaby.mp3');
+    'url:~src/assets/audio/russian-lullaby.mp3');
 export default [
   {
     trackNumber: 1,
@@ -38,7 +38,7 @@ export default [
   {
     trackNumber: 4,
     title: 'Nuages',
-    id: 4,
+    id: 5,
     audio: new Audio(track4),
   },
   {
@@ -50,7 +50,7 @@ export default [
   {
     trackNumber: 6,
     title: 'Russian lullaby',
-    id: 4,
+    id: 6,
     audio: new Audio(track6),
   },
 ];
