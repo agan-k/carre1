@@ -3,13 +3,15 @@ import audioPlayerData from '~src/assets/content/audioPlayerData';
 
 import {Box} from '~src/shared';
 import {Player, TrackList} from './components';
+import {defaultTrack, controlAudio} from './components/utils';
 
 export default function AudioPlayer() {
   const tracksData = audioPlayerData;
   const [isPlaying, setIsPlaying] = useState();
-  const [activeTrack, setActiveTrack] = useState(audioPlayerData[0]);
+  const [activeTrack, setActiveTrack] = useState(defaultTrack(tracksData));
 
   const onChange = ({track = activeTrack, playing}) => {
+    controlAudio({track, activeTrack});
     setActiveTrack(track);
     setIsPlaying(playing);
   };

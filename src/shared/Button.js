@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import {space} from 'styled-system';
+import {color, space, layout, typography} from 'styled-system';
 
-const Button = styled('button')(space);
+const Button = styled('button')(color, space, layout, typography);
 
 export default Button;
