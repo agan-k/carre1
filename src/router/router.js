@@ -1,6 +1,13 @@
 import {createBrowserRouter} from 'react-router-dom';
-import App from '../app';
-import {Bio, Projects, Home, Music, TourDates, PresskitContact} from '../pages';
+import App from '~src/App';
+import {
+  Bio, 
+  Projects, 
+  Home, 
+  Music, 
+  TourDates, 
+  PresskitContact
+} from '~src/pages';
 import {
   pageCategoriesEnglish as english,
   pageCategoriesFrench as french

@@ -7,7 +7,7 @@ import {contentFrench, contentEnglish} from "~src/assets/content/content";
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";
 
-export default function app() {
+export default function App() {
   const [language, setLanguage] = useState('french');
   const [data, setData] = useState();
 
