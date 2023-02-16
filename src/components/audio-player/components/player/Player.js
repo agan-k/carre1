@@ -1,18 +1,32 @@
 import PropTypes from 'prop-types';
-import {Box} from '~src/shared';
+import {Box, Text} from '~src/shared';
+import Controls from './controls/Controls';
 
 export default function Player({
-  loading,
-  tracks,
-  activeTrack,
-  onChange,
+  loading, 
+  tracks, 
+  activeTrack, 
+  onChange, 
   isPlaying,
 }) {
+
   return (
-    <Box>
-      <Box>
-        {activeTrack?.title}
+    <Box mb={2}>
+      <Box m={2}>
+        {loading ? (
+          <Text pl={6}>. . .</Text>
+        ) : (
+          <Text textAlign="center" color='primary'>
+            {activeTrack.title}
+          </Text>
+        )}
       </Box>
+      <Controls 
+        tracks={tracks}
+        activeTrack={activeTrack}
+        onChange={onChange}
+        isPlaying={isPlaying}
+        loading={loading} />
     </Box>
   );
 }
@@ -24,4 +38,5 @@ Player.propTypes = {
   }),
   onChange: PropTypes.func,
   isPlaying: PropTypes.bool,
+  loading: PropTypes.bool,
 };
