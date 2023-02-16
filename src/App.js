@@ -11,7 +11,7 @@ export default function App() {
   const [language, setLanguage] = useState('french');
   const [data, setData] = useState();
 
-  const onChange = ({language}) => {
+  const onChange = (language) => {
     setLanguage(language);
   };
 
@@ -23,7 +23,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <Header>
         <Nav language={language} />
-        <LanguageSelector />
+        <LanguageSelector language={language} onChange={onChange} />
       </Header>
       <Outlet context={[language, data, onChange]}/>
     </ThemeProvider>
