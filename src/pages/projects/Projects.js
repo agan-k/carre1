@@ -1,9 +1,15 @@
-import {projectsFrench} from '~src/assets/content/projects';
+import {useOutletContext} from "react-router-dom";
+import {projectsFrench, projectsEnglish} from '~src/assets/content/projects';
 import {MultiParagraphText} from '~src/shared';
+
 export default function Projects() {
+  const [language] = useOutletContext();
+  const projects = language === 'french' ?
+    projectsFrench : projectsEnglish;
+
   return(
     <>
-      {projectsFrench.map(item => 
+      {projects.map(item => 
         <div key={item.name}>
           <h2>{item.name}</h2>
           {item.img ? 
@@ -16,4 +22,3 @@ export default function Projects() {
     </>
   );
 };
-
