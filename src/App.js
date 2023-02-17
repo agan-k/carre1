@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
 import theme from './theme';
-import {contentFrench, contentEnglish} from "~src/assets/content/content";
+import {contentFrench, contentEnglish} from "./assets/content/content";
 
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import fusionProject from 'url:../images/fusion-project.jpg';
-import acousticCombo from 'url:../images/acoustic-combo.jpg';
-import tomBabylone from 'url:../images/tom-babylone.jpg';
+import fusionProject from '../images/fusion-project.jpg';
+import acousticCombo from '../images/acoustic-combo.jpg';
+import tomBabylone from '../images/tom-babylone.jpg';
 export const projectsFrench = [
   {
     name: 'Fusion Project',
