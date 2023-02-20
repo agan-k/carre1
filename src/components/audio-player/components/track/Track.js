@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Button} from '~src/shared';
+import {Button} from '../../../../shared';
 
 export default function Track({activeTrack, onChange, track}) {
   let active = Boolean(track.id === activeTrack?.id);

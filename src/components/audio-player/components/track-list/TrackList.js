@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Box} from '~src/shared';
+import {Box} from '../../../../shared';
 import Track from '../track';
 
 export default function TrackList({activeTrack, tracks, onChange}) {
