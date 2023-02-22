@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import fusionProject from '../images/fusion-project.jpg';
-import acousticCombo from '../images/acoustic-combo.jpg';
-import tomBabylone from '../images/tom-babylone.jpg';
+const fusionProject = require('url:../images/fusion-project.jpg');
+const acousticCombo = require('url:../images/acoustic-combo.jpg');
+const tomBabylone = require('url:../images/tom-babylone.jpg');
 export const projectsFrench = [
   {
     name: 'Fusion Project',
