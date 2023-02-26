@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Box, Text} from '~src/shared';
+import {Box, Text} from '../../../../shared';
 import Controls from './controls/Controls';
 
 export default function Player({

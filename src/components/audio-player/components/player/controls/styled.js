@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Box} from "~src/shared";
+import {Box} from "../../../../../shared";
 
 const Container = styled(Box)({
   display: 'flex',

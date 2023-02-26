@@ -1,5 +1,4 @@
 import {bioEnglish, bioFrench} from "./bio";
-// import {statementEnglish, statementFrench} from "./statement";
 import {pressFrench, pressEnglish} from "./press";
 import {projectsFrench, projectsEnglish} from "./projects";
 import {bookingEnglish, bookingFrench} from "./booking";

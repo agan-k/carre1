@@ -1,5 +1,6 @@
 import {useOutletContext} from "react-router-dom";
-import {statementFrench, statementEnglish} from "~src/assets/content/statement";
+import {statementFrench, statementEnglish} from 
+  "../../assets/content/statement";
 
 export default function Home() {
   const [language] = useOutletContext();

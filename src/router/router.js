@@ -1,5 +1,5 @@
 import {createBrowserRouter} from 'react-router-dom';
-import App from '~src/App';
+import App from '../App';
 import {
   Bio, 
   Projects, 
@@ -7,11 +7,11 @@ import {
   Music, 
   TourDates, 
   PresskitContact
-} from '~src/pages';
+} from '../pages';
 import {
   pageCategoriesEnglish as english,
   pageCategoriesFrench as french
-} from '~src/pages/constants';
+} from '../pages/constants';
 
 const router = createBrowserRouter([
   {

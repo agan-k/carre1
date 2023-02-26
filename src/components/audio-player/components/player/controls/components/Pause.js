@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Button} from '~src/shared';
+import {Button} from '../../../../../../shared';
 import Play from './Play';
 
 export default function Pause({loading, onChange}) {

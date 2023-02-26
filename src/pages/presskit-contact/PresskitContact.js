@@ -2,7 +2,7 @@ import {useOutletContext} from "react-router-dom";
 import {
   pageCategoriesEnglish as english,
   pageCategoriesFrench as french
-} from "~src/pages/constants";
+} from "../constants";
 
 export default function PresskitContact() {
   const [language, data] = useOutletContext();

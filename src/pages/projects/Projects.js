@@ -1,6 +1,6 @@
 import {useOutletContext} from "react-router-dom";
-import {projectsFrench, projectsEnglish} from '~src/assets/content/projects';
-import {MultiParagraphText} from '~src/shared';
+import {projectsFrench, projectsEnglish} from '../../assets/content/projects';
+import {MultiParagraphText} from '../../shared';
 
 export default function Projects() {
   const [language] = useOutletContext();

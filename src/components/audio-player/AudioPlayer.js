@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
-import audioPlayerData from '~src/assets/content/audioPlayerData';
+import audioPlayerData from '../../assets/content/audioPlayerData';
 
-import {Box} from '~src/shared';
+import {Box} from '../../shared';
 import {Player, TrackList} from './components';
 import {defaultTrack, controlAudio} from './components/utils';
 

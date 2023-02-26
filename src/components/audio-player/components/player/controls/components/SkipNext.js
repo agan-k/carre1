@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {Button} from '~src/shared';
+import {Button} from '../../../../../../shared';
 
 export default function SkipNext({tracks, activeTrack, onChange}) {
   const tracksData = tracks;

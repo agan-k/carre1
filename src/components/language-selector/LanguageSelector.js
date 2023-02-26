@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Button, Box} from '~src/shared';
+import {Button, Box} from '../../..../../shared';
 
 export default function LanguageSelector({language, onChange}) {
   // console.log(language)
