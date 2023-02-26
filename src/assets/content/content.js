@@ -6,7 +6,7 @@ import {bookingEnglish, bookingFrench} from "./booking";
 import {
   pageCategoriesEnglish as english,
   pageCategoriesFrench as french
-} from "~src/pages/constants";
+} from "../../pages/constants";
 
 export const contentFrench = [
   {category: french.BIO, bio: bioFrench},
