@@ -6,7 +6,7 @@ import {contentFrench, contentEnglish} from "./assets/content/content";
 
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";
-import {AudioPlayer} from "~src/components/audio-player";
+import {AudioPlayer} from "./components/audio-player";
 
 export default function App() {
   const [language, setLanguage] = useState('french');

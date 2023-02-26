@@ -1,21 +1,9 @@
-const track1 =
-  require(
-    'url:~src/assets/audio/new-wind.mp3');
-const track2 =
-  require(
-    'url:~src/assets/audio/lawns.mp3');
-const track3 =
-  require(
-    'url:~src/assets/audio/my-blue-heaven.mp3');
-const track4 =
-  require(
-    'url:~src/assets/audio/nuages.mp3');
-const track5 =
-  require(
-    'url:~src/assets/audio/flechedor.mp3');
-const track6 =
-  require(
-    'url:~src/assets/audio/russian-lullaby.mp3');
+import track1 from 'url:../audio/new-wind.mp3';
+import track2 from 'url:../audio/lawns.mp3';
+import track3 from 'url:../audio/my-blue-heaven.mp3';
+import track4 from 'url:../audio/nuages.mp3';
+import track5 from 'url:../audio/flechedor.mp3';
+import track6 from 'url:../audio/russian-lullaby.mp3';
 export default [
   {
     trackNumber: 1,

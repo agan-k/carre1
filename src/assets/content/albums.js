@@ -1,5 +1,5 @@
-import nyCarre from '~src/assets/images/nyc-carre.jpg';
-import randesVouz from '~src/assets/images/randes-vouz.jpg';
+import nyCarre from '../images/nyc-carre.jpg';
+import randesVouz from '../images/randes-vouz.jpg';
 
 export default [
   {
