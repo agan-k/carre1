@@ -1,13 +1,21 @@
-import {render, screen} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import {render, screen, fireEvent} from '@testing-library/react';
 import {BrowserRouter} from 'react-router-dom';
 import App from './App';
 
-it('renders conponent and navigates', async () => {
-  render(<App />, {wrapper: BrowserRouter});
-  const user = userEvent.setup();
+it('renders conponent in french and changes to english on click', async () => {
+  render(<App />, {wrapper: BrowserRouter});  
+  const languageButtonEnglish = screen.getByRole('button', {name: 'English'});
 
-  expect(screen.getByText(/Dominique/i)).toBeInTheDocument();
-
-  await user.click(screen.getByText(/Musique/i)).toBeInTheDocument();
+  expect(languageButtonEnglish).toBeInTheDocument();
+  expect(screen.queryByRole('button', {name: 'Française'}))
+    .not.toBeInTheDocument();
+  expect(screen.getByRole('link', {name: 'Musique'})).toBeInTheDocument();
+  expect(screen.queryByRole('link', {name: 'Music'})).not.toBeInTheDocument();
+  
+  fireEvent.click(languageButtonEnglish);
+  const languageButtonFrench = screen.getByRole('button', {name: 'Française'});
+  
+  expect(languageButtonFrench).toBeInTheDocument();
+  expect(screen.getByRole('link', {name: 'Music'})).toBeInTheDocument();
+  expect(screen.queryByRole('link', {name: 'Musique'})).not.toBeInTheDocument();
 });

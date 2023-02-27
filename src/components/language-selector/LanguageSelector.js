@@ -9,7 +9,7 @@ export default function LanguageSelector({language, onChange}) {
       {isFrench ? 
         <Button onClick={() => onChange('english')}>
           English</Button> :
-        <Button onClick={() => onChange('french')}>French</Button>
+        <Button onClick={() => onChange('french')}>Française</Button>
       }
     </Box>
   );

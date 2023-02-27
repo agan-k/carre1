@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 module.exports = {
-  collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.{js,jsx}'],
-  coverageDirectory: 'coverage',
+  // collectCoverage: true,
+  // collectCoverageFrom: ['src/**/*.{js,jsx}'],
+  // coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
