@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import {Button, Box} from '../../..../../shared';
 
 export default function LanguageSelector({language, onChange}) {
-  // console.log(language)
   const isFrench = Boolean(language === 'french');
   return(
     <Box>
