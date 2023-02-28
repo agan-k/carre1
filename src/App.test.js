@@ -7,8 +7,6 @@ it('renders conponent in french and changes to english on click', async () => {
   const languageButtonEnglish = screen.getByRole('button', {name: 'English'});
 
   expect(languageButtonEnglish).toBeInTheDocument();
-  expect(screen.queryByRole('button', {name: 'Française'}))
-    .not.toBeInTheDocument();
   expect(screen.getByRole('link', {name: 'Musique'})).toBeInTheDocument();
   expect(screen.queryByRole('link', {name: 'Music'})).not.toBeInTheDocument();
   

@@ -14,3 +14,4 @@ export const pageCategoriesEnglish = {
   TOUR_DATES: 'Tour Dates',
   PRESSKIT_CONTACT: 'Press-kit/Contact',
 };
+export const DEFAULT_LANGUAGE = 'french';
