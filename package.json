@@ -31,6 +31,8 @@
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@prismicio/client": "^6.7.3",
+    "@prismicio/react": "^2.5.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
