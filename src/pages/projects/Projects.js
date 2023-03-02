@@ -3,13 +3,13 @@ import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 
 export default function Projects() {
   const [language] = useOutletContext();
-  const [projects] = useAllPrismicDocumentsByType('projects');
+  const [projectsData] = useAllPrismicDocumentsByType('projects');
 
-  const project = projects?.map((item) => {
+  const projects = projectsData?.map((item) => {
     const name = item.data.project;
     const personnel = item.data.project_personnel;
-    const descriptionFrench = item.data.project_description_french;
-    const descriptionEnglish = item.data.project_description_english;
+    const descriptionFrench = item.data.project_description_french || [];
+    const descriptionEnglish = item.data.project_description_english || [];
     const description = language === 'french' ?
       descriptionFrench : descriptionEnglish;
 
@@ -23,5 +23,5 @@ export default function Projects() {
     );
   });
 
-  return project;
+  return projects;
 };
