@@ -1,24 +1,27 @@
 import {useOutletContext} from "react-router-dom";
-import {projectsFrench, projectsEnglish} from '../../assets/content/projects';
-import {MultiParagraphText} from '../../shared';
+import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 
 export default function Projects() {
   const [language] = useOutletContext();
-  const projects = language === 'french' ?
-    projectsFrench : projectsEnglish;
+  const [projects] = useAllPrismicDocumentsByType('projects');
 
-  return(
-    <>
-      {projects.map(item => 
-        <div key={item.name}>
-          <h2>{item.name}</h2>
-          {item.img ? 
-            <img src={item.img} width="200"/> : ''
-          } 
-          <MultiParagraphText text={item.desc} />
-          <span>{item.personel}</span>
-        </div>
-      )}
-    </>
-  );
+  const project = projects?.map((item) => {
+    const name = item.data.project;
+    const personnel = item.data.project_personnel;
+    const descriptionFrench = item.data.project_description_french;
+    const descriptionEnglish = item.data.project_description_english;
+    const description = language === 'french' ?
+      descriptionFrench : descriptionEnglish;
+
+    return(
+      <div key={item.data.id}>
+        <PrismicRichText field={ name.length !== 0 ? name : ''} />
+        <img src={item.data.project_image.url} width="200"/>
+        <PrismicRichText field={description.length !== 0 ? description : ''}/>
+        <PrismicRichText field={personnel.length !== 0 ? personnel : ''}/>
+      </div>
+    );
+  });
+
+  return project;
 };
