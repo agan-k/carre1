@@ -14,7 +14,7 @@ export default function Projects() {
       descriptionFrench : descriptionEnglish;
 
     return(
-      <div key={item.data.id}>
+      <div key={item.id}>
         <PrismicRichText field={ name.length !== 0 ? name : ''} />
         <img src={item.data.project_image.url} width="200"/>
         <PrismicRichText field={description.length !== 0 ? description : ''}/>
