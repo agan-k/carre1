@@ -4,7 +4,7 @@ import {
   PrismicRichText
 } from "@prismicio/react";
 
-export default function PressQuotes() {
+export const PressQuotes = () => {
   const [language] = useOutletContext();
   const [pressData] = useAllPrismicDocumentsByType('press');
   const quotes = pressData?.map((item) => {
@@ -23,4 +23,4 @@ export default function PressQuotes() {
   });
 
   return quotes;
-}
+};

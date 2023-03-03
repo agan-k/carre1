@@ -3,9 +3,9 @@ import {
   useSinglePrismicDocument, 
   PrismicRichText
 } from "@prismicio/react";
-import {hideEmail, validateEmail} from './utilities';
+import {hideEmail, validateEmail} from '../utilities';
 
-export default function Contact() {
+export const Contact = () => {
   const [language] = useOutletContext();
   const [bookingData] = useSinglePrismicDocument('booking');
 
@@ -42,4 +42,4 @@ export default function Contact() {
       }
     </div>
   );
-}
+};
