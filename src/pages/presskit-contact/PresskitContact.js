@@ -1,48 +1,63 @@
 import {useOutletContext} from "react-router-dom";
 import {
-  pageCategoriesEnglish as english,
-  pageCategoriesFrench as french
-} from "../constants";
-import {hideEmail} from './utilities';
-
+  useSinglePrismicDocument, 
+  useAllPrismicDocumentsByType, 
+  PrismicRichText
+} from "@prismicio/react";
+import {hideEmail, validateEmail} from './utilities';
+import PressQuotes from "./components";
+ 
 export default function PresskitContact() {
-  const [language, data] = useOutletContext();
-  const generalEmail = 'prog@dominiquecarre.fr'; //TODO get emainl from CMS
-  const bookingEmail = '3et4prod@dominiquecarre.fr'; //TODO get emainl from CMS
+  const [language] = useOutletContext();
+  const [bookingData] = useSinglePrismicDocument('booking');
 
-  const content = data || [];
-  const categoryName = language === 'english' ?
-    english.PRESSKIT_CONTACT : french.PRESSKIT_CONTACT;
+  // bookingData && console.log('bookingData: ', bookingData);
+  // pressData && console.log('pressData: ', pressData);
 
-  const currentCategory = 
-    content?.find(item => item.category === categoryName);
-  const {press} = currentCategory || [];
-  const {booking} = currentCategory || {};
-  const {contact, rider, photos, contactOther} = booking || {};
-  const quotes = press?.map(item => 
-    <div key={item.id}>
-      <p>{item.quote}</p>
-      <p> - {item.source}</p>
-    </div>
-  );
+  const generalEmail = bookingData?.data.general_email;
+  const hasGeneralEmail = Boolean(generalEmail !== null);
+  const generalContactFrench = bookingData?.data.general_contact_french;
+  const generalContactEnglish = bookingData?.data.general_contact_english;
+  const generalContactDescription = language === 'french' ?
+    generalContactFrench : generalContactEnglish;
 
-  const PhotosLink = () => {
-    return <a href={photos?.file}>Download {photos?.name}</a>;
-  };
-  const Rider = () => {
-    return (
-      <div>
-        <a href={rider?.file}>Download {rider?.name}</a>
-      </div>
-    );
-  };
+  const hasContactDescription = 
+    Boolean(generalContactDescription?.length !== 0);
+  
+  const bookingName = bookingData?.data.booking_name;
+  const hasBookingName = Boolean(bookingName !== null);
+  const bookingEmail = bookingData?.data.booking_email;
+  const hasBookingEmail = Boolean(bookingEmail !== null);
+  const bookingPhone = bookingData?.data.booking_phone;
+  const hasBookingPhone = Boolean(bookingPhone !== null);
+
+  const isValidGeneralEmail = validateEmail(generalEmail);
+  const isValidBookingEmail = validateEmail(bookingEmail);
+
+  // const PhotosLink = () => {
+  //   return <a href={photos?.file}>Download {photos?.name}</a>;
+  // };
+  // const Rider = () => {
+  //   return (
+  //     <div>
+  //       <a href={rider?.file}>Download {rider?.name}</a>
+  //     </div>
+  //   );
+  // };
   const Contact = () => {
     return (
       <div>
-        <span>{contact?.phone}</span>
-        {hideEmail(bookingEmail)}
-        <h3>Contact</h3>
-        <span>{contactOther?.desc}</span>{hideEmail(generalEmail)}
+        <span>{hasBookingName ? bookingName : ''}</span><br/>
+        <span>{hasBookingPhone ? bookingPhone : ''}</span><br/>
+        {hasBookingEmail ? 
+          isValidBookingEmail && hideEmail(bookingEmail) : ''
+        }
+        {hasContactDescription ? 
+          <PrismicRichText field={generalContactDescription} /> : ''
+        }
+        {hasGeneralEmail ? 
+          isValidGeneralEmail && hideEmail(generalEmail) : ''
+        }
       </div>
     );
   };
@@ -50,10 +65,10 @@ export default function PresskitContact() {
   return (
     <>
       <h3>Press</h3>
-      {quotes}
+      <PressQuotes />
       <h3>Downloads</h3>
-      <PhotosLink />
-      <Rider />
+      {/* <PhotosLink />
+      <Rider /> */}
       <h3>Booking</h3>
       <Contact />
     </>
