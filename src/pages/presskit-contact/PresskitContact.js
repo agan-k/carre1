@@ -3,9 +3,13 @@ import {
   pageCategoriesEnglish as english,
   pageCategoriesFrench as french
 } from "../constants";
+import {hideEmail} from './utilities';
 
 export default function PresskitContact() {
   const [language, data] = useOutletContext();
+  const generalEmail = 'prog@dominiquecarre.fr'; //TODO get emainl from CMS
+  const bookingEmail = '3et4prod@dominiquecarre.fr'; //TODO get emainl from CMS
+
   const content = data || [];
   const categoryName = language === 'english' ?
     english.PRESSKIT_CONTACT : french.PRESSKIT_CONTACT;
@@ -36,9 +40,9 @@ export default function PresskitContact() {
     return (
       <div>
         <span>{contact?.phone}</span>
-        <span> - {contact?.email}</span>
+        {hideEmail(bookingEmail)}
         <h3>Contact</h3>
-        <span>{contactOther?.desc}</span><span> - {contactOther?.email}</span>
+        <span>{contactOther?.desc}</span>{hideEmail(generalEmail)}
       </div>
     );
   };
