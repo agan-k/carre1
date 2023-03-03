@@ -1,8 +1,9 @@
 export const hideEmail = (email) => {
+  if(!email) return;
   const username = email.split('@')[0];
-  const pt2 = email.split('@')[1];
-  const domain = pt2.split('.')[0];
-  const extension = pt2.split('.')[1];
+  const domainAndExtension = email.split('@')[1];
+  const domain = domainAndExtension.split('.')[0];
+  const extension = domainAndExtension.split('.')[1];
   return(
     <span>
       {username}@{domain}
@@ -11,9 +12,11 @@ export const hideEmail = (email) => {
     </span>
   );
 };
-export const validateEmail = (email) => {
+export const validateEmail = async (email) => {
+  if(!email) return;
   const acceptedEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-  return acceptedEmail.test(email) ? 
-    // eslint-disable-next-line no-console
-    acceptedEmail.test(email) : console.log('ERROR email NOT valid: ', email);
+  const isValid = acceptedEmail.test(email);
+  // eslint-disable-next-line no-console
+  if(!isValid) console.log('ERROR email NOT valid: ', email);
+  return isValid;
 };
