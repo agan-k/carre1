@@ -6,6 +6,7 @@ import {routes} from '../../router';
 export default function Nav({language}) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
+  console.log(socialLinksData);
   const navLinks = routes.map((item) => 
     <li key={item.id}>
       <Link to={item.path}>
@@ -14,13 +15,14 @@ export default function Nav({language}) {
     </li>
   );
 
-  const socialLinks = data?.social_links.map((item) => 
-    <li key={item.text}>
-      <Link to={item.spans[0].data.url}>
-        {item.text}
-      </Link>
-    </li>
-  );
+  const socialLinks = data?.social_links.map((item) => {
+    return(
+      item.spans.length !== 0 ?
+        <li key={item.text}>
+          <Link to={item.spans[0].data.url}>{item.text}</Link>
+        </li> : ''
+    );
+  });
   
   return (
     <nav>
