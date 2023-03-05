@@ -3,7 +3,8 @@ import {
   useSinglePrismicDocument, 
   PrismicRichText
 } from "@prismicio/react";
-import {hideEmail, validateEmail} from '../utilities';
+import {validateEmail} from '../utilities';
+import {HideEmail} from "./HideEmail";
 
 export const Contact = () => {
   const [language] = useOutletContext();
@@ -34,13 +35,13 @@ export const Contact = () => {
       <span>{hasBookingName ? bookingName : ''}</span><br/>
       <span>{hasBookingPhone ? bookingPhone : ''}</span><br/>
       {hasBookingEmail ? 
-        isValidBookingEmail && hideEmail(bookingEmail) : ''
+        isValidBookingEmail && <HideEmail email={bookingEmail} /> : ''
       }
       {hasContactDescription ? 
         <PrismicRichText field={generalContactDescription} /> : ''
       }
       {hasGeneralEmail ? 
-        isValidGeneralEmail && hideEmail(generalEmail) : ''
+        isValidGeneralEmail && <HideEmail email={generalEmail} /> : ''
       }
     </div>
   );
