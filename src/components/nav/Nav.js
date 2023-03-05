@@ -1,9 +1,11 @@
+import {useSinglePrismicDocument} from '@prismicio/react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
-import social from './social';
 
 export default function Nav({language}) {
+  const [socialLinksData] = useSinglePrismicDocument('social_links');
+  const {data} = socialLinksData || {};
   const navLinks = routes.map((item) => 
     <li key={item.id}>
       <Link to={item.path}>
@@ -12,9 +14,11 @@ export default function Nav({language}) {
     </li>
   );
 
-  const socialLinks = social.map((item) => 
-    <li key={item.media}>
-      <a href={item.url}>{item.media}</a>
+  const socialLinks = data?.social_links.map((item) => 
+    <li key={item.text}>
+      <Link to={item.spans[0].data.url}>
+        {item.text}
+      </Link>
     </li>
   );
   
@@ -22,6 +26,8 @@ export default function Nav({language}) {
     <nav>
       <ul>
         {navLinks}
+      </ul>
+      <ul>
         {socialLinks}
       </ul>
     </nav>
