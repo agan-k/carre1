@@ -6,7 +6,6 @@ import {routes} from '../../router';
 export default function Nav({language}) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
-  console.log(socialLinksData);
   const navLinks = routes.map((item) => 
     <li key={item.id}>
       <Link to={item.path}>
