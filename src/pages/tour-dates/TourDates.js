@@ -3,7 +3,7 @@ import {asDate} from "@prismicio/helpers";
 export default function TourDates() {
   const [shows] = useAllPrismicDocumentsByType('shows');
   const showCards = shows?.map((item) =>
-    <div key={item.data.id}>
+    <div key={item.id}>
       {
         item.data?.venue.length !== 0 ? (
           <h3>{item.data?.venue[0].text}</h3>
