@@ -1,21 +1,13 @@
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
+import {findNextTrack} from './utils';
 import {Button} from '../../../../../../shared';
 
 export default function SkipNext({tracks, activeTrack, onChange}) {
-  const tracksData = tracks;
   const [nextTrack, setNextTrack] = useState({});
-
-  function findNextTrack() {
-    if (activeTrack.trackNumber === tracksData.length) {
-      return tracksData[0];
-    }
-    return tracksData.find(t => 
-      t.trackNumber === activeTrack.trackNumber + 1);
-  }
     
   useEffect(() => {
-    setNextTrack(findNextTrack());
+    setNextTrack(findNextTrack({tracks, activeTrack}));
   }, [activeTrack]);
   
   return (

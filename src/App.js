@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
 import theme from './theme';
-import {DEFAULT_LANGUAGE} from './pages/constants';
+import {DEFAULT_LANGUAGE, MISSING_TRACK_TITLE} from './pages/constants';
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 
 import {Nav, LanguageSelector} from "./components";
@@ -14,14 +14,25 @@ export default function App() {
   const [tracksData, setTracksData] = useState();
   const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
+  console.log(audioData)
   const audioPlayerData = audioData?.map((item, index) => {
-    return {
-      trackNumber: index + 1,
-      title: item.data.track_title,
-      id: item.id,
-      audio: new Audio(item.data.track_link.url),
-      default: item.data.default_track,
-    };
+    if(item.data.track_title === null || item.data.track_link.url === null) {
+      return {
+        trackNumber: index + 1,
+        title: MISSING_TRACK_TITLE,
+        id: item.id,
+        audio: new Audio(item.data.track_link.url),
+        default: item.data.default_track,
+      };
+    } else {
+      return {
+        trackNumber: index + 1,
+        title: item.data.track_title,
+        id: item.id,
+        audio: new Audio(item.data.track_link.url),
+        default: item.data.default_track,
+      };
+    }
   });
   function isDefault(track) {
     return track.default === true;

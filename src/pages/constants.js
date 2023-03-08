@@ -15,3 +15,4 @@ export const pageCategoriesEnglish = {
   PRESSKIT_CONTACT: 'Press-kit/Contact',
 };
 export const DEFAULT_LANGUAGE = 'french';
+export const MISSING_TRACK_TITLE = 'Missing track';
