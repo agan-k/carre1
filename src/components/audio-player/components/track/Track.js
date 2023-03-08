@@ -28,11 +28,11 @@ Track.propTypes = {
   onChange: PropTypes.func,
   activeTrack: PropTypes.shape({
     title: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
   track: PropTypes.shape({
     trackNumber: PropTypes.number,
     title: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
 };

@@ -19,7 +19,7 @@ export default function TrackList({activeTrack, tracks, onChange}) {
 TrackList.propTypes = {
   activeTrack: PropTypes.shape({
     title: PropTypes.string,
-    id: PropTypes.number,
+    id: PropTypes.string,
   }),
   tracks: PropTypes.arrayOf(PropTypes.object),
   onChange: PropTypes.func,

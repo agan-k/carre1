@@ -1,21 +1,20 @@
 import {useState, useEffect} from 'react';
-import audioPlayerData from '../../assets/content/audioPlayerData';
+import PropTypes from 'prop-types';
 
 import {Box} from '../../shared';
 import {Player, TrackList} from './components';
-import {defaultTrack, controlAudio} from './components/utils';
+import {controlAudio} from './components/utils';
 
-export default function AudioPlayer() {
-  const tracksData = audioPlayerData;
+export default function AudioPlayer({defaultTrack, tracksData}) {
   const [isPlaying, setIsPlaying] = useState();
-  const [activeTrack, setActiveTrack] = useState(defaultTrack(tracksData));
+  const [activeTrack, setActiveTrack] = useState(defaultTrack);
 
   const onChange = ({track = activeTrack, playing}) => {
     controlAudio({track, activeTrack});
     setActiveTrack(track);
     setIsPlaying(playing);
   };
-
+  
   useEffect(() => {
     if(isPlaying) activeTrack.audio.play();
     if(!isPlaying) activeTrack.audio.pause();
@@ -23,16 +22,24 @@ export default function AudioPlayer() {
 
   return (
     <Box p={2}>
-      <Player 
-        tracks={tracksData}
-        activeTrack={activeTrack}
-        onChange={onChange}
-        isPlaying={isPlaying}/>
-
-      <TrackList
-        activeTrack={activeTrack} 
-        tracks={tracksData}
-        onChange={onChange} />
+      {activeTrack && (
+        <Player 
+          tracks={tracksData}
+          activeTrack={activeTrack}
+          onChange={onChange}
+          isPlaying={isPlaying}/>
+      )}
+      {tracksData && (
+        <TrackList
+          activeTrack={activeTrack} 
+          tracks={tracksData}
+          onChange={onChange} />
+      )}
     </Box>
   );
 }
+
+AudioPlayer.propTypes = {
+  defaultTrack: PropTypes.object,
+  tracksData: PropTypes.arrayOf(Object),
+};
