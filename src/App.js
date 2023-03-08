@@ -14,7 +14,7 @@ export default function App() {
   const [tracksData, setTracksData] = useState();
   const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
-  console.log(audioData)
+  
   const audioPlayerData = audioData?.map((item, index) => {
     if(item.data.track_title === null || item.data.track_link.url === null) {
       return {
