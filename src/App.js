@@ -5,7 +5,7 @@ import theme from './theme';
 import {DEFAULT_LANGUAGE, MISSING_TRACK_TITLE} from './pages/constants';
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {handleAudioPlayerData, isDefault} from "./utils";
-import {Nav, LanguageSelector} from "./components";
+import {Nav} from "./components";
 import Header from "./layout/Header";
 import {AudioPlayer} from "./components/audio-player";
 
@@ -34,8 +34,7 @@ export default function App() {
             tracksData={tracksData} 
             defaultTrack={defaultTrack}/>
         )}
-        <Nav language={language} />
-        <LanguageSelector language={language} onChange={onChange} />
+        <Nav language={language} onChange={onChange} />
       </Header>
       <Outlet context={[language, onChange]}/>
     </ThemeProvider>
