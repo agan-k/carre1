@@ -17,10 +17,10 @@ export default function Music() {
 
     return(
       <div key={item.id}>
-        <img src={item.data.album_image.url} width="200"/>
-        <PrismicRichText field={ title.length !== 0 ? title : ''} />
-        <PrismicRichText field={description.length !== 0 ? description : ''}/>
-        <PrismicRichText field={personnel.length !== 0 ? personnel : ''}/>
+        <img src={item.data.album_image.url} width="200" />
+        <PrismicRichText field={title.length !== 0 ? title : ''} />
+        <PrismicRichText field={description.length !== 0 ? description : ''} />
+        <PrismicRichText field={personnel.length !== 0 ? personnel : ''} />
         {item.data.video.url !== null ? 
           <iframe 
             width="300" 

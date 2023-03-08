@@ -13,11 +13,13 @@ export const PressQuotes = () => {
     const quote = language === 'french' ?
       quoteFrench : quoteEnglish;
     const source = item.data.press_source;
+    const hasQuote = Boolean(quote.length !== 0);
+    const hasSource = Boolean(source.length !== 0);
   
     return (
       <div key={item.id}>
-        <PrismicRichText field={quote.length !== 0 ? quote : ''} />
-        <PrismicRichText field={source.length !== 0 ? source : ''} />
+        <PrismicRichText field={hasQuote ? quote : ''} />
+        <PrismicRichText field={hasSource ? source : ''} />
       </div>
     );
   });
