@@ -3,7 +3,6 @@ import {Outlet} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
 import theme from './theme';
 import {DEFAULT_LANGUAGE} from './pages/constants';
-import {contentFrench, contentEnglish} from "./assets/content/content";
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 
 import {Nav, LanguageSelector} from "./components";
@@ -15,7 +14,6 @@ export default function App() {
   const [tracksData, setTracksData] = useState();
   const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
-  const [data, setData] = useState();
   const audioPlayerData = audioData?.map((item, index) => {
     return {
       trackNumber: index + 1,
@@ -36,8 +34,6 @@ export default function App() {
   useEffect(() => {
     setTracksData(audioPlayerData);
     setDefaultTrack(audioPlayerData?.find(isDefault));
-    if(language === 'french') setData(contentFrench);
-    if(language === 'english') setData(contentEnglish);
   }, [language, audioData]);
   return (
     <ThemeProvider theme={theme}>
@@ -50,7 +46,7 @@ export default function App() {
         <Nav language={language} />
         <LanguageSelector language={language} onChange={onChange} />
       </Header>
-      <Outlet context={[language, data, onChange]}/>
+      <Outlet context={[language, onChange]}/>
     </ThemeProvider>
   );
 }

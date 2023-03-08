@@ -6,16 +6,19 @@ export default function Home() {
   const [homeObj] = useSinglePrismicDocument('home');
   const statementEnglish = homeObj?.data.statement_english;
   const statementFrench = homeObj?.data.statement_french;
-  const statement = language === 'french' ?
-    statementFrench : statementEnglish;
+  const newsFrench = homeObj?.data.news_french;
+  const newsEnglish = homeObj?.data.news_english;
+  const isFrench = language === 'french';
+  const statement = isFrench ? statementFrench : statementEnglish;
+  const news = isFrench ? newsFrench : newsEnglish;
+  const hasStatement = Boolean(statement?.length !== 0);
+  const hasNews = Boolean(news?.length !== 0);
 
   return(
     <>
       <h1>Dominique Carre Home</h1>
-      {
-        statement?.length !== 0 ? 
-          <PrismicRichText field={statement} /> : ''
-      }
+      {hasStatement ? <PrismicRichText field={statement} /> : ''}
+      {hasNews ? <PrismicRichText field={news} /> : ''}
     </>
   );
 };
