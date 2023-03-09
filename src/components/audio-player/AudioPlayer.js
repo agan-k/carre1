@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-import {Box} from '../../shared';
 import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
