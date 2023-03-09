@@ -26,7 +26,7 @@ export default function Nav({language, onChange}) {
   });
   
   return (
-    <NavWrapper p={3} m={3}>
+    <NavWrapper p={2} mt={1}>
       <nav>
         <ul>
           {navLinks}

@@ -3,7 +3,7 @@ import Box from "../shared/Box";
 
 export default function Header({children}) {
   return(
-    <Box p={2} m={1}>
+    <Box>
       {children}
     </Box>
   );
