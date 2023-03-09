@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Box} from '../../shared';
 import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
+import {AudioPlayerWrapper} from './styled';
 
 export default function AudioPlayer({defaultTrack, tracksData}) {
   const [isPlaying, setIsPlaying] = useState();
@@ -21,7 +22,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
   }, [isPlaying, activeTrack]);
 
   return (
-    <Box p={2}>
+    <AudioPlayerWrapper p={2}>
       {activeTrack && (
         <Player 
           tracks={tracksData}
@@ -35,7 +36,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
           tracks={tracksData}
           onChange={onChange} />
       )}
-    </Box>
+    </AudioPlayerWrapper>
   );
 }
 

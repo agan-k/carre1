@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {space} from 'styled-system';
 
 const Box = styled('div')(
-  {border: '1px solid blue'},
+  // {border: '1px solid blue'},
   space
 );
 export default Box;
