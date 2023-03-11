@@ -6,6 +6,7 @@ import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
 
 export default function AudioPlayer({defaultTrack, tracksData}) {
+  const [isOpen, setIsOpen] = useState(true);
   const [isPlaying, setIsPlaying] = useState();
   const [activeTrack, setActiveTrack] = useState(defaultTrack);
 
@@ -13,6 +14,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
     controlAudio({track, activeTrack});
     setActiveTrack(track);
     setIsPlaying(playing);
+    setIsOpen(false);
   };
   
   useEffect(() => {
@@ -21,7 +23,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
   }, [isPlaying, activeTrack]);
 
   return (
-    <AudioPlayerWrapper p={2} pt={0} height={50}>
+    <AudioPlayerWrapper p={2} pt={0} isOpen={isOpen}>
       {activeTrack && (
         <Player 
           tracks={tracksData}
