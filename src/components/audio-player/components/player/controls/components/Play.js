@@ -4,7 +4,7 @@ import {Button} from '../../../../../../shared';
 export default function Play({onChange}) {
 
   return (
-    <Button lineHeight={1} p={2} onClick={() => onChange({playing: true})}>
+    <Button lineHeight={0} p={1} onClick={() => onChange({playing: true})}>
       {'>'}
     </Button>
   );

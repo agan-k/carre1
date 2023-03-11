@@ -11,7 +11,7 @@ export default function Pause({loading, onChange}) {
         ) :
         (
           <Button 
-            p={2}
+            p={0}
             lineHeight={1}
             onClick={() => onChange({playing: false})}>
             {'| |'}

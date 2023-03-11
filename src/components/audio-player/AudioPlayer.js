@@ -21,7 +21,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
   }, [isPlaying, activeTrack]);
 
   return (
-    <AudioPlayerWrapper p={2}>
+    <AudioPlayerWrapper p={2} pt={0} height={50}>
       {activeTrack && (
         <Player 
           tracks={tracksData}

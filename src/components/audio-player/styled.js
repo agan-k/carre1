@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import {space, layout, color} from 'styled-system';
 
 export const AudioPlayerWrapper = styled('div')(
-  {border: '1px solid blue'},
+  {
+    border: '1px solid blue',
+    overflow: 'hidden',
+  },
   space,
   layout,
   color
