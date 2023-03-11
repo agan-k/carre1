@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import Box from "../shared/Box";
+import {HeaderWrapper} from './styled';
 
 export default function Header({children}) {
   return(
-    <Box>
+    <HeaderWrapper>
       {children}
-    </Box>
+    </HeaderWrapper>
   );
 }
 
