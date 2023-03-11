@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Outlet} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
-import theme from './theme';
+import {theme, GlobalStyle} from './theme';
 import {DEFAULT_LANGUAGE, MISSING_TRACK_TITLE} from './pages/constants';
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {handleAudioPlayerData, isDefault} from "./utils";
@@ -28,6 +28,7 @@ export default function App() {
   }, [language, audioData]);
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <Header>
         {defaultTrack && tracksData && (
           <AudioPlayer 

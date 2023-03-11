@@ -1,8 +1,8 @@
-export default {
+export const theme = {
   breakpoints: ['40em', '52em', '64em'],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
-    background: '#fff',
+    background: 'black',
     gray: '#dddddf',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     muted: '#f6f6f9',
