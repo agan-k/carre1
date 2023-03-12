@@ -3,34 +3,34 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
 import {LanguageSelector} from '../../components/language-selector';
-import NavWrapper from './styled';
+import {NavWrapper, NavList, NavListItem} from './styled';
 
 export default function Nav({language, onChange}) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
   const navLinks = routes.map((item) => 
-    <li key={item.id}>
+    <NavListItem key={item.id}>
       <Link to={item.path}>
         {item.element.props.name[`${language}`]}
       </Link>
-    </li>
+    </NavListItem>
   );
 
   const socialLinks = data?.social_links.map((item) => {
     return(
       item.spans.length !== 0 ?
-        <li key={item.text}>
+        <NavListItem key={item.text}>
           <Link to={item.spans[0].data.url}>{item.text}</Link>
-        </li> : ''
+        </NavListItem> : ''
     );
   });
   
   return (
     <NavWrapper p={2} mt={1}>
       <nav>
-        <ul>
+        <NavList>
           {navLinks}
-        </ul>
+        </NavList>
         <ul>
           {socialLinks}
         </ul>

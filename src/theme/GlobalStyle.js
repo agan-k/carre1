@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle(
       color: 'white',
       ul: {
         listStyle: 'none',
+        margin: '0',
+        padding: '0',
       },
       'a:any-link': {
         color: 'white',
