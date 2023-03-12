@@ -1,4 +1,5 @@
-export {default as Play} from './Play';
-export {default as Pause} from './Pause';
-export {default as SkipNext} from './SkipNext';
-export {default as SkipPrevious} from './SkipPrevious';
+export {default as PlayControl} from './PlayControl';
+export {default as PauseControl} from './PauseControl';
+export {default as SkipNextControl} from './SkipNextControl';
+export {default as SkipPreviousControl} from './SkipPreviousControl';
+export {default as TrackListViewControl} from './TrackListViewControl';

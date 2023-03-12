@@ -5,7 +5,6 @@ import {space, layout, color} from 'styled-system';
 // Nav and top margin of body with a single source of truth
 export const HeaderWrapper = styled.div(
   {
-    // position: 'absolute',
     margin: '0 auto',
     top: '0',
     height: 'auto',

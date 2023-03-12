@@ -8,7 +8,8 @@ export default function Player({
   activeTrack, 
   onChange, 
   isPlaying,
-}) {
+  isOpenTrackList,
+  toggleTrackListView}) {
 
   return (
     <Box mb={2}>
@@ -26,7 +27,9 @@ export default function Player({
         activeTrack={activeTrack}
         onChange={onChange}
         isPlaying={isPlaying}
-        loading={loading} />
+        loading={loading}
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView} />
     </Box>
   );
 }
@@ -37,6 +40,8 @@ Player.propTypes = {
     title: PropTypes.string,
   }),
   onChange: PropTypes.func,
+  isOpenTrackList: PropTypes.bool,
+  toggleTrackListView: PropTypes.func,
   isPlaying: PropTypes.bool,
   loading: PropTypes.bool,
 };

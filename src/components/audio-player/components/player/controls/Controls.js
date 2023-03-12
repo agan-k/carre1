@@ -1,37 +1,50 @@
 import PropTypes from 'prop-types';
 import Container from './styled';
-import {Play, Pause, SkipNext, SkipPrevious} from './components';
+import {
+  PlayControl, 
+  PauseControl, 
+  SkipNextControl, 
+  SkipPreviousControl,
+  TrackListViewControl
+} from './components';
 
 export default function Controls({
   loading,
   tracks,
   activeTrack, 
   onChange, 
-  isPlaying}) {
+  isPlaying,
+  toggleTrackListView,
+  isOpenTrackList}) {
   return (
     <Container>
-      <SkipPrevious
-        tracks={tracks}
-        activeTrack={activeTrack}
-        onChange={onChange} />
-      {
-        isPlaying ? 
-          (
-            <Pause
-              onChange={onChange}
-              isPlaying={isPlaying}
-              loading={loading} />
-          ) :
-          (
-            <Play
-              onChange={onChange}
-              isPlaying={isPlaying} />
-          )
-      }
-      <SkipNext
-        tracks={tracks}
-        activeTrack={activeTrack}
-        onChange={onChange} />
+      <Container>
+        <SkipPreviousControl
+          tracks={tracks}
+          activeTrack={activeTrack}
+          onChange={onChange} />
+        {
+          isPlaying ? 
+            (
+              <PauseControl
+                onChange={onChange}
+                isPlaying={isPlaying}
+                loading={loading} />
+            ) :
+            (
+              <PlayControl
+                onChange={onChange}
+                isPlaying={isPlaying} />
+            )
+        }
+        <SkipNextControl
+          tracks={tracks}
+          activeTrack={activeTrack}
+          onChange={onChange} />
+      </Container>
+      <TrackListViewControl 
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView} />
     </Container>
   );
 }
@@ -39,6 +52,8 @@ export default function Controls({
 Controls.propTypes = {
   tracks: PropTypes.arrayOf(PropTypes.object),
   activeTrack: PropTypes.object,
+  toggleTrackListView: PropTypes.func,
+  isOpenTrackList: PropTypes.bool,
   onChange: PropTypes.func,
   isPlaying: PropTypes.bool,
   loading: PropTypes.bool,
