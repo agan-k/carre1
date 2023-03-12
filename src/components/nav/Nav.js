@@ -2,7 +2,6 @@ import {useSinglePrismicDocument} from '@prismicio/react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
-import {LanguageSelector} from '../../components/language-selector';
 import {NavWrapper, NavList, NavListItem} from './styled';
 
 export default function Nav({language, onChange}) {
@@ -34,7 +33,6 @@ export default function Nav({language, onChange}) {
         <ul>
           {socialLinks}
         </ul>
-        <LanguageSelector language={language} onChange={onChange} />
       </nav>
     </NavWrapper>
   );
