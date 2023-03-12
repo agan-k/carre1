@@ -6,7 +6,7 @@ import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
 
 export default function AudioPlayer({defaultTrack, tracksData}) {
-  const [isOpenTrackList, setIsOpenTrackList] = useState(true);
+  const [isOpenTrackList, setIsOpenTrackList] = useState(false);
   const [isPlaying, setIsPlaying] = useState();
   const [activeTrack, setActiveTrack] = useState(defaultTrack);
 
@@ -14,7 +14,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
     controlAudio({track, activeTrack});
     setActiveTrack(track);
     setIsPlaying(playing);
-    if(isOpenTrackList) setIsOpenTrackList(false);
+    if(isOpenTrackList && playing) setIsOpenTrackList(false);
   };
 
   const toggleTrackListView = () => {
