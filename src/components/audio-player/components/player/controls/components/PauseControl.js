@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Button} from '../../../../../../shared';
+import ControlsButton from './styled';
 import Play from './PlayControl';
 
 export default function Pause({loading, onChange}) {
@@ -10,12 +10,10 @@ export default function Pause({loading, onChange}) {
           <Play />
         ) :
         (
-          <Button 
-            p={2}
-            lineHeight={1}
+          <ControlsButton
             onClick={() => onChange({playing: false})}>
             {'| |'}
-          </Button>
+          </ControlsButton>
         ) 
     
       }

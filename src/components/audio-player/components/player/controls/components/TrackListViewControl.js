@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {Button} from '../../../../../../shared';
+import ControlsButton from './styled';
 
 export default function TrackListViewControl(
   {
@@ -8,7 +8,11 @@ export default function TrackListViewControl(
   }) {
   const toggle = isOpenTrackList ? <>&#x2715;</> : <>&#9776;</>;
 
-  return <Button onClick={() => toggleTrackListView()}>{toggle}</Button>;
+  return (
+    <ControlsButton onClick={() => toggleTrackListView()}>
+      {toggle}
+    </ControlsButton>
+  );
 }
 
 TrackListViewControl.propTypes = {

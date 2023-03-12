@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import {Box} from "../../../../../shared";
 
-const Container = styled(Box)({
+const ControlsContainer = styled(Box)({
   display: 'flex',
-  boxSizing: 'border-box',
-  border: 'none',
-  justifyContent: 'space-around',
-  width: '200px',
-  margin: '0 auto',
+  flexDirection: 'column',
+  alignItems: 'center',
+  'div:nth-child(2)': {
+    alignSelf: 'flex-end',
+    marginTop: '-30px',
+  },
 });
 
-export default Container;
+export default ControlsContainer;

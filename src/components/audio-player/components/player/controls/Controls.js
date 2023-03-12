@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import Container from './styled';
+import {Box} from '../../../../../shared';
+import ControlsContainer from './styled';
 import {
   PlayControl, 
   PauseControl, 
@@ -16,9 +17,12 @@ export default function Controls({
   isPlaying,
   toggleTrackListView,
   isOpenTrackList}) {
+  
   return (
-    <Container>
-      <Container>
+    <ControlsContainer
+      display={'flex'} 
+      justifyContent={'center'}>
+      <Box justifyContent={'space-around'} display={'flex'} width={'120px'}>
         <SkipPreviousControl
           tracks={tracks}
           activeTrack={activeTrack}
@@ -41,11 +45,13 @@ export default function Controls({
           tracks={tracks}
           activeTrack={activeTrack}
           onChange={onChange} />
-      </Container>
-      <TrackListViewControl 
-        isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView} />
-    </Container>
+      </Box>
+      <Box dalignSelf={'flex-end'}>
+        <TrackListViewControl 
+          isOpenTrackList={isOpenTrackList}
+          toggleTrackListView={toggleTrackListView} />
+      </Box>
+    </ControlsContainer>
   );
 }
 

@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import {space, layout, color, flexbox} from 'styled-system';
 
-const Box = styled('div')(
+const ControlsButton = styled('button')(
+  {
+    width: '30px',
+    height: '30px',
+  },
   space,
   layout,
   color,
   flexbox
 );
-export default Box;
+export default ControlsButton;

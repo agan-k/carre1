@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
 import {findNextTrack} from './utils';
-import {Button} from '../../../../../../shared';
+import ControlsButton from './styled';
 
 export default function SkipNext({tracks, activeTrack, onChange}) {
   const [nextTrack, setNextTrack] = useState({});
@@ -11,12 +11,11 @@ export default function SkipNext({tracks, activeTrack, onChange}) {
   }, [activeTrack]);
   
   return (
-    <Button
-      p={2}
-      lineHeight={1}
+    <ControlsButton
+      px={1}
       onClick={() => onChange({track: nextTrack, playing: true})}>
       {'>>'}
-    </Button>
+    </ControlsButton>
   );
 }
 

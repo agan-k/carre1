@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
-import {Button} from '../../../../../../shared';
+import ControlsButton from './styled';
 
 export default function Play({onChange}) {
 
   return (
-    <Button lineHeight={0} p={2} onClick={() => onChange({playing: true})}>
+    <ControlsButton
+      onClick={() => onChange({playing: true})}>
       {' > '}
-    </Button>
+    </ControlsButton>
   );
 }
 
