@@ -13,7 +13,7 @@ export default function Track({activeTrack, onChange, track}) {
         border={'none'}
         borderBottom={'1px solid white'}
         textAlign="left"
-        onClick={!active ? () => onChange({track, playing: true}) : ''}>
+        onClick={!active ? () => onChange({track, playing: true}) : null}>
         {track.title}
       </Button>
     </Box>
