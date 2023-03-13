@@ -17,6 +17,7 @@ export default function TrackListViewControl(
   return (
     <Button 
       width={'100%'}
+      border={'none'}
       p={4}
       onClick={() => handleClick()}>{`${buttonName}`}
     </Button>

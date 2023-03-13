@@ -18,30 +18,32 @@ export default function Controls(
   }) {
   
   return (
-    <ControlsContainer>
-      <SkipPreviousControl
-        tracks={tracks}
-        activeTrack={activeTrack}
-        onChange={onChange} />
-      {
-        isPlaying ? 
-          (
-            <PauseControl
-              onChange={onChange}
-              isPlaying={isPlaying}
-              loading={loading} />
-          ) :
-          (
-            <PlayControl
-              onChange={onChange}
-              isPlaying={isPlaying} />
-          )
-      }
-      <SkipNextControl
-        tracks={tracks}
-        activeTrack={activeTrack}
-        onChange={onChange} />
-    </ControlsContainer>
+    <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
+      <ControlsContainer>
+        <SkipPreviousControl
+          tracks={tracks}
+          activeTrack={activeTrack}
+          onChange={onChange} />
+        {
+          isPlaying ? 
+            (
+              <PauseControl
+                onChange={onChange}
+                isPlaying={isPlaying}
+                loading={loading} />
+            ) :
+            (
+              <PlayControl
+                onChange={onChange}
+                isPlaying={isPlaying} />
+            )
+        }
+        <SkipNextControl
+          tracks={tracks}
+          activeTrack={activeTrack}
+          onChange={onChange} />
+      </ControlsContainer>
+    </Box>
   );
 }
 

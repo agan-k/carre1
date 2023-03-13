@@ -10,6 +10,7 @@ export default function LanguageSelector({language, onChange}) {
     <Button 
       width={'100%'}
       p={10}
+      border={'none'}
       onClick={() => onChange(`${changeTo}`)}> 
       &#127760; {buttonName}
     </Button>

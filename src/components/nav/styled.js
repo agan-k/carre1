@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {space, layout, color} from 'styled-system';
+import {space, layout, color, border} from 'styled-system';
 import {theme} from '../../theme';
 
 export const NavWrapper = styled('div')(
@@ -33,8 +33,10 @@ export const NavListItem = styled('li')(
 export const NavViewControl = styled('button')(
   {
     width: '100%',
+    border: 'none',
   },
   space,
   layout,
-  color
+  color,
+  border
 );
