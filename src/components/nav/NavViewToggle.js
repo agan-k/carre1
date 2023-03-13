@@ -2,19 +2,29 @@ import PropTypes from 'prop-types';
 import {NavViewControl} from "./styled";
 import {Box} from '../../shared';
 
-export default function NavViewToggle({isNavOpen, toggle}) {
+export default function NavViewToggle(
+  {
+    isOpenTrackList, 
+    toggleTrackListView,
+    isOpenNav,
+    toggleNavView,
+  }) {
+  const handleClick = () => {
+    isOpenTrackList && toggleTrackListView();
+    toggleNavView();
+  };
   return(
     <Box>
       {
-        isNavOpen ? 
+        isOpenNav ? 
           <NavViewControl 
             p={4}
-            onClick={() => toggle()}>
+            onClick={() => handleClick()}>
             Close Menu
           </NavViewControl> :
           <NavViewControl
             p={4}
-            onClick={() => toggle()}>
+            onClick={() => handleClick()}>
             Menu
           </NavViewControl>
       }
@@ -23,6 +33,8 @@ export default function NavViewToggle({isNavOpen, toggle}) {
 }
 
 NavViewToggle.propTypes = {
-  isNavOpen: PropTypes.bool,
-  toggle: PropTypes.func,
+  isOpenTrackList: PropTypes.bool,
+  toggleTrackListView: PropTypes.func,
+  isOpenNav: PropTypes.bool,
+  toggleNavView: PropTypes.func,
 };

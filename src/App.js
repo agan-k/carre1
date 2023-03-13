@@ -52,8 +52,10 @@ export default function App() {
         )}
         <Nav 
           language={language} 
-          toggleNavView={toggleNavView} 
           isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
+          isOpenTrackList={isOpenTrackList}
+          toggleTrackListView={toggleTrackListView}
         />
         <LanguageSelector language={language} onChange={onChange} />
       </Header>
