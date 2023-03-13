@@ -14,7 +14,8 @@ export default function App() {
   const [tracksData, setTracksData] = useState();
   const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isOpenNav, setIsNavOpen] = useState(false);
+  const [isOpenTrackList, setIsOpenTrackList] = useState(false);
 
   const audioPlayerData = 
     handleAudioPlayerData({audioData, missingTrackTitle: MISSING_TRACK_TITLE});
@@ -24,7 +25,11 @@ export default function App() {
   };
 
   const toggleNavView = () => {
-    setIsNavOpen(!isNavOpen);
+    setIsNavOpen(!isOpenNav);
+  };
+
+  const toggleTrackListView = () => {
+    setIsOpenTrackList(!isOpenTrackList);
   };
 
   useEffect(() => {
@@ -38,12 +43,17 @@ export default function App() {
         {defaultTrack && tracksData && (
           <AudioPlayer 
             tracksData={tracksData} 
-            defaultTrack={defaultTrack}/>
+            defaultTrack={defaultTrack}
+            isOpenNav={isOpenNav}
+            toggleNavView={toggleNavView}
+            isOpenTrackList={isOpenTrackList}
+            toggleTrackListView={toggleTrackListView}
+          />
         )}
         <Nav 
           language={language} 
           toggleNavView={toggleNavView} 
-          isNavOpen={isNavOpen} 
+          isOpenNav={isOpenNav}
         />
         <LanguageSelector language={language} onChange={onChange} />
       </Header>

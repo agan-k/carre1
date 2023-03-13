@@ -9,14 +9,18 @@ import {
   TrackListViewControl
 } from './components';
 
-export default function Controls({
-  loading,
-  tracks,
-  activeTrack, 
-  onChange, 
-  isPlaying,
-  toggleTrackListView,
-  isOpenTrackList}) {
+export default function Controls(
+  {
+    loading,
+    tracks,
+    activeTrack,
+    onChange,
+    isPlaying,
+    toggleTrackListView,
+    isOpenTrackList,
+    isOpenNav,
+    toggleNavView,
+  }) {
   
   return (
     <ControlsContainer
@@ -49,7 +53,10 @@ export default function Controls({
       <Box dalignSelf={'flex-end'}>
         <TrackListViewControl 
           isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView} />
+          toggleTrackListView={toggleTrackListView}
+          isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
+        />
       </Box>
     </ControlsContainer>
   );
@@ -60,6 +67,8 @@ Controls.propTypes = {
   activeTrack: PropTypes.object,
   toggleTrackListView: PropTypes.func,
   isOpenTrackList: PropTypes.bool,
+  toggleNavView: PropTypes.func,
+  isOpenNav: PropTypes.bool,
   onChange: PropTypes.func,
   isPlaying: PropTypes.bool,
   loading: PropTypes.bool,

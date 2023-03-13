@@ -5,8 +5,15 @@ import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
 
-export default function AudioPlayer({defaultTrack, tracksData}) {
-  const [isOpenTrackList, setIsOpenTrackList] = useState(false);
+export default function AudioPlayer(
+  {
+    defaultTrack, 
+    tracksData, 
+    isOpenNav, 
+    toggleNavView,
+    isOpenTrackList,
+    toggleTrackListView,
+  }) {
   const [isPlaying, setIsPlaying] = useState();
   const [activeTrack, setActiveTrack] = useState(defaultTrack);
 
@@ -14,11 +21,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
     controlAudio({track, activeTrack});
     setActiveTrack(track);
     setIsPlaying(playing);
-    if(isOpenTrackList && playing) setIsOpenTrackList(false);
-  };
-
-  const toggleTrackListView = () => {
-    setIsOpenTrackList(!isOpenTrackList);
+    if(isOpenTrackList && playing) toggleTrackListView();
   };
   
   useEffect(() => {
@@ -36,6 +39,8 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
           isPlaying={isPlaying}
           isOpenTrackList={isOpenTrackList}
           toggleTrackListView={toggleTrackListView}
+          isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
         />
       )}
       {tracksData && (
@@ -53,4 +58,8 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
 AudioPlayer.propTypes = {
   defaultTrack: PropTypes.object,
   tracksData: PropTypes.arrayOf(Object),
+  isOpenNav: PropTypes.bool,
+  toggleNavView: PropTypes.func,
+  isOpenTrackList: PropTypes.bool,
+  toggleTrackListView: PropTypes.func,
 };

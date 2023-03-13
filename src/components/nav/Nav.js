@@ -5,7 +5,7 @@ import {routes} from '../../router';
 import {NavWrapper, NavList, NavListItem} from './styled';
 import NavViewToggle from './NavViewToggle';
 
-export default function Nav({language, toggleNavView, isNavOpen}) {
+export default function Nav({language, toggleNavView, isOpenNav}) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
   const navLinks = routes.map((item) => 
@@ -27,8 +27,8 @@ export default function Nav({language, toggleNavView, isNavOpen}) {
   
   return (
     <>
-      <NavViewToggle toggle={toggleNavView} isNavOpen={isNavOpen} />
-      <NavWrapper w={1/2} isNavOpen={isNavOpen}>
+      <NavViewToggle toggle={toggleNavView} isNavOpen={isOpenNav} />
+      <NavWrapper isNavOpen={isOpenNav}>
         <nav>
           <NavList>
             {navLinks}
@@ -45,5 +45,5 @@ export default function Nav({language, toggleNavView, isNavOpen}) {
 Nav.propTypes = {
   language: PropTypes.string,
   toggleNavView: PropTypes.func,
-  isNavOpen: PropTypes.bool,
+  isOpenNav: PropTypes.bool,
 };

@@ -2,14 +2,18 @@ import PropTypes from 'prop-types';
 import {Box, Text} from '../../../../shared';
 import Controls from './controls/Controls';
 
-export default function Player({
-  loading, 
-  tracks, 
-  activeTrack, 
-  onChange, 
-  isPlaying,
-  isOpenTrackList,
-  toggleTrackListView}) {
+export default function Player(
+  {
+    loading, 
+    tracks, 
+    activeTrack, 
+    onChange, 
+    isPlaying,
+    isOpenTrackList,
+    toggleTrackListView,
+    isOpenNav,
+    toggleNavView,
+  }) {
 
   return (
     <Box mb={2}>
@@ -29,7 +33,10 @@ export default function Player({
         isPlaying={isPlaying}
         loading={loading}
         isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView} />
+        toggleTrackListView={toggleTrackListView}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+      />
     </Box>
   );
 }
@@ -42,6 +49,8 @@ Player.propTypes = {
   onChange: PropTypes.func,
   isOpenTrackList: PropTypes.bool,
   toggleTrackListView: PropTypes.func,
+  isOpenNav: PropTypes.bool,
+  toggleNavView: PropTypes.func,
   isPlaying: PropTypes.bool,
   loading: PropTypes.bool,
 };
