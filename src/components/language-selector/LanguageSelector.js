@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
-import {Button, Box} from '../../..../../shared';
+import {Button} from '../../..../../shared';
 
 export default function LanguageSelector({language, onChange}) {
   const isFrench = Boolean(language === 'french');
-  return(
-    <Box>
-      {isFrench ? 
-        <Button onClick={() => onChange('english')}>
-          English</Button> :
-        <Button onClick={() => onChange('french')}>Française</Button>
-      }
-    </Box>
+  const buttonName = isFrench ? 'English' : 'Française';
+  const changeTo = isFrench ? 'english' : 'french';
+
+  return (
+    <Button 
+      width={'99%'}
+      p={10}
+      onClick={() => onChange(`${changeTo}`)}> 
+      &#127760; {buttonName}
+    </Button>
   );
 }
 
