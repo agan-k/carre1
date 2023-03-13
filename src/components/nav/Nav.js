@@ -15,8 +15,9 @@ export default function Nav(
   }) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
+
   const navLinks = routes.map((item) => 
-    <NavListItem key={item.id}>
+    <NavListItem onClick={() => toggleNavView()} key={item.id}>
       <Link to={item.path}>
         {item.element.props.name[`${language}`]}
       </Link>
@@ -26,7 +27,7 @@ export default function Nav(
   const socialLinks = data?.social_links.map((item) => {
     return(
       item.spans.length !== 0 ?
-        <NavListItem key={item.text}>
+        <NavListItem onClick={() => toggleNavView()} key={item.text}>
           <Link to={item.spans[0].data.url}>{item.text}</Link>
         </NavListItem> : ''
     );
