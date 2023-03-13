@@ -1,26 +1,22 @@
 import PropTypes from 'prop-types';
-import {Button} from '../../../../shared';
+import {Button, Box} from '../../../../shared';
 
 export default function Track({activeTrack, onChange, track}) {
   let active = Boolean(track.id === activeTrack?.id);
    
   return (
-    !active ? 
+    <Box textAlign={'center'}>
       <Button 
-        width={1}
-        m={1}
+        width={'80%'}
+        p={4}
+        color={!active ? 'black' : 'primary'}
+        border={'none'}
+        borderBottom={'1px solid white'}
         textAlign="left"
-        onClick={() => onChange({track, playing: true})}>
+        onClick={!active ? () => onChange({track, playing: true}) : ''}>
         {track.title}
       </Button>
-      : 
-      <Button 
-        width={1}
-        m={1}
-        color='primary'
-        textAlign="left">
-        {track.title}
-      </Button>
+    </Box>
   );
 }
 

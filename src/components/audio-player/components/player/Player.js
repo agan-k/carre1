@@ -16,8 +16,8 @@ export default function Player(
   }) {
 
   return (
-    <Box mb={2}>
-      <Box m={2}>
+    <Box>
+      <Box>
         {loading ? (
           <Text pl={6}>. . .</Text>
         ) : (

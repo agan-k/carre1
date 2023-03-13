@@ -5,6 +5,8 @@ const ControlsButton = styled('button')(
   {
     width: '30px',
     height: '30px',
+    border: 'none',
+    backgroundColor: 'white',
   },
   space,
   layout,

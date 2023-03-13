@@ -43,12 +43,6 @@ export default function AudioPlayer(
           toggleNavView={toggleNavView}
         />
       )}
-      <TrackListViewControl 
-        isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView}
-        isOpenNav={isOpenNav}
-        toggleNavView={toggleNavView}
-      />
       {tracksData && (
         <TrackList
           activeTrack={activeTrack} 
@@ -60,6 +54,12 @@ export default function AudioPlayer(
           toggleNavView={toggleNavView}
         />
       )}
+      <TrackListViewControl 
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+      />
     </AudioPlayerWrapper>
   );
 }

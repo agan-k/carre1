@@ -6,6 +6,7 @@ import {
   SkipNextControl, 
   SkipPreviousControl
 } from './components';
+import {ControlsContainer} from './styled';
 
 export default function Controls(
   {
@@ -17,7 +18,7 @@ export default function Controls(
   }) {
   
   return (
-    <Box justifyContent={'space-around'} display={'flex'} width={'120px'}>
+    <ControlsContainer>
       <SkipPreviousControl
         tracks={tracks}
         activeTrack={activeTrack}
@@ -40,7 +41,7 @@ export default function Controls(
         tracks={tracks}
         activeTrack={activeTrack}
         onChange={onChange} />
-    </Box>
+    </ControlsContainer>
   );
 }
 
