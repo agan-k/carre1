@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
 import {Box} from '../../../../../shared';
-import ControlsContainer from './styled';
 import {
   PlayControl, 
   PauseControl, 
   SkipNextControl, 
-  SkipPreviousControl,
-  TrackListViewControl
+  SkipPreviousControl
 } from './components';
 
 export default function Controls(
@@ -16,49 +14,33 @@ export default function Controls(
     activeTrack,
     onChange,
     isPlaying,
-    toggleTrackListView,
-    isOpenTrackList,
-    isOpenNav,
-    toggleNavView,
   }) {
   
   return (
-    <ControlsContainer
-      display={'flex'} 
-      justifyContent={'center'}>
-      <Box justifyContent={'space-around'} display={'flex'} width={'120px'}>
-        <SkipPreviousControl
-          tracks={tracks}
-          activeTrack={activeTrack}
-          onChange={onChange} />
-        {
-          isPlaying ? 
-            (
-              <PauseControl
-                onChange={onChange}
-                isPlaying={isPlaying}
-                loading={loading} />
-            ) :
-            (
-              <PlayControl
-                onChange={onChange}
-                isPlaying={isPlaying} />
-            )
-        }
-        <SkipNextControl
-          tracks={tracks}
-          activeTrack={activeTrack}
-          onChange={onChange} />
-      </Box>
-      <Box dalignSelf={'flex-end'}>
-        <TrackListViewControl 
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-        />
-      </Box>
-    </ControlsContainer>
+    <Box justifyContent={'space-around'} display={'flex'} width={'120px'}>
+      <SkipPreviousControl
+        tracks={tracks}
+        activeTrack={activeTrack}
+        onChange={onChange} />
+      {
+        isPlaying ? 
+          (
+            <PauseControl
+              onChange={onChange}
+              isPlaying={isPlaying}
+              loading={loading} />
+          ) :
+          (
+            <PlayControl
+              onChange={onChange}
+              isPlaying={isPlaying} />
+          )
+      }
+      <SkipNextControl
+        tracks={tracks}
+        activeTrack={activeTrack}
+        onChange={onChange} />
+    </Box>
   );
 }
 

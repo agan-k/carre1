@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-import {Player, TrackList} from './components';
+import {Player, TrackList, TrackListViewControl} from './components';
 import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
 
@@ -30,7 +30,7 @@ export default function AudioPlayer(
   }, [isPlaying, activeTrack, isOpenTrackList]);
 
   return (
-    <AudioPlayerWrapper p={2} pt={0} isOpenTrackList={isOpenTrackList}>
+    <AudioPlayerWrapper isOpenTrackList={isOpenTrackList}>
       {activeTrack && (
         <Player 
           tracks={tracksData}
@@ -43,12 +43,21 @@ export default function AudioPlayer(
           toggleNavView={toggleNavView}
         />
       )}
+      <TrackListViewControl 
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+      />
       {tracksData && (
         <TrackList
           activeTrack={activeTrack} 
           tracks={tracksData}
           onChange={onChange} 
           isOpenTrackList={isOpenTrackList}
+          toggleTrackListView={toggleTrackListView}
+          isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
         />
       )}
     </AudioPlayerWrapper>

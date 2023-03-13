@@ -6,7 +6,7 @@ export default function TrackList(
   {
     activeTrack, 
     tracks, 
-    onChange, 
+    onChange,
     isOpenTrackList,
   }) {
   const allTitles = tracks.map((item) => (

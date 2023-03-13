@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import ControlsButton from './styled';
+import {Button} from '../../../../shared';
 
 export default function TrackListViewControl(
   {
@@ -8,16 +8,18 @@ export default function TrackListViewControl(
     isOpenNav,
     toggleNavView,
   }) {
-  const toggle = isOpenTrackList ? <>&#x2715;</> : <>&#9776;</>;
+  const buttonName = isOpenTrackList ? 'Close Track list' : 'Track list';
   const handleClick = () => {
     isOpenNav && toggleNavView();
     toggleTrackListView();
   };
 
   return (
-    <ControlsButton onClick={() => handleClick()}>
-      {toggle}
-    </ControlsButton>
+    <Button 
+      width={'99%'}
+      p={4}
+      onClick={() => handleClick()}>{`${buttonName}`}
+    </Button>
   );
 }
 
