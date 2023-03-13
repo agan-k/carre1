@@ -5,6 +5,7 @@ export default function PresskitContact() {
 
   return (
     <>
+      <h1>PressKit/Contact</h1>
       <Box p={3} m={1}>
         <h3>Press</h3>
         <PressQuotes />

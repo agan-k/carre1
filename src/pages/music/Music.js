@@ -33,5 +33,10 @@ export default function Music() {
       </div>
     );
   });
-  return albums;
+  return (
+    <>
+      <h1>Music</h1>
+      {albums}
+    </>
+  );
 };

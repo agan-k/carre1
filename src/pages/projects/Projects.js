@@ -28,5 +28,10 @@ export default function Projects() {
     );
   });
 
-  return projects;
+  return (
+    <>
+      <h1>Projects</h1>
+      {projects}
+    </>
+  );
 };

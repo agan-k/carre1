@@ -2,7 +2,7 @@ import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 import {asDate} from "@prismicio/helpers";
 export default function TourDates() {
   const [shows] = useAllPrismicDocumentsByType('shows');
-  const showCards = shows?.map((item) => {
+  const calendarCards = shows?.map((item) => {
     const hasVenue = Boolean(item.data?.venue.length !== 0);
     const hasTime = Boolean(item.data?.timestamp !== null);
     const hasDescription = Boolean(item.data?.description !== 0);
@@ -16,5 +16,10 @@ export default function TourDates() {
       </div>
     );
   });
-  return showCards;
+  return (
+    <>
+      <h1>Tour Dates</h1>
+      {calendarCards}
+    </>
+  );
 };
