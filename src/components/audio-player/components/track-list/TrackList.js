@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
-import {Box} from '../../../../shared';
+import {TracklistWrapper} from './styled';
 import Track from '../track';
 
-export default function TrackList({activeTrack, tracks, onChange}) {
+export default function TrackList(
+  {
+    activeTrack, 
+    tracks, 
+    onChange, 
+    isOpenTrackList,
+  }) {
   const allTitles = tracks.map((item) => (
     <Track 
       activeTrack={activeTrack}
@@ -12,7 +18,9 @@ export default function TrackList({activeTrack, tracks, onChange}) {
   ));
 
   return (
-    <Box>{allTitles}</Box>
+    <TracklistWrapper isOpenTrackList={isOpenTrackList}>
+      {allTitles}
+    </TracklistWrapper>
   );
 }
 
@@ -23,4 +31,5 @@ TrackList.propTypes = {
   }),
   tracks: PropTypes.arrayOf(PropTypes.object),
   onChange: PropTypes.func,
+  isOpenTrackList: PropTypes.bool,
 };

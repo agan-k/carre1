@@ -14,12 +14,17 @@ export default function App() {
   const [tracksData, setTracksData] = useState();
   const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
+  const [isNavOpen, setIsNavOpen] = useState(false);
 
   const audioPlayerData = 
     handleAudioPlayerData({audioData, missingTrackTitle: MISSING_TRACK_TITLE});
 
   const onChange = (language) => {
     setLanguage(language);
+  };
+
+  const toggleNavView = () => {
+    setIsNavOpen(!isNavOpen);
   };
 
   useEffect(() => {
@@ -35,7 +40,11 @@ export default function App() {
             tracksData={tracksData} 
             defaultTrack={defaultTrack}/>
         )}
-        <Nav language={language} onChange={onChange} />
+        <Nav 
+          language={language} 
+          toggleNavView={toggleNavView} 
+          isNavOpen={isNavOpen} 
+        />
         <LanguageSelector language={language} onChange={onChange} />
       </Header>
       <Outlet context={[language, onChange]}/>

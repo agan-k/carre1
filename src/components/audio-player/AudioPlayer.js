@@ -24,7 +24,7 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
   useEffect(() => {
     if(isPlaying) activeTrack.audio.play();
     if(!isPlaying) activeTrack.audio.pause();
-  }, [isPlaying, activeTrack]);
+  }, [isPlaying, activeTrack, isOpenTrackList]);
 
   return (
     <AudioPlayerWrapper p={2} pt={0} isOpenTrackList={isOpenTrackList}>
@@ -35,13 +35,16 @@ export default function AudioPlayer({defaultTrack, tracksData}) {
           onChange={onChange}
           isPlaying={isPlaying}
           isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}/>
+          toggleTrackListView={toggleTrackListView}
+        />
       )}
       {tracksData && (
         <TrackList
           activeTrack={activeTrack} 
           tracks={tracksData}
-          onChange={onChange} />
+          onChange={onChange} 
+          isOpenTrackList={isOpenTrackList}
+        />
       )}
     </AudioPlayerWrapper>
   );

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
 import {NavWrapper, NavList, NavListItem} from './styled';
+import NavViewToggle from './NavViewToggle';
 
-export default function Nav({language, onChange}) {
+export default function Nav({language, toggleNavView, isNavOpen}) {
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
   const navLinks = routes.map((item) => 
@@ -25,20 +26,24 @@ export default function Nav({language, onChange}) {
   });
   
   return (
-    <NavWrapper p={2} mt={1}>
-      <nav>
-        <NavList>
-          {navLinks}
-        </NavList>
-        <ul>
-          {socialLinks}
-        </ul>
-      </nav>
-    </NavWrapper>
+    <>
+      <NavViewToggle toggle={toggleNavView} isNavOpen={isNavOpen} />
+      <NavWrapper w={1/2} isNavOpen={isNavOpen}>
+        <nav>
+          <NavList>
+            {navLinks}
+          </NavList>
+          <NavList>
+            {socialLinks}
+          </NavList>
+        </nav>
+      </NavWrapper>
+    </>
   );
 }
 
 Nav.propTypes = {
-  language: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  language: PropTypes.string,
+  toggleNavView: PropTypes.func,
+  isNavOpen: PropTypes.bool,
 };
