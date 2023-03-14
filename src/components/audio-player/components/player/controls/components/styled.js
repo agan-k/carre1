@@ -3,8 +3,8 @@ import {space, layout, color, flexbox, typography} from 'styled-system';
 
 const ControlsButton = styled('button')(
   {
-    width: '40px',
-    height: '40px',
+    width: '50px',
+    height: '50px',
     border: 'none',
     backgroundColor: 'white',
     fontSize: '18px',
