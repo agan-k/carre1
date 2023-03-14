@@ -5,14 +5,16 @@ export default function Track({activeTrack, onChange, track}) {
   let active = Boolean(track.id === activeTrack?.id);
    
   return (
-    <Box textAlign={'center'}>
+    <Box textAlign={'right'}>
       <Button 
-        width={'80%'}
+        width={'200px'}
         p={4}
         color={!active ? 'black' : 'primary'}
         border={'none'}
-        borderBottom={'1px solid white'}
-        textAlign="left"
+        borderTop={'1px solid #efefef'}
+        backgroundColor={'white'}
+        borderLeft={'1px solid #efefef'}
+        textAlign={'left'}
         onClick={!active ? () => onChange({track, playing: true}) : null}>
         {track.title}
       </Button>

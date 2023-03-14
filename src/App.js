@@ -8,7 +8,7 @@ import {handleAudioPlayerData, isDefault} from "./utils";
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";
 import {AudioPlayer} from "./components/audio-player";
-import {Box} from "./shared";
+import {Box, HeadingLarge} from "./shared";
 
 export default function App() {
   const [audioData] = useAllPrismicDocumentsByType('audio_player_track');
@@ -17,6 +17,8 @@ export default function App() {
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const [isOpenNav, setIsNavOpen] = useState(false);
   const [isOpenTrackList, setIsOpenTrackList] = useState(false);
+  const isFrench = Boolean(language === 'french');
+  const siteDomain = isFrench ? 'DominiqueCarré.fr' : 'DominiqueCarre.com';
 
   const audioPlayerData = 
     handleAudioPlayerData({audioData, missingTrackTitle: MISSING_TRACK_TITLE});
@@ -44,10 +46,12 @@ export default function App() {
         <Box 
           pl={2}
           color={'black'}
-          backgroundColor={'gray'} 
+          backgroundColor={'#EFEFEF'} 
           display={'flex'} 
           justifyContent={'space-between'}>
-          <p>DominiqueCarre.fr</p>
+          <h1>
+            <HeadingLarge fontSize={'14px'}>{siteDomain}</HeadingLarge>
+          </h1>
           <LanguageSelector language={language} onChange={onChange} />
         </Box>
         {defaultTrack && tracksData && (

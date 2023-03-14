@@ -14,15 +14,15 @@ export default function Player(
     isOpenNav,
     toggleNavView,
   }) {
-
+  const currentTrack = activeTrack?.title;
   return (
-    <Box>
-      <Box>
+    <Box display={'flex'} justifyContent={'space-between'}>
+      <Box pl={3} display={'flex'} alignSelf={'center'}>
         {loading ? (
           <Text pl={6}>. . .</Text>
         ) : (
-          <Text textAlign="center" color='primary'>
-            {activeTrack.title}
+          <Text color='primary' fontSize={1} fontStyle={'italic'}>
+            &#39;{currentTrack}&#39;
           </Text>
         )}
       </Box>

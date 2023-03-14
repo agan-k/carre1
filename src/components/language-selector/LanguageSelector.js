@@ -11,7 +11,7 @@ export default function LanguageSelector({language, onChange}) {
       p={3}
       border={'none'}
       textAlign={'right'}
-      backgroundColor={'gray'}
+      backgroundColor={'#EFEFEF'}
       onClick={() => onChange(`${changeTo}`)}> 
       &#127760; {buttonName}
     </Button>

@@ -5,7 +5,7 @@ export const ControlsContainer = styled(Box)(
   {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '120px',
+    width: '200px',
     backgroundColor: 'white',
   }
 );

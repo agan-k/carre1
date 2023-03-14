@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-import {Player, TrackList, TrackListViewControl} from './components';
+import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
 import {AudioPlayerWrapper} from './styled';
 
@@ -54,12 +54,6 @@ export default function AudioPlayer(
           toggleNavView={toggleNavView}
         />
       )}
-      <TrackListViewControl 
-        isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView}
-        isOpenNav={isOpenNav}
-        toggleNavView={toggleNavView}
-      />
     </AudioPlayerWrapper>
   );
 }
