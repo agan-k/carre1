@@ -8,9 +8,10 @@ export default function LanguageSelector({language, onChange}) {
 
   return (
     <Button 
-      width={'100%'}
-      p={10}
+      p={3}
       border={'none'}
+      textAlign={'right'}
+      backgroundColor={'gray'}
       onClick={() => onChange(`${changeTo}`)}> 
       &#127760; {buttonName}
     </Button>

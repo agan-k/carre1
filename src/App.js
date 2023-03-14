@@ -8,6 +8,7 @@ import {handleAudioPlayerData, isDefault} from "./utils";
 import {Nav, LanguageSelector} from "./components";
 import Header from "./layout/Header";
 import {AudioPlayer} from "./components/audio-player";
+import {Box} from "./shared";
 
 export default function App() {
   const [audioData] = useAllPrismicDocumentsByType('audio_player_track');
@@ -40,6 +41,15 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header>
+        <Box 
+          pl={2}
+          color={'black'}
+          backgroundColor={'gray'} 
+          display={'flex'} 
+          justifyContent={'space-between'}>
+          <p>DominiqueCarre.fr</p>
+          <LanguageSelector language={language} onChange={onChange} />
+        </Box>
         {defaultTrack && tracksData && (
           <AudioPlayer 
             tracksData={tracksData} 
@@ -57,7 +67,6 @@ export default function App() {
           isOpenTrackList={isOpenTrackList}
           toggleTrackListView={toggleTrackListView}
         />
-        <LanguageSelector language={language} onChange={onChange} />
       </Header>
       <Outlet context={[language, onChange]}/>
     </ThemeProvider>
