@@ -15,7 +15,9 @@ export default function TrackListViewControl(
   };
 
   return (
-    <ControlsButton onClick={() => handleClick()}>
+    <ControlsButton 
+      pb={'3px'}
+      onClick={() => handleClick()}>
       {toggle}
     </ControlsButton>
   );

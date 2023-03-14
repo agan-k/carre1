@@ -48,10 +48,14 @@ export default function App() {
           color={'black'}
           backgroundColor={'#EFEFEF'} 
           display={'flex'} 
-          justifyContent={'space-between'}>
-          <h1>
-            <HeadingLarge fontSize={'14px'}>{siteDomain}</HeadingLarge>
-          </h1>
+          justifyContent={'space-between'}
+        >
+          <HeadingLarge 
+            fontSize={'16px'} 
+            lineHeight={2}
+          >
+            {siteDomain}
+          </HeadingLarge>
           <LanguageSelector language={language} onChange={onChange} />
         </Box>
         {defaultTrack && tracksData && (

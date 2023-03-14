@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {space, layout, color, flexbox} from 'styled-system';
+import {space, layout, color, flexbox, typography} from 'styled-system';
 
 const ControlsButton = styled('button')(
   {
@@ -7,12 +7,13 @@ const ControlsButton = styled('button')(
     height: '40px',
     border: 'none',
     backgroundColor: 'white',
-    fontSize: '13px',
+    fontSize: '18px',
     color: 'gray',
   },
   space,
   layout,
   color,
-  flexbox
+  flexbox,
+  typography
 );
 export default ControlsButton;

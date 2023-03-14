@@ -9,25 +9,19 @@ export default function NavViewToggle(
     isOpenNav,
     toggleNavView,
   }) {
+  const buttonName = isOpenNav ? 'Close Menu' : 'Menu';
   const handleClick = () => {
     isOpenTrackList && toggleTrackListView();
     toggleNavView();
   };
   return(
     <Box>
-      {
-        isOpenNav ? 
-          <NavViewControl 
-            p={4}
-            onClick={() => handleClick()}>
-            Close Menu
-          </NavViewControl> :
-          <NavViewControl
-            p={4}
-            onClick={() => handleClick()}>
-            Menu
-          </NavViewControl>
-      }
+      <NavViewControl 
+        p={4}
+        textAlign={'right'}
+        onClick={() => handleClick()}>
+        {buttonName}
+      </NavViewControl>
     </Box>
   );
 }

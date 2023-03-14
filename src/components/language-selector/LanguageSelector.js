@@ -7,11 +7,12 @@ export default function LanguageSelector({language, onChange}) {
   const changeTo = isFrench ? 'english' : 'french';
 
   return (
-    <Button 
-      p={3}
+    <Button
+      fontSize={'14px'}
+      p={2}
       border={'none'}
       textAlign={'right'}
-      backgroundColor={'#EFEFEF'}
+      backgroundColor={'#efefef'}
       onClick={() => onChange(`${changeTo}`)}> 
       &#127760; {buttonName}
     </Button>

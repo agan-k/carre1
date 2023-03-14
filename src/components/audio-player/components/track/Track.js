@@ -6,7 +6,8 @@ export default function Track({activeTrack, onChange, track}) {
    
   return (
     <Box textAlign={'right'}>
-      <Button 
+      <Button
+        fontSize={'14px'}
         width={'200px'}
         p={4}
         color={!active ? 'black' : 'primary'}
@@ -14,7 +15,7 @@ export default function Track({activeTrack, onChange, track}) {
         borderTop={'1px solid #efefef'}
         backgroundColor={'white'}
         borderLeft={'1px solid #efefef'}
-        textAlign={'left'}
+        textAlign={'right'}
         onClick={!active ? () => onChange({track, playing: true}) : null}>
         {track.title}
       </Button>

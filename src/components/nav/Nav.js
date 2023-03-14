@@ -17,19 +17,23 @@ export default function Nav(
   const {data} = socialLinksData || {};
 
   const navLinks = routes.map((item) => 
-    <NavListItem onClick={() => toggleNavView()} key={item.id}>
-      <Link to={item.path}>
+    <Link to={item.path} onClick={() => toggleNavView()} key={item.id}>
+      <NavListItem>
         {item.element.props.name[`${language}`]}
-      </Link>
-    </NavListItem>
+      </NavListItem>
+    </Link>
   );
 
   const socialLinks = data?.social_links.map((item) => {
     return(
       item.spans.length !== 0 ?
-        <NavListItem onClick={() => toggleNavView()} key={item.text}>
-          <Link to={item.spans[0].data.url}>{item.text}</Link>
-        </NavListItem> : ''
+        <Link 
+          to={item.spans[0].data.url} 
+          onClick={() => toggleNavView()} 
+          key={item.text}
+        >
+          <NavListItem>{item.text}</NavListItem>
+        </Link> : ''
     );
   });
   
@@ -42,14 +46,12 @@ export default function Nav(
         toggleNavView={toggleNavView}
       />
       <NavWrapper isNavOpen={isOpenNav}>
-        <nav>
-          <NavList>
-            {navLinks}
-          </NavList>
-          <NavList>
-            {socialLinks}
-          </NavList>
-        </nav>
+        <NavList>
+          {navLinks}
+        </NavList>
+        <NavList>
+          {socialLinks}
+        </NavList>
       </NavWrapper>
     </>
   );
