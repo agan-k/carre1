@@ -14,7 +14,10 @@ export default function Player(
     isOpenNav,
     toggleNavView,
   }) {
-  const currentTrack = activeTrack?.title;
+  const currentTrack = 
+    <>
+      <>&#39;</>{activeTrack?.title}<>&#39;</>
+    </>;
   return (
     <Box display={'flex'} justifyContent={'space-between'}>
       <Box pl={3} display={'flex'} alignSelf={'center'}>
@@ -22,7 +25,7 @@ export default function Player(
           <Text pl={6}>. . .</Text>
         ) : (
           <Text color='primary' fontSize={1} fontStyle={'italic'}>
-            &#39;{currentTrack}&#39;
+            {currentTrack}
           </Text>
         )}
       </Box>
