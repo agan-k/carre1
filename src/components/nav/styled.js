@@ -38,6 +38,7 @@ export const NavListItem = styled('li')(
 export const NavViewControl = styled(Button)(
   {
     width: '100%',
+    backgroundColor: '#efefef',
   },
   space,
   layout,

@@ -6,5 +6,6 @@ export const LanguageSelectorButton = styled(Button)(
   {
     padding: theme.space[4],
     fontSize: '14px',
+    backgroundColor: '#efefef',
   }
 );
