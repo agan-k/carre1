@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import {CurrentTrack, PlayerContainer} from './styled';
 import {Box, Text} from '../../../../shared';
 import Controls from './controls/Controls';
+import MusicalNotes from '../MusicalNotes';
 
 export default function Player(
   {
@@ -19,16 +21,17 @@ export default function Player(
       <>&#39;</>{activeTrack?.title}<>&#39;</>
     </>;
   return (
-    <Box display={'flex'} justifyContent={'space-between'}>
+    <PlayerContainer>
       <Box pl={3} display={'flex'} alignSelf={'center'}>
         {loading ? (
           <Text pl={6}>. . .</Text>
         ) : (
-          <Text color='primary' fontSize={1} fontStyle={'italic'}>
+          <CurrentTrack>
             {currentTrack}
-          </Text>
+          </CurrentTrack>
         )}
       </Box>
+      {isPlaying && <MusicalNotes />}
       <Controls 
         tracks={tracks}
         activeTrack={activeTrack}
@@ -40,7 +43,7 @@ export default function Player(
         isOpenNav={isOpenNav}
         toggleNavView={toggleNavView}
       />
-    </Box>
+    </PlayerContainer>
   );
 }
 

@@ -4,6 +4,7 @@ import Track from '../track';
 
 export default function TrackList(
   {
+    isPlaying,
     activeTrack, 
     tracks, 
     onChange,
@@ -11,6 +12,7 @@ export default function TrackList(
   }) {
   const allTitles = tracks.map((item) => (
     <Track 
+      isPlaying={isPlaying}
       activeTrack={activeTrack}
       track={item}
       key={item.id}
@@ -25,6 +27,7 @@ export default function TrackList(
 }
 
 TrackList.propTypes = {
+  isPlaying: PropTypes.bool,
   activeTrack: PropTypes.shape({
     title: PropTypes.string,
     id: PropTypes.string,

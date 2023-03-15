@@ -45,6 +45,7 @@ export default function AudioPlayer(
       )}
       {tracksData && (
         <TrackList
+          isPlaying={isPlaying}
           activeTrack={activeTrack} 
           tracks={tracksData}
           onChange={onChange} 
