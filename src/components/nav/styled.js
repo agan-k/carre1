@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import {space, layout, color, border, typography, flexbox} from 'styled-system';
 import {theme} from '../../theme';
+import {Button} from '../../shared';
 
 export const NavWrapper = styled('nav')(
   {
     height: props => (props.isNavOpen ? 'auto' : '0'),
     overflow: 'hidden',
-    // width: '200px',
-    // margin: '0 auto',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'end',
@@ -36,11 +35,9 @@ export const NavListItem = styled('li')(
   space,
   color
 );
-export const NavViewControl = styled('button')(
+export const NavViewControl = styled(Button)(
   {
     width: '100%',
-    border: 'none',
-    fontSize: '18px',
   },
   space,
   layout,

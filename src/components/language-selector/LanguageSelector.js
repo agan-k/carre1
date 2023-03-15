@@ -9,8 +9,8 @@ export default function LanguageSelector({language, onChange}) {
   return (
     <Button
       fontSize={'14px'}
-      p={2}
-      border={'none'}
+      p={4}
+      // border={'none'}
       textAlign={'right'}
       backgroundColor={'#efefef'}
       onClick={() => onChange(`${changeTo}`)}> 

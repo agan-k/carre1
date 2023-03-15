@@ -1,19 +1,12 @@
 import styled from 'styled-components';
-import {space, layout, color, flexbox, typography} from 'styled-system';
+import {Button} from '../../../../../../shared';
 
-const ControlsButton = styled('button')(
+const ControlsButton = styled(Button)(
   {
     width: '50px',
     height: '50px',
-    border: 'none',
     backgroundColor: 'white',
-    fontSize: '18px',
-    color: 'gray',
-  },
-  space,
-  layout,
-  color,
-  flexbox,
-  typography
+    color: 'grey',
+  }
 );
 export default ControlsButton;
