@@ -1,21 +1,17 @@
 import PropTypes from 'prop-types';
-import {Button} from '../../..../../shared';
+import {LanguageSelectorButton} from './styled';
 
 export default function LanguageSelector({language, onChange}) {
   const isFrench = Boolean(language === 'french');
   const buttonName = isFrench ? 'English' : 'Française';
   const changeTo = isFrench ? 'english' : 'french';
+  const globeIcon = <>&#127760;</>;
 
   return (
-    <Button
-      fontSize={'14px'}
-      p={4}
-      // border={'none'}
-      textAlign={'right'}
-      backgroundColor={'#efefef'}
+    <LanguageSelectorButton
       onClick={() => onChange(`${changeTo}`)}> 
-      &#127760; {buttonName}
-    </Button>
+      {globeIcon} {buttonName}
+    </LanguageSelectorButton>
   );
 }
 
