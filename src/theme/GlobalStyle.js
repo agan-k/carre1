@@ -17,6 +17,9 @@ export const GlobalStyle = createGlobalStyle(
         color: 'white',
         textDecoration: 'none',
       },
+      blockquote: {
+        margin: '20px',
+      },
     },
   }
 );

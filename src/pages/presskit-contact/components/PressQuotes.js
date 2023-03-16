@@ -19,6 +19,15 @@ export const PressQuotes = () => {
     return (
       <Box key={item.id} mb={4}>
         {hasQuote ? <QuotedText>{quote}</QuotedText> : ''}
+        {/* {hasSource ? 
+          <SourceWrapper>
+            <figure>
+              <figcaption>
+                <cite>- {source}</cite>
+              </figcaption>
+            </figure>
+          </SourceWrapper>
+          : ''} */}
         {hasSource ? <SourceWrapper>~ {source}</SourceWrapper> : ''}
       </Box>
     );
