@@ -44,11 +44,10 @@ export default function Home() {
   });
 
   return(
-    <>
-      <h1>Home</h1>
+    <Box mt={0}>
       <Box m={'0 auto'} width={'90%'}><img src={imageURL} width={'100%'}/></Box>
       {featuredPress}
       {hasNews ? <PrismicRichText field={news} /> : ''}
-    </>
+    </Box>
   );
 };

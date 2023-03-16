@@ -42,9 +42,9 @@ export default function Music() {
     );
   });
   return (
-    <>
+    <Box p={4}>
       <h1>Music</h1>
       {albums}
-    </>
+    </Box>
   );
 };

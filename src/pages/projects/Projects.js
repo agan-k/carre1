@@ -20,7 +20,7 @@ export default function Projects() {
     const hasPersonnel = Boolean(personnel.length !== 0);
 
     return(
-      <Box key={item.id} p={4}>
+      <Box key={item.id}>
         <PrismicRichText field={hasName ? name : ''} />
         {hasImage ? 
           <Box m={'0 auto'} width={'90%'}>
@@ -33,9 +33,9 @@ export default function Projects() {
   });
 
   return (
-    <>
+    <Box p={4}>
       <h1>Projects</h1>
       {projects}
-    </>
+    </Box>
   );
 };

@@ -20,7 +20,7 @@ export default function Bio() {
   const hasImage = Boolean(imageURL !== null);
 
   return(
-    <>
+    <Box p={4}>
       <h1>Bio</h1>
       {hasImage ? 
         <Box m={'0 auto'} width={'70%'}>
@@ -28,6 +28,6 @@ export default function Bio() {
         </Box> : ''}
       {hasStatement ? <QuotedText>{statement[0].text}</QuotedText> : ''}
       {hasBio ? <PrismicRichText field={bio} /> : ''}
-    </>
+    </Box>
   );
 };

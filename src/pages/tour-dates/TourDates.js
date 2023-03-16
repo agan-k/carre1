@@ -10,7 +10,7 @@ export default function TourDates() {
     const hasTime = Boolean(item.data.timestamp !== null);
     const hasDescription = Boolean(item.data.description !== 0);
     return (
-      <Box key={item.id} p={4} borderBottom={'1px solid gray'}>
+      <Box key={item.id} borderBottom={'1px solid gray'}>
         {hasTime ? <p>{asDate(item.data.timestamp).toLocaleString()}</p> : ''}
         {hasVenue ? <h3>{venue[0].text}</h3> : ''}
         {hasDescription ? 
@@ -20,7 +20,7 @@ export default function TourDates() {
   });
 
   return (
-    <Box>
+    <Box p={4}>
       <h1>Tour Dates</h1>
       {calendarCards}
     </Box>
