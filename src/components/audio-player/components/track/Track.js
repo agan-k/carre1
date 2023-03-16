@@ -11,11 +11,11 @@ export default function Track({isPlaying, activeTrack, onChange, track}) {
    
   return (
     <TrackWrapper>
-      {isPlaying && active && <MusicalNotes />}
       <TrackButton
         active={active}
         onClick={!active ? () => onChange({track, playing: true}) : null}>
         {trackTitle}
+        {isPlaying && active && <MusicalNotes size={'10px'} />}
       </TrackButton>
     </TrackWrapper>
   );

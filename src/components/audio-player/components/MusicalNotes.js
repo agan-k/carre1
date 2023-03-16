@@ -1,8 +1,13 @@
+import PropTypes from 'prop-types';
 import {MusicalNotesWrapper} from "./styled";
 
-const MusicalNotes = () => {
+const MusicalNotes = ({size}) => {
   return (
-    <MusicalNotesWrapper>&#9836;</MusicalNotesWrapper>
+    <MusicalNotesWrapper fontSize={size}>&#9836;</MusicalNotesWrapper>
   );
 };
 export default MusicalNotes;
+
+MusicalNotes.propTypes = {
+  size: PropTypes.string,
+};
