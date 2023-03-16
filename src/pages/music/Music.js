@@ -1,5 +1,6 @@
 import {useOutletContext} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
+import {Box} from "../../shared";
 
 export default function Music() {
   const [language] = useOutletContext();
@@ -14,23 +15,30 @@ export default function Music() {
       item.data.english_album_description_english || [];
     const description = language === 'french' ?
       descriptionFrench : descriptionEnglish;
+    const imageURL = item.data.album_image.url;
+    const hasImage = Boolean(imageURL !== null);
 
     return(
-      <div key={item.id}>
-        <img src={item.data.album_image.url} width="200" />
+      <Box key={item.id}>
         <PrismicRichText field={title.length !== 0 ? title : ''} />
+        {hasImage ? 
+          <Box m={'0 auto'} width={'70%'} border={'1px solid gray'}>
+            <img src={imageURL} width={'100%'}/>
+          </Box> : ''}
         <PrismicRichText field={description.length !== 0 ? description : ''} />
         <PrismicRichText field={personnel.length !== 0 ? personnel : ''} />
         {item.data.video.url !== null ? 
-          <iframe 
-            width="300" 
-            height="200" 
-            src={item.data.video.url} 
-            title="YouTube video player"
-          /> : ''
+          <Box m={'0 auto'} mt={7} width={'90%'} border={'1px solid gray'}>
+            <iframe 
+              width="90%" 
+              height="200" 
+              src={item.data.video.url} 
+              title="YouTube video player"
+            />
+
+          </Box> : ''
         }
-        <hr></hr>
-      </div>
+      </Box>
     );
   });
   return (

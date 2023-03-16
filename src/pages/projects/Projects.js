@@ -7,7 +7,7 @@ export default function Projects() {
   const [projectsData] = useAllPrismicDocumentsByType('projects');
 
   const projects = projectsData?.map((item) => {
-    const image = item.data.project_image.url;
+    const imageURL = item.data.project_image.url;
     const name = item.data.project;
     const personnel = item.data.project_personnel;
     const descriptionFrench = item.data.project_description_french || [];
@@ -15,7 +15,7 @@ export default function Projects() {
     const description = language === 'french' ?
       descriptionFrench : descriptionEnglish;
     const hasName = Boolean(name.length !== 0);
-    const hasImage = Boolean(image !== null);
+    const hasImage = Boolean(imageURL !== null);
     const hasDescription = Boolean(description.length !== 0);
     const hasPersonnel = Boolean(personnel.length !== 0);
 
@@ -24,7 +24,7 @@ export default function Projects() {
         <PrismicRichText field={hasName ? name : ''} />
         {hasImage ? 
           <Box m={'0 auto'} width={'90%'}>
-            <img src={image} width={'100%'}/>
+            <img src={imageURL} width={'100%'}/>
           </Box> : ''}
         <PrismicRichText field={hasDescription ? description : ''} />
         <PrismicRichText field={hasPersonnel ? personnel : ''} />

@@ -20,6 +20,9 @@ export const GlobalStyle = createGlobalStyle(
       blockquote: {
         margin: '20px',
       },
+      iframe: {
+        border: 'none',
+      },
     },
   }
 );
