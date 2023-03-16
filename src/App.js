@@ -51,8 +51,9 @@ export default function App() {
           justifyContent={'space-between'}
         >
           <HeadingLarge 
-            fontSize={'16px'} 
-            lineHeight={2}
+            fontSize={2} 
+            lineHeight={3}
+            pl={2}
           >
             {siteDomain}
           </HeadingLarge>
