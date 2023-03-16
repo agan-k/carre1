@@ -1,5 +1,6 @@
 import {useOutletContext} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
+import {Box} from "../../shared";
 
 export default function Projects() {
   const [language] = useOutletContext();
@@ -19,12 +20,15 @@ export default function Projects() {
     const hasPersonnel = Boolean(personnel.length !== 0);
 
     return(
-      <div key={item.id}>
+      <Box key={item.id} p={4}>
         <PrismicRichText field={hasName ? name : ''} />
-        {hasImage ? <img src={image} width="200" /> : ''}
+        {hasImage ? 
+          <Box m={'0 auto'} width={'90%'}>
+            <img src={image} width={'100%'}/>
+          </Box> : ''}
         <PrismicRichText field={hasDescription ? description : ''} />
         <PrismicRichText field={hasPersonnel ? personnel : ''} />
-      </div>
+      </Box>
     );
   });
 
