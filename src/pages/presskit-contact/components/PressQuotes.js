@@ -1,7 +1,5 @@
 import {useOutletContext} from "react-router-dom";
-import {
-  useAllPrismicDocumentsByType, 
-} from "@prismicio/react";
+import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {Box} from "../../../shared";
 import QuotedText from '../../QuotedText';
 import {SourceWrapper} from "./styled";
