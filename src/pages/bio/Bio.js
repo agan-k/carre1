@@ -1,11 +1,17 @@
-import {useOutletContext} from "react-router-dom";
+import {useOutletContext, useLocation} from "react-router-dom";
 import {useSinglePrismicDocument, PrismicRichText} from "@prismicio/react";
 import {Box} from "../../shared";
 import QuotedText from "../QuotedText";
+import {routes} from '../../router';
+import {PageTitle} from "../styled";
 
 export default function Bio() {
   const [language] = useOutletContext();
   const [bioObj] = useSinglePrismicDocument('bio');
+  const location = useLocation();
+  const currentPage = routes.find(item =>  location.pathname === item.path);
+  const pageTitleInActiveLanguage = 
+      currentPage.element.props.name[`${language}`];
   const bioEnglish = bioObj?.data.bio_english;
   const bioFrench = bioObj?.data.bio_french;
   const statementEnglish = bioObj?.data.statement_english || [];
@@ -21,7 +27,7 @@ export default function Bio() {
 
   return(
     <Box p={4}>
-      <h1>Bio</h1>
+      <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
       {hasImage ? 
         <Box m={'0 auto'} width={'70%'}>
           <img src={imageURL} width={'100%'}/>

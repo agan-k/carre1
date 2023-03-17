@@ -12,7 +12,7 @@ export const pageCategoriesEnglish = {
   PROJECTS: 'Projects',
   MUSIC: 'Music',
   TOUR_DATES: 'Tour Dates',
-  PRESSKIT_CONTACT: 'Press-kit/Contact',
+  PRESSKIT_CONTACT: 'Press/Contact',
 };
 export const DEFAULT_LANGUAGE = 'french';
 export const MISSING_TRACK_TITLE = 'Missing track';

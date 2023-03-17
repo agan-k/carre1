@@ -33,7 +33,11 @@ export default function Home() {
           {hasFeaturedPress && (
             <Box>
               <QuotedText>{featuredPressQuote[0].text}</QuotedText>
-              <Text fontStyle={'italic'} fontWeight={'600'} textAlign={'right'}>
+              <Text 
+                mr={'20px'} 
+                fontStyle={'italic'} 
+                fontWeight={'600'} 
+                textAlign={'right'}>
               ~ {source}
               </Text>
             </Box>
@@ -44,7 +48,7 @@ export default function Home() {
   });
 
   return(
-    <Box mt={0}>
+    <Box mt={0} px={4} pb={4}>
       <Box m={'0 auto'} width={'90%'}><img src={imageURL} width={'100%'}/></Box>
       {featuredPress}
       {hasNews ? <PrismicRichText field={news} /> : ''}

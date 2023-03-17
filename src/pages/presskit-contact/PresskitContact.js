@@ -1,11 +1,18 @@
+import {useOutletContext, useLocation} from "react-router-dom";
 import {PressQuotes, Contact, MediaDownload} from "./components";
 import {Box} from "../../shared";
+import {routes} from '../../router';
+import {PageTitle} from "../styled";
  
 export default function PresskitContact() {
-
+  const [language] = useOutletContext();
+  const location = useLocation();
+  const currentPage = routes.find(item =>  location.pathname === item.path);
+  const pageTitleInActiveLanguage = 
+      currentPage.element.props.name[`${language}`];
   return (
     <Box p={4}>
-      <h1>PressKit/Contact</h1>
+      <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
       <Box>
         <h3>Press</h3>
         <PressQuotes />

@@ -1,11 +1,17 @@
-import {useOutletContext} from "react-router-dom";
+import {useOutletContext, useLocation} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 import {Box} from "../../shared";
+import {routes} from '../../router';
+import {PageTitle} from "../styled";
 
 export default function Projects() {
   const [language] = useOutletContext();
   const [projectsData] = useAllPrismicDocumentsByType('projects');
-
+  const location = useLocation();
+  const currentPage = routes.find(item =>  location.pathname === item.path);
+  const pageTitleInActiveLanguage = 
+      currentPage.element.props.name[`${language}`];
+      
   const projects = projectsData?.map((item) => {
     const imageURL = item.data.project_image.url;
     const name = item.data.project;
@@ -34,7 +40,7 @@ export default function Projects() {
 
   return (
     <Box p={4}>
-      <h1>Projects</h1>
+      <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
       {projects}
     </Box>
   );

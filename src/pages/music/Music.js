@@ -1,11 +1,16 @@
-import {useOutletContext} from "react-router-dom";
+import {useOutletContext, useLocation} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 import {Box} from "../../shared";
+import {routes} from '../../router';
+import {PageTitle} from "../styled";
 
 export default function Music() {
   const [language] = useOutletContext();
   const [albumsData] = useAllPrismicDocumentsByType('albums');
-
+  const location = useLocation();
+  const currentPage = routes.find(item =>  location.pathname === item.path);
+  const pageTitleInActiveLanguage = 
+      currentPage.element.props.name[`${language}`];
   const albums = albumsData?.map((item) => {
     const title = item.data.album_title;
     const personnel = item.data.album_personnel;
@@ -43,7 +48,7 @@ export default function Music() {
   });
   return (
     <Box p={4}>
-      <h1>Music</h1>
+      <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
       {albums}
     </Box>
   );
