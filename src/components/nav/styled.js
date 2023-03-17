@@ -7,9 +7,7 @@ export const NavWrapper = styled('nav')(
   {
     height: props => (props.isNavOpen ? 'auto' : '0'),
     overflow: 'hidden',
-    display: 'flex',
     flexDirection: 'column',
-    alignItems: 'end',
   },
   space,
   layout,
@@ -27,10 +25,9 @@ export const NavListItem = styled('li')(
   {
     display: 'block',
     backgroundColor: 'grey',
-    borderBottom: `1px solid #efefef`,
+    borderTop: `1px solid #efefef`,
     textAlign: 'right',
     padding: theme.space[4],
-    width: '200px',
   },
   space,
   color
