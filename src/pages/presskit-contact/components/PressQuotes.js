@@ -2,7 +2,7 @@ import {useOutletContext} from "react-router-dom";
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {Box} from "../../../shared";
 import QuotedText from '../../QuotedText';
-import {SourceWrapper} from "./styled";
+import {SourceWrapper, PresskitContactContainer} from "./styled";
 
 export const PressQuotes = () => {
   const [language] = useOutletContext();
@@ -19,19 +19,10 @@ export const PressQuotes = () => {
     return (
       <Box key={item.id} mb={4}>
         {hasQuote ? <QuotedText>{quote}</QuotedText> : ''}
-        {/* {hasSource ? 
-          <SourceWrapper>
-            <figure>
-              <figcaption>
-                <cite>- {source}</cite>
-              </figcaption>
-            </figure>
-          </SourceWrapper>
-          : ''} */}
         {hasSource ? <SourceWrapper>~ {source}</SourceWrapper> : ''}
       </Box>
     );
   });
 
-  return quotes;
+  return <PresskitContactContainer>{quotes}</PresskitContactContainer>;
 };

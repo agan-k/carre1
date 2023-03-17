@@ -5,6 +5,7 @@ import {
 } from "@prismicio/react";
 import {validateEmail} from '../utilities';
 import {HideEmail} from "./HideEmail";
+import {PresskitContactContainer} from "./styled";
 
 export const Contact = () => {
   const [language] = useOutletContext();
@@ -31,7 +32,7 @@ export const Contact = () => {
   const isValidBookingEmail = validateEmail(bookingEmail);
 
   return (
-    <div>
+    <PresskitContactContainer>
       <span>{hasBookingName ? bookingName : ''}</span><br/>
       <span>{hasBookingPhone ? bookingPhone : ''}</span><br/>
       {hasBookingEmail ? 
@@ -43,6 +44,6 @@ export const Contact = () => {
       {hasGeneralEmail ? 
         isValidGeneralEmail && <HideEmail email={generalEmail} /> : ''
       }
-    </div>
+    </PresskitContactContainer>
   );
 };

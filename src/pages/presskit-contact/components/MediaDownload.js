@@ -1,5 +1,6 @@
 import {useOutletContext} from "react-router-dom";
 import {useSinglePrismicDocument} from "@prismicio/react";
+import {DownloadWrapper, PresskitContactContainer} from "./styled";
 
 export const MediaDownload = () => {
   const [language] = useOutletContext();
@@ -13,17 +14,22 @@ export const MediaDownload = () => {
   const rider = isFrench ? riderFrench : riderEnglish;
   const riderName = isFrench ? 'Fiche Technique' : 'Rider';
 
-  const photoDownloadLink = <a href={photoDownload}>Download Photos ZIP</a>;
+  const photoDownloadLink = <a href={photoDownload}>Photos ZIP</a>;
   const riderDownloadLink = <a href={rider}>{riderName}</a>;
 
-  const hasRider = Boolean(rider !== undefined);
+  const hasRiderDownload = Boolean(rider !== undefined);
   const hasPhotoDownload = Boolean(photoDownload !== undefined);
 
   return(
-    <>
-      {hasPhotoDownload ? photoDownloadLink : ''}
-      <br/>
-      {hasRider ? riderDownloadLink : ''}
-    </>
+    <PresskitContactContainer>
+      {hasPhotoDownload ? 
+        <DownloadWrapper>
+          Download {photoDownloadLink}
+        </DownloadWrapper> : ''}
+      {hasRiderDownload ? 
+        <DownloadWrapper>
+          Download {riderDownloadLink}
+        </DownloadWrapper> : ''}
+    </PresskitContactContainer>
   );
 };
