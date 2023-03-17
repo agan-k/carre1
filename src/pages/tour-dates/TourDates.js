@@ -1,7 +1,7 @@
 import {useOutletContext, useLocation} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 import {asDate} from "@prismicio/helpers";
-import {Box} from '../../shared';
+import {Box, Text, HeadingSmall} from '../../shared';
 import {routes} from '../../router';
 import {PageTitle} from "../styled";
 import {CalendarCardWrapper} from "./styled";
@@ -20,8 +20,9 @@ export default function TourDates() {
     const hasDescription = Boolean(item.data.description !== 0);
     return (
       <CalendarCardWrapper key={item.id}>
-        {hasTime ? <p>{asDate(item.data.timestamp).toLocaleString()}</p> : ''}
-        {hasVenue ? <h3>{venue[0].text}</h3> : ''}
+        {hasTime ? 
+          <Text>{asDate(item.data.timestamp).toLocaleString()}</Text> : ''}
+        {hasVenue ? <HeadingSmall>{venue[0].text}</HeadingSmall> : ''}
         {hasDescription ? 
           <PrismicRichText field={item.data?.description} /> : ''}
       </CalendarCardWrapper>
