@@ -19,8 +19,8 @@ export default function Music() {
     const hasImage = Boolean(imageURL !== null);
 
     return(
-      <Box key={item.id}>
-        <PrismicRichText field={title.length !== 0 ? title : ''} />
+      <Box key={item.id} mb={6} pb={6} borderTop={'1px solid gray'}>
+        <PrismicRichText field={title.length !== 0 ? title : ''} /> 
         {hasImage ? 
           <Box m={'0 auto'} width={'70%'} border={'1px solid gray'}>
             <img src={imageURL} width={'100%'}/>
