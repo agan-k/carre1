@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
+import {theme} from '../theme';
 
 export const GlobalStyle = createGlobalStyle(
   {
@@ -7,7 +8,7 @@ export const GlobalStyle = createGlobalStyle(
       maxWidth: '1200px',
       fontFamily: 'Verdana',
       background: 'black',
-      color: 'white',
+      color: theme.colors.muted,
       ul: {
         listStyle: 'none',
         margin: '0',

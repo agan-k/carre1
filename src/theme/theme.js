@@ -4,6 +4,7 @@ export const theme = {
   colors: {
     background: 'black',
     gray: '#dddddf',
+    lightGray: '#dbdbdb',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     muted: '#f6f6f9',
     primary: '#07c',
