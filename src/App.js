@@ -7,7 +7,6 @@ import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {handleAudioPlayerData, isDefault} from "./utils";
 import {Nav, LanguageSelector} from "./components";
 import {Header, Footer} from "./layout";
-// import Footer from "./layout/index";
 import {AudioPlayer} from "./components/audio-player";
 import {Box, HeadingLarge} from "./shared";
 
