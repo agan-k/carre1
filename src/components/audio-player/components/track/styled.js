@@ -16,7 +16,7 @@ export const TrackButton = styled(Button)(
     fontSize: '14px',
     fontStyle: 'italic',
     textAlign: 'left',
-    width: '200px',
+    width: '100%',
     padding: theme.space[4],
     color: props => (!props.active ? 'gray' : theme.colors.primary),
     borderTop: '1px solid #efefef',

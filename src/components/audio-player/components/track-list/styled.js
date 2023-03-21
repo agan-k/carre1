@@ -7,6 +7,8 @@ export const TracklistWrapper = styled.div(
     overflow: 'hidden',
     position: 'absolute',
     right: '0',
+    background: 'white',
+    width: '100%',
   },
   space,
   layout,
