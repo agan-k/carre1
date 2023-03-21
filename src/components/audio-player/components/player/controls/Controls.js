@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import {Box} from '../../../../../shared';
 import {
   PlayControl, 
   PauseControl, 
@@ -23,38 +22,36 @@ export default function Controls(
   }) {
   
   return (
-    <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-      <ControlsContainer>
-        <SkipPreviousControl
-          tracks={tracks}
-          activeTrack={activeTrack}
-          onChange={onChange} />
-        {
-          isPlaying ? 
-            (
-              <PauseControl
-                onChange={onChange}
-                isPlaying={isPlaying}
-                loading={loading} />
-            ) :
-            (
-              <PlayControl
-                onChange={onChange}
-                isPlaying={isPlaying} />
-            )
-        }
-        <SkipNextControl
-          tracks={tracks}
-          activeTrack={activeTrack}
-          onChange={onChange} />
-        <TrackListViewControl 
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-        />
-      </ControlsContainer>
-    </Box>
+    <ControlsContainer>
+      <SkipPreviousControl
+        tracks={tracks}
+        activeTrack={activeTrack}
+        onChange={onChange} />
+      {
+        isPlaying ? 
+          (
+            <PauseControl
+              onChange={onChange}
+              isPlaying={isPlaying}
+              loading={loading} />
+          ) :
+          (
+            <PlayControl
+              onChange={onChange}
+              isPlaying={isPlaying} />
+          )
+      }
+      <SkipNextControl
+        tracks={tracks}
+        activeTrack={activeTrack}
+        onChange={onChange} />
+      <TrackListViewControl 
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+      />
+    </ControlsContainer>
   );
 }
 

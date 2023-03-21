@@ -2,7 +2,7 @@ import {useSinglePrismicDocument} from '@prismicio/react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
-import {NavWrapper, NavList, NavListItem} from './styled';
+import {NavWrapper, NavGroup, NavItem} from './styled';
 import NavViewToggle from './NavViewToggle';
 
 export default function Nav(
@@ -16,41 +16,40 @@ export default function Nav(
   const [socialLinksData] = useSinglePrismicDocument('social_links');
   const {data} = socialLinksData || {};
   const navLinks = routes.map((item) => 
-    <Link to={item.path} onClick={() => toggleNavView()} key={item.id}>
-      <NavListItem>
+    <NavItem key={item.id}>
+      <Link to={item.path} onClick={() => toggleNavView()}>
         {item.element.props.name[`${language}`]}
-      </NavListItem>
-    </Link>
+      </Link>
+    </NavItem>
   );
 
   const socialLinks = data?.social_links.map((item) => {
     return(
       item.spans.length !== 0 ?
-        <Link 
-          to={item.spans[0].data.url} 
-          onClick={() => toggleNavView()} 
-          key={item.text}
-        >
-          <NavListItem>{item.text}</NavListItem>
-        </Link> : ''
+        <NavItem key={item.text}>
+          <Link to={item.spans[0].data.url} onClick={() => toggleNavView()} >
+            {item.text}
+          </Link>
+        </NavItem> : ''
     );
   });
-  
   return (
     <>
-      <NavViewToggle 
+      <NavViewToggle
         isOpenTrackList={isOpenTrackList}
         toggleTrackListView={toggleTrackListView}
         isOpenNav={isOpenNav}
         toggleNavView={toggleNavView}
       />
-      <NavWrapper isNavOpen={isOpenNav}>
-        <NavList>
+      <NavWrapper
+        isOpenNav={isOpenNav}
+      >
+        <NavGroup>
           {navLinks}
-        </NavList>
-        <NavList>
+        </NavGroup>
+        <NavGroup>
           {socialLinks}
-        </NavList>
+        </NavGroup>
       </NavWrapper>
     </>
   );

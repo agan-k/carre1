@@ -10,7 +10,7 @@ export default function LanguageSelector({language, onChange}) {
   return (
     <LanguageSelectorButton
       onClick={() => onChange(`${changeTo}`)}> 
-      {globeIcon} {buttonName}
+       {buttonName}
     </LanguageSelectorButton>
   );
 }

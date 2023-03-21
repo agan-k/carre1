@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import {NavViewControl} from "./styled";
-import {Box} from '../../shared';
 
 export default function NavViewToggle(
   {
@@ -15,14 +14,10 @@ export default function NavViewToggle(
     toggleNavView();
   };
   return(
-    <Box>
-      <NavViewControl 
-        p={4}
-        textAlign={'right'}
-        onClick={() => handleClick()}>
-        {buttonName}
-      </NavViewControl>
-    </Box>
+    <NavViewControl 
+      onClick={() => handleClick()}>
+      {buttonName}
+    </NavViewControl>
   );
 }
 

@@ -1,17 +1,18 @@
 export const theme = {
-  breakpoints: ['600px'],
+  breakpoints: ['769px', '1100px'],
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
     background: 'black',
     gray: '#dddddf',
     lightGray: '#dbdbdb',
+    faintGray: '#efefef',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     muted: '#f6f6f9',
     primary: '#07c',
     secondary: '#30c',
     text: '#000',
   },
-  space: [0, 2, 4, 8, 12, 16, 32, 64, 128, 256],
+  space: [0, 4, 8, 12, 16, 32, 64, 128, 256],
   fonts: {
     body: 'system-ui, sans-serif',
     heading: 'inherit',

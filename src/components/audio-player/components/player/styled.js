@@ -6,15 +6,16 @@ export const PlayerContainer = styled(Box)(
   {
     display: 'flex',
     justifyContent: 'space-between',
+    height: '40px',
   }
 );
 export const CurrentTrack = styled(Text)(
   {
-    display: 'flex',
-    justifyContent: 'space-between',
     minWidth: '120px', 
+    alignSelf: 'center',
+    paddingLeft: theme.space[3],
     color: theme.colors.primary,
-    fontSize: '14px',
+    fontSize: theme.fontSizes[0],
     fontStyle: 'italic',
   }
 );

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {Button} from '../../../../../../shared';
+import {theme} from '../../../../../../theme';
 
 const ControlsButton = styled(Button)(
   {
-    width: '50px',
-    height: '50px',
     backgroundColor: 'white',
     color: 'grey',
+    fontSize: theme.fontSizes[1],
   }
 );
 export default ControlsButton;

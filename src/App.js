@@ -39,43 +39,49 @@ export default function App() {
     setTracksData(audioPlayerData);
     setDefaultTrack(audioPlayerData?.find(isDefault));
   }, [language, audioData]);
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header>
         <Box 
-          pl={2}
-          color={'black'}
           backgroundColor={'#EFEFEF'} 
           display={'flex'} 
           justifyContent={'space-between'}
         >
-          <HeadingLarge 
-            fontSize={2} 
-            lineHeight={3}
-            pl={2}
+          <HeadingLarge
+            color={'black'}
+            fontSize={1} 
+            lineHeight={4}
+            pl={3}
           >
             {siteDomain}
           </HeadingLarge>
           <LanguageSelector language={language} onChange={onChange} />
         </Box>
-        {defaultTrack && tracksData && (
-          <AudioPlayer 
-            tracksData={tracksData} 
-            defaultTrack={defaultTrack}
+        <Box 
+          display={['block', 'block', 'flex']} 
+          flexDirection={'row-reverse'} 
+          justifyContent={'space-between'}
+        >
+          {defaultTrack && tracksData && (
+            <AudioPlayer
+              tracksData={tracksData} 
+              defaultTrack={defaultTrack}
+              isOpenNav={isOpenNav}
+              toggleNavView={toggleNavView}
+              isOpenTrackList={isOpenTrackList}
+              toggleTrackListView={toggleTrackListView}
+            />
+          )}
+          <Nav
+            language={language} 
             isOpenNav={isOpenNav}
             toggleNavView={toggleNavView}
             isOpenTrackList={isOpenTrackList}
             toggleTrackListView={toggleTrackListView}
           />
-        )}
-        <Nav 
-          language={language} 
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-        />
+        </Box>
       </Header>
       <Outlet context={[language, onChange]}/>
       <Footer />
