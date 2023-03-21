@@ -16,10 +16,7 @@ export default function Player(
     isOpenNav,
     toggleNavView,
   }) {
-  const currentTrack = 
-    <>
-      <>&#39;</>{activeTrack?.title}<>&#39;</>
-    </>;
+  const currentTrack = activeTrack?.title;
   return (
     <PlayerContainer>
       <Box pl={3} display={'flex'} alignContent={'center'}>
@@ -30,7 +27,7 @@ export default function Player(
           {loading ? (
             <Text>loading...</Text>
           ) : (
-            <Text>{currentTrack}</Text>
+            <Text>&#39;{currentTrack}&#39;</Text>
           )}
         </CurrentTrack>
       </Box>

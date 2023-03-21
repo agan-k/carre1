@@ -12,13 +12,12 @@ export const TrackWrapper = styled(Box)(
 export const TrackButton = styled(Button)(
   {
     display: 'flex',
-    justifyContent: 'space-between',
     fontSize: '14px',
     fontStyle: 'italic',
     textAlign: 'left',
     width: '100%',
-    padding: theme.space[4],
-    color: props => (!props.active ? 'gray' : theme.colors.primary),
+    padding: theme.space[3],
+    color: props => (!props.active ? 'gray' : theme.colors.lightGray),
     borderTop: '1px solid #efefef',
     backgroundColor: 'white',
     borderLeft: '1px solid #efefef',

@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types';
 import {TrackButton, TrackWrapper} from './styled';
 import MusicalNotes from '../MusicalNotes';
+import {Text} from '../../../../shared';
 
 export default function Track({isPlaying, activeTrack, onChange, track}) {
   const active = Boolean(track.id === activeTrack?.id);
-  const trackTitle = 
-  <>
-    <>&#39;</>{track?.title}<>&#39;</>
-  </>;
+  const trackTitle = track?.title;
    
   return (
     <TrackWrapper>
       <TrackButton
         active={active}
         onClick={!active ? () => onChange({track, playing: true}) : null}>
-        {trackTitle}
-        {isPlaying && active && <MusicalNotes size={'10px'} />}
+        <MusicalNotes 
+          size={'10px'} 
+          visibility={isPlaying && active ? 'visible' : 'hidden'}
+        />
+        <Text pl={3}>&#39;{trackTitle}&#39;</Text>
       </TrackButton>
     </TrackWrapper>
   );
