@@ -7,6 +7,7 @@ export const MusicalNotesWrapper = styled(Text)(
     fontSize: props => (props.fontSize),
     display: 'flex',
     alignSelf: 'center',
+    visibility: props => (props.visibility),
     color: theme.colors.primary,
   }
 );

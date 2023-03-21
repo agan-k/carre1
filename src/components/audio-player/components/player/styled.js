@@ -10,7 +10,6 @@ export const PlayerContainer = styled(Box)(
 );
 export const CurrentTrack = styled(Text)(
   {
-    minWidth: '120px', 
     alignSelf: 'center',
     paddingLeft: theme.space[3],
     color: theme.colors.primary,

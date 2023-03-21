@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {CurrentTrack, PlayerContainer} from './styled';
-import {Text} from '../../../../shared';
+import {Text, Box} from '../../../../shared';
 import Controls from './controls/Controls';
 import MusicalNotes from '../MusicalNotes';
 
@@ -22,14 +22,18 @@ export default function Player(
     </>;
   return (
     <PlayerContainer>
-      <CurrentTrack>
-        {loading ? (
-          <Text>loading...</Text>
-        ) : (
-          <Text>{currentTrack}</Text>
-        )}
-      </CurrentTrack>
-      {isPlaying && <MusicalNotes size={'12px'} />}
+      <Box pl={3} display={'flex'} alignContent={'center'}>
+        <MusicalNotes 
+          size={'10px'} 
+          visibility={isPlaying ? 'visible' : 'hidden'}/>
+        <CurrentTrack>
+          {loading ? (
+            <Text>loading...</Text>
+          ) : (
+            <Text>{currentTrack}</Text>
+          )}
+        </CurrentTrack>
+      </Box>
       <Controls 
         tracks={tracks}
         activeTrack={activeTrack}
