@@ -9,6 +9,12 @@ export const GlobalStyle = createGlobalStyle(
       fontFamily: 'Verdana',
       background: 'black',
       color: theme.colors.muted,
+      input: {
+        borderRadius: '0',
+        '-webkit-appearance': 'none',
+        '-moz-appearance': 'none',
+        appearance: 'none',
+      },
       ul: {
         listStyle: 'none',
         margin: '0',
