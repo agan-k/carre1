@@ -6,8 +6,7 @@ export const ControlsContainer = styled(Box)(
   {
     display: 'flex',
     justifyContent: 'space-between',
-    width: '150px',
+    width: '180px',
     backgroundColor: 'white',
-    padding: theme.space[2],
   }
 );

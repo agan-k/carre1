@@ -29,7 +29,7 @@ export default function Player(
           <Text>{currentTrack}</Text>
         )}
       </CurrentTrack>
-      {isPlaying && <MusicalNotes />}
+      {isPlaying && <MusicalNotes size={'12px'} />}
       <Controls 
         tracks={tracks}
         activeTrack={activeTrack}
