@@ -6,7 +6,6 @@ export const PlayerContainer = styled(Box)(
   {
     display: 'flex',
     justifyContent: 'space-between',
-    height: '40px',
   }
 );
 export const CurrentTrack = styled(Text)(

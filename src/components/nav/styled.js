@@ -7,7 +7,6 @@ import {Button} from '../../shared';
 export const NavWrapper = styled('nav')(
   { 
     overflow: 'hidden',
-    background: 'gray',
   },
   mediaQuery({
     display: ['block', 'flex'],

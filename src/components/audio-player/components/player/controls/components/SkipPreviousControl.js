@@ -12,7 +12,6 @@ export default function SkipPrevious({tracks, activeTrack, onChange}) {
 
   return (
     <ControlsButton
-      // px={1}
       onClick={() => onChange({track: previousTrack, playing: true})}>
       {'<<'}
     </ControlsButton>
