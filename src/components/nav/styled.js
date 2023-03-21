@@ -33,14 +33,16 @@ export const NavItem = styled('li')(
       padding: theme.space[2],
       display: 'inline-block',
     },
+    'a:hover': {
+      color: theme.colors.primary,
+    },
   },
   mediaQuery({
     textAlign: ['right', 'center'],
     padding: [`${theme.space[2]}px`, '0'],
-    paddingRight: ['0'],
-    borderBottom: [`1px solid ${theme.colors.primary}`, 'none'],
+    borderBottom: [`1px solid ${theme.colors.dimGray}`, 'none'],
     'a:any-link': {
-      width: ['100px', 'auto'],
+      // width: ['100px', 'auto'],
     },
   }),
   space,

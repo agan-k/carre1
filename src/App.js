@@ -48,11 +48,11 @@ export default function App() {
           backgroundColor={'#EFEFEF'} 
           display={'flex'} 
           justifyContent={'space-between'}
+          alignItems={'center'}
         >
           <HeadingLarge
             color={'black'}
             fontSize={1} 
-            lineHeight={4}
             pl={3}
           >
             {siteDomain}

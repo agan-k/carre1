@@ -4,8 +4,14 @@ import {theme} from '../../theme';
 
 export const LanguageSelectorButton = styled(Button)(
   {
-    paddingRight: theme.space[2],
+    padding: theme.space[2],
     fontSize: theme.fontSizes[1],
     backgroundColor: theme.colors.faintGray,
+  }
+);
+export const GlobeIcon = styled('span')(
+  {
+    fontSize: '12px', 
+    lineHeight: '1',
   }
 );

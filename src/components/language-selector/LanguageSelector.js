@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
-import {LanguageSelectorButton} from './styled';
+import {LanguageSelectorButton, GlobeIcon} from './styled';
 
 export default function LanguageSelector({language, onChange}) {
   const isFrench = Boolean(language === 'french');
   const buttonName = isFrench ? 'English' : 'Française';
   const changeTo = isFrench ? 'english' : 'french';
-  const globeIcon = <>&#127760;</>;
 
   return (
     <LanguageSelectorButton
       onClick={() => onChange(`${changeTo}`)}> 
-       {buttonName}
+      <GlobeIcon>&#127760;</GlobeIcon>
+      &nbsp;{buttonName}
     </LanguageSelectorButton>
   );
 }
