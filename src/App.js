@@ -5,10 +5,7 @@ import {theme, GlobalStyle} from './theme';
 import {DEFAULT_LANGUAGE, MISSING_TRACK_TITLE} from './pages/constants';
 import {useAllPrismicDocumentsByType} from "@prismicio/react";
 import {handleAudioPlayerData, isDefault} from "./utils";
-import {Nav, LanguageSelector} from "./components";
 import {Header, Footer} from "./layout";
-import {AudioPlayer} from "./components/audio-player";
-import {Box, HeadingLarge} from "./shared";
 
 export default function App() {
   const [audioData] = useAllPrismicDocumentsByType('audio_player_track');
@@ -43,46 +40,16 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header>
-        <Box 
-          backgroundColor={'#EFEFEF'} 
-          display={'flex'} 
-          justifyContent={'space-between'}
-          alignItems={'center'}
-        >
-          <HeadingLarge
-            color={'black'}
-            fontSize={1} 
-            pl={3}
-          >
-            {siteDomain}
-          </HeadingLarge>
-          <LanguageSelector language={language} onChange={onChange} />
-        </Box>
-        <Box 
-          display={['block', 'block', 'flex']} 
-          flexDirection={'row-reverse'} 
-          justifyContent={'space-between'}
-        >
-          {defaultTrack && tracksData && (
-            <AudioPlayer
-              tracksData={tracksData} 
-              defaultTrack={defaultTrack}
-              isOpenNav={isOpenNav}
-              toggleNavView={toggleNavView}
-              isOpenTrackList={isOpenTrackList}
-              toggleTrackListView={toggleTrackListView}
-            />
-          )}
-          <Nav
-            language={language} 
-            isOpenNav={isOpenNav}
-            toggleNavView={toggleNavView}
-            isOpenTrackList={isOpenTrackList}
-            toggleTrackListView={toggleTrackListView}
-          />
-        </Box>
-      </Header>
+      <Header
+        onChange={onChange}
+        language={language}
+        tracksData={tracksData}
+        defaultTrack={defaultTrack}
+        siteDomain={siteDomain}
+        toggleNavView={toggleNavView}
+        toggleTrackListView={toggleTrackListView}
+        isOpenTrackList={isOpenTrackList}
+      />
       <Outlet context={[language, onChange]}/>
       <Footer />
     </ThemeProvider>
