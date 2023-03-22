@@ -5,7 +5,7 @@ import mediaQuery from '../../utils/mediaQuery';
 
 export const AudioPlayerContainer = styled.div(
   {
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.background,
     position: 'relative',
     height: 'inherit',
     height: theme.space[5],

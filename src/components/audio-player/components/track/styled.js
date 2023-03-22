@@ -17,10 +17,9 @@ export const TrackButton = styled(Button)(
     textAlign: 'left',
     width: '100%',
     padding: theme.space[3],
-    color: props => (!props.active ? 'gray' : theme.colors.lightGray),
-    borderTop: '1px solid #efefef',
-    backgroundColor: 'white',
-    borderLeft: '1px solid #efefef',
+    color: props => (!props.active ? 'gray' : theme.colors.dimGray),
+    borderTop: `1px solid ${theme.colors.dimGray}`,
+    backgroundColor: theme.colors.background,
   },
   flexbox
 );

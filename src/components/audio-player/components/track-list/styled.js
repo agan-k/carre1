@@ -5,9 +5,6 @@ export const TracklistWrapper = styled.div(
   {
     height: props => (props.isOpenTrackList ? 'auto' : '0'),
     overflow: 'hidden',
-    position: 'absolute',
-    right: '0',
-    background: 'white',
     width: '100%',
   },
   space,

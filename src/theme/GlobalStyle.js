@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle(
       margin: '0 auto',
       maxWidth: '1200px',
       fontFamily: 'Verdana',
-      background: 'black',
+      background: theme.colors.background,
       color: theme.colors.muted,
       ul: {
         listStyle: 'none',
