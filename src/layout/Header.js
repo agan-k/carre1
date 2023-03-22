@@ -24,7 +24,11 @@ export default function Header(
         justifyContent={'space-between'}
         alignItems={'center'}>
       
-        <HeadingLarge color={theme.colors.muted} fontSize={1} pl={3}>
+        <HeadingLarge 
+          color={theme.colors.darkRed} 
+          fontSize={2} 
+          pl={3} 
+          fontWeight={'700'}>
           {siteDomain}
         </HeadingLarge>
         <LanguageSelector language={language} onChange={onChange} />

@@ -3,6 +3,8 @@ export const theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64],
   colors: {
     background: 'black',
+    red: 'red',
+    darkRed: '#a61403',
     gray: '#dddddf',
     lightGray: '#dbdbdb',
     faintGray: '#efefef',
