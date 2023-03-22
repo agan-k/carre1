@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle(
         padding: '0',
       },
       'a:any-link': {
-        color: 'white',
+        color: theme.colors.lightGray,
         textDecoration: 'none',
       },
       blockquote: {

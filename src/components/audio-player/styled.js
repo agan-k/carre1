@@ -5,6 +5,7 @@ export const AudioPlayerWrapper = styled.div(
   {
     backgroundColor: 'white',
     position: 'relative',
+    height: 'inherit',
   },
   space,
   layout,

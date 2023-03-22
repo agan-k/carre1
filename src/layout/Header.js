@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import {HeaderWrapper} from './styled';
 import {Box, HeadingLarge} from '../shared';
 import {Nav, LanguageSelector, AudioPlayer} from "../components";
+import {theme} from '../theme';
 
 export default function Header(
   {
@@ -36,9 +37,11 @@ export default function Header(
       <Box 
         display={['block', 'block', 'flex']} 
         flexDirection={'row-reverse'} 
-        justifyContent={'flex-end'}
-      >
-        <Box flexGrow={'1'}>
+        justifyContent={'flex-end'}>
+        <Box 
+          flexGrow={'1'}
+          height={theme.space[5]}
+        >
           {defaultTrack && tracksData && (
             <AudioPlayer
               tracksData={tracksData} 
@@ -50,7 +53,9 @@ export default function Header(
             />
           )}
         </Box>
-        <Box pr={['0', '4']}>
+        <Box 
+          height={theme.space[5]}
+          pr={['0', '4']}>
           <Nav
             language={language} 
             isOpenNav={isOpenNav}

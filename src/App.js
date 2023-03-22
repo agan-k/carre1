@@ -46,6 +46,7 @@ export default function App() {
         tracksData={tracksData}
         defaultTrack={defaultTrack}
         siteDomain={siteDomain}
+        isOpenNav={isOpenNav}
         toggleNavView={toggleNavView}
         toggleTrackListView={toggleTrackListView}
         isOpenTrackList={isOpenTrackList}

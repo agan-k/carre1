@@ -9,8 +9,6 @@ const ControlsButton = styled(Button)(
     fontSize: theme.fontSizes[1],
     paddingLeft: theme.space[3],
     paddingRight: theme.space[3],
-    paddingTop: theme.space[2],
-    paddingBottom: theme.space[2],
   }
 );
 export default ControlsButton;

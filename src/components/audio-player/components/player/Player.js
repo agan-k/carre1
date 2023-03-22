@@ -27,7 +27,7 @@ export default function Player(
           {loading ? (
             <Text>loading...</Text>
           ) : (
-            <Text>&#39;{currentTrack}&#39;</Text>
+            <Text>{currentTrack}</Text>
           )}
         </CurrentTrack>
       </Box>

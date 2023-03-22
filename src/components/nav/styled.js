@@ -7,10 +7,14 @@ import {Button} from '../../shared';
 export const NavWrapper = styled('nav')(
   { 
     overflow: 'hidden',
+    background: theme.colors.background,
   },
   mediaQuery({
     display: ['block', 'flex'],
     height: [(props => (props.isOpenNav ? 'auto' : '0')), 'auto'],
+    position: ['absolute', 'initial'],
+    right: ['0'],
+    width: ['100%', 'unset'],
   }),
   space,
   layout,
@@ -30,7 +34,7 @@ export const NavGroup = styled('ul')(
 export const NavItem = styled('li')(
   {
     'a:any-link': {
-      padding: theme.space[2],
+      padding: theme.space[1],
       display: 'inline-block',
     },
     'a:hover': {
@@ -41,8 +45,6 @@ export const NavItem = styled('li')(
     textAlign: ['right', 'center'],
     padding: [`${theme.space[2]}px`, '0'],
     borderBottom: [`1px solid ${theme.colors.dimGray}`, 'none'],
-    'a:any-link': {
-    },
   }),
   space,
   layout,
