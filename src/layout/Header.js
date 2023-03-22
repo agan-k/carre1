@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import {HeaderWrapper} from './styled';
 import {Box, HeadingLarge} from '../shared';
 import {Nav, LanguageSelector, AudioPlayer} from "../components";
 import {theme} from '../theme';
