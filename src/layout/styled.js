@@ -2,18 +2,6 @@ import styled from 'styled-components';
 import {space, layout, color} from 'styled-system';
 import {theme} from '../theme';
 
-export const HeaderWrapper = styled.div(
-  {
-    margin: '0 auto',
-    top: '0',
-    height: 'auto',
-    width: '100%',
-    backgroundColor: 'black',
-  },
-  space,
-  layout,
-  color
-);
 export const FooterWrapper = styled.div(
   {
     fontSize: theme.fontSizes[0],

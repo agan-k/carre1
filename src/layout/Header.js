@@ -18,7 +18,7 @@ export default function Header(
   }) {
 
   return(
-    <HeaderWrapper>
+    <>
       <Box 
         backgroundColor={'#EFEFEF'} 
         display={'flex'} 
@@ -65,7 +65,7 @@ export default function Header(
           />
         </Box>
       </Box>
-    </HeaderWrapper>
+    </>
   );
 }
 
