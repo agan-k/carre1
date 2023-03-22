@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
-import {AudioPlayerWrapper} from './styled';
+import {AudioPlayerContainer} from './styled';
 
 export default function AudioPlayer(
   {
@@ -30,7 +30,7 @@ export default function AudioPlayer(
   }, [isPlaying, activeTrack, isOpenTrackList]);
 
   return (
-    <AudioPlayerWrapper isOpenTrackList={isOpenTrackList}>
+    <AudioPlayerContainer isOpenTrackList={isOpenTrackList}>
       {activeTrack && (
         <Player 
           tracks={tracksData}
@@ -55,7 +55,7 @@ export default function AudioPlayer(
           toggleNavView={toggleNavView}
         />
       )}
-    </AudioPlayerWrapper>
+    </AudioPlayerContainer>
   );
 }
 

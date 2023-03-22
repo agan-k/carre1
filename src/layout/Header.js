@@ -19,50 +19,39 @@ export default function Header(
   return(
     <>
       <Box 
-        backgroundColor={'#EFEFEF'} 
+        backgroundColor={theme.colors.faintGray} 
         display={'flex'} 
         justifyContent={'space-between'}
-        alignItems={'center'}
-      >
-        <HeadingLarge
-          color={'black'}
-          fontSize={1} 
-          pl={3}
-        >
+        alignItems={'center'}>
+      
+        <HeadingLarge color={'black'} fontSize={1} pl={3}>
           {siteDomain}
         </HeadingLarge>
         <LanguageSelector language={language} onChange={onChange} />
       </Box>
       <Box 
         display={['block', 'block', 'flex']} 
-        flexDirection={'row-reverse'} 
-        justifyContent={'flex-end'}>
-        <Box 
-          flexGrow={'1'}
-          height={theme.space[5]}
-        >
-          {defaultTrack && tracksData && (
-            <AudioPlayer
-              tracksData={tracksData} 
-              defaultTrack={defaultTrack}
-              isOpenNav={isOpenNav}
-              toggleNavView={toggleNavView}
-              isOpenTrackList={isOpenTrackList}
-              toggleTrackListView={toggleTrackListView}
-            />
-          )}
-        </Box>
-        <Box 
-          height={theme.space[5]}
-          pr={['0', '4']}>
-          <Nav
-            language={language} 
+        flexDirection={defaultTrack && tracksData ? 'row-reverse' : 'initial'} 
+        justifyContent={'space-between'}>
+        
+        {defaultTrack && tracksData && (
+          <AudioPlayer
+            tracksData={tracksData} 
+            defaultTrack={defaultTrack}
             isOpenNav={isOpenNav}
             toggleNavView={toggleNavView}
             isOpenTrackList={isOpenTrackList}
             toggleTrackListView={toggleTrackListView}
           />
-        </Box>
+        )}
+        
+        <Nav
+          language={language} 
+          isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
+          isOpenTrackList={isOpenTrackList}
+          toggleTrackListView={toggleTrackListView}
+        />
       </Box>
     </>
   );

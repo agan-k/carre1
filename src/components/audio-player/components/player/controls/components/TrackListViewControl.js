@@ -3,12 +3,12 @@ import ControlsButton from './styled';
 
 export default function TrackListViewControl(
   {
-    isOpenTrackList, 
+    // isOpenTrackList, 
     toggleTrackListView,
     isOpenNav,
     toggleNavView,
   }) {
-  const toggle = isOpenTrackList ? <>&#x2715;</> : <>&#9776;</>;
+  const toggle = <>&#9776;</>;
   const handleClick = () => {
     isOpenNav && toggleNavView();
     toggleTrackListView();

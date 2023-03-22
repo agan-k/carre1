@@ -6,7 +6,7 @@ export default function Play({onChange}) {
   return (
     <ControlsButton
       onClick={() => onChange({playing: true})}>
-      {' > '}
+      {'>'}
     </ControlsButton>
   );
 }

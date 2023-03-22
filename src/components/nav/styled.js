@@ -11,10 +11,13 @@ export const NavWrapper = styled('nav')(
   },
   mediaQuery({
     display: ['block', 'flex'],
+    alignItems: 'center',
     height: [(props => (props.isOpenNav ? 'auto' : '0')), 'auto'],
     position: ['absolute', 'initial'],
     right: ['0'],
     width: ['100%', 'unset'],
+    paddingRight: ['0', theme.space[3]],
+    paddingLeft: ['0', theme.space[2]],
   }),
   space,
   layout,
