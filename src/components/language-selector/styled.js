@@ -6,7 +6,8 @@ export const LanguageSelectorButton = styled(Button)(
   {
     padding: theme.space[2],
     fontSize: theme.fontSizes[1],
-    backgroundColor: theme.colors.faintGray,
+    backgroundColor: theme.colors.background,
+    color: theme.colors.primary,
   }
 );
 export const GlobeIcon = styled('span')(

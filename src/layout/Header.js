@@ -19,12 +19,12 @@ export default function Header(
   return(
     <>
       <Box 
-        backgroundColor={theme.colors.faintGray} 
+        backgroundColor={theme.colors.background} 
         display={'flex'} 
         justifyContent={'space-between'}
         alignItems={'center'}>
       
-        <HeadingLarge color={'black'} fontSize={1} pl={3}>
+        <HeadingLarge color={theme.colors.muted} fontSize={1} pl={3}>
           {siteDomain}
         </HeadingLarge>
         <LanguageSelector language={language} onChange={onChange} />
