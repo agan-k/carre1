@@ -39,15 +39,17 @@ export const NavItem = styled('li')(
     'a:any-link': {
       padding: theme.space[1],
       display: 'inline-block',
+      color: theme.colors.primary,
+      fontSize: theme.fontSizes[1],
     },
     'a:hover': {
-      color: theme.colors.primary,
+      color: theme.colors.muted,
     },
   },
   mediaQuery({
     textAlign: ['right', 'center'],
-    padding: [`${theme.space[2]}px`, '0'],
-    borderBottom: [`1px solid ${theme.colors.dimGray}`, 'none'],
+    padding: [`${theme.space[1]}px`, '0'],
+    borderTop: [`1px solid ${theme.colors.dimGray}`, 'none'],
   }),
   space,
   layout,
@@ -57,7 +59,8 @@ export const NavItem = styled('li')(
 export const NavViewControl = styled(Button)(
   {
     width: '100%',
-    backgroundColor: theme.colors.faintGray,
+    backgroundColor: theme.colors.background,
+    color: theme.colors.primary,
     fontSize: theme.fontSizes[1],
     textAlign: 'right',
   },
