@@ -5,6 +5,7 @@ import {routes} from '../../router';
 import {NavWrapper, NavGroup, NavItem} from './styled';
 import NavViewToggle from './NavViewToggle';
 import {LanguageSelector} from '../../components';
+import {Box} from '../../shared';
 
 export default function Nav(
   {
@@ -37,12 +38,15 @@ export default function Nav(
   });
   return (
     <>
-      <NavViewToggle
-        isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView}
-        isOpenNav={isOpenNav}
-        toggleNavView={toggleNavView}
-      />
+      <Box border={'1px solid black'}>
+        <NavViewToggle
+          isOpenTrackList={isOpenTrackList}
+          toggleTrackListView={toggleTrackListView}
+          isOpenNav={isOpenNav}
+          toggleNavView={toggleNavView}
+        />
+
+      </Box>
       <NavWrapper
         isOpenNav={isOpenNav}
       >

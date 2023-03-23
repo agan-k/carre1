@@ -9,17 +9,21 @@ export const NavWrapper = styled('nav')(
     overflow: 'hidden',
     background: theme.colors.background,
   },
-  mediaQuery({
-    display: ['block', 'flex'],
-    alignItems: 'center',
-    height: [(props => (props.isOpenNav ? 'auto' : '0')), theme.space[5]],
-    position: ['absolute', 'initial'],
-    right: ['0'],
-    width: ['100%', 'unset'],
-    paddingRight: ['0', theme.space[3]],
-    paddingBottom: props => (props.isOpenNav ?
-      `${theme.space[4]}px` : '0'),
-  }),
+  mediaQuery(
+    {
+      display: ['block', 'flex'],
+      alignItems: 'center',
+      height: [(props => (props.isOpenNav ? 'auto' : '0')), theme.space[5]],
+      position: ['absolute', 'initial'],
+      right: ['0'],
+      width: ['100%', 'unset'],
+      paddingRight: ['0', theme.space[3]],
+      borderBottom: [(props => (props.isOpenNav ?
+        `4px solid ${theme.colors.primaryMuted}` : 'none')), 'none'],
+      paddingBottom: props => (props.isOpenNav ?
+        `${theme.space[1]}px` : '0'),
+    }
+  ),
   space,
   layout,
   color,
@@ -41,16 +45,20 @@ export const NavItem = styled('li')(
       padding: theme.space[2],
       display: 'inline-block',
       color: theme.colors.primary,
-      fontSize: theme.fontSizes[1],
     },
     'a:hover': {
       color: theme.colors.muted,
     },
   },
   mediaQuery({
+    fontSize: [theme.fontSizes[2], theme.fontSizes[1]],
     textAlign: ['right', 'center'],
-    padding: [`${theme.space[1]}px`, '0'],
+    padding: [`${theme.space[1]}px`, `${theme.space[2]}px`],
+    paddingLeft: ['', '0'],
     borderTop: [`1px solid ${theme.colors.dimGray}`, 'none'],
+    'a:any-link': {
+      paddingLeft: '0',
+    },
   }),
   space,
   layout,
@@ -60,15 +68,15 @@ export const NavItem = styled('li')(
 export const NavViewControl = styled(Button)(
   {
     width: '100%',
-    backgroundColor: theme.colors.background,
-    // borderBottom: '2px solid #36454F',
-    color: theme.colors.primary,
+    backgroundColor: theme.colors.primaryMuted,
+    border: `1px solid ${theme.colors.primary}`,
+    color: 'black',
     fontSize: theme.fontSizes[2],
     textAlign: 'right',
   },
   mediaQuery({
     display: ['block', 'none'],
-    padding: [`${theme.space[3]}px`, '0'],
+    padding: [`${theme.space[2]}px`, '0'],
   }),
   space,
   layout,

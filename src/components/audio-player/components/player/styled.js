@@ -7,7 +7,7 @@ export const PlayerContainer = styled(Box)(
     display: 'flex',
     height: 'inherit',
     paddingLeft: theme.space[3],
-    paddingRight: theme.space[3],
+    paddingRight: theme.space[2],
     border: `1px solid ${theme.colors.primary}`,
     background: theme.colors.primaryMuted,
     color: theme.colors.muted,
