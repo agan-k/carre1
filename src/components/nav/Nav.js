@@ -4,10 +4,12 @@ import {Link} from 'react-router-dom';
 import {routes} from '../../router';
 import {NavWrapper, NavGroup, NavItem} from './styled';
 import NavViewToggle from './NavViewToggle';
+import {LanguageSelector} from '../../components';
 
 export default function Nav(
   {
     language, 
+    onChange,
     toggleNavView, 
     isOpenNav, 
     isOpenTrackList, 
@@ -50,6 +52,11 @@ export default function Nav(
         <NavGroup>
           {socialLinks}
         </NavGroup>
+        <NavGroup>
+          <NavItem>
+            <LanguageSelector language={language} onChange={onChange} />
+          </NavItem>
+        </NavGroup>
       </NavWrapper>
     </>
   );
@@ -57,6 +64,7 @@ export default function Nav(
 
 Nav.propTypes = {
   language: PropTypes.string,
+  onChange: PropTypes.func,
   isOpenNav: PropTypes.bool,
   toggleNavView: PropTypes.func,
   isOpenTrackList: PropTypes.bool,

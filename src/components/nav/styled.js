@@ -39,7 +39,7 @@ export const NavGroup = styled('ul')(
 export const NavItem = styled('li')(
   {
     'a:any-link': {
-      padding: theme.space[1],
+      padding: theme.space[2],
       display: 'inline-block',
       color: theme.colors.primary,
       fontSize: theme.fontSizes[1],
@@ -62,13 +62,14 @@ export const NavViewControl = styled(Button)(
   {
     width: '100%',
     backgroundColor: theme.colors.background,
+    // borderBottom: '2px solid #36454F',
     color: theme.colors.primary,
-    fontSize: theme.fontSizes[1],
+    fontSize: theme.fontSizes[2],
     textAlign: 'right',
   },
   mediaQuery({
     display: ['block', 'none'],
-    padding: [`${theme.space[2]}px`, '0'],
+    padding: [`${theme.space[3]}px`, '0'],
   }),
   space,
   layout,

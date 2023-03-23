@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
-import {Box, HeadingLarge} from '../shared';
-import {Nav, LanguageSelector, AudioPlayer} from "../components";
-import {theme} from '../theme';
+import {Nav, AudioPlayer} from "../components";
+import {HeaderContainer} from './styled';
+import {Box} from '../shared';
 
 export default function Header(
   {
     language,
     tracksData,
     defaultTrack,
-    siteDomain,
     onChange,
     toggleNavView,
     toggleTrackListView,
@@ -17,28 +16,9 @@ export default function Header(
   }) {
 
   return(
-    <>
-      <Box 
-        backgroundColor={theme.colors.background} 
-        display={'flex'} 
-        justifyContent={'space-between'}
-        alignItems={'center'}>
-      
-        <HeadingLarge 
-          color={theme.colors.darkRed} 
-          fontSize={2} 
-          pl={3} 
-          fontWeight={'700'}>
-          {siteDomain}
-        </HeadingLarge>
-        <LanguageSelector language={language} onChange={onChange} />
-      </Box>
-      <Box 
-        display={['block', 'block', 'flex']} 
-        flexDirection={defaultTrack && tracksData ? 'row-reverse' : 'initial'} 
-        justifyContent={'space-between'}>
-        
-        {defaultTrack && tracksData && (
+    <HeaderContainer defaultTrack={defaultTrack} tracksData={tracksData}>
+      {defaultTrack && tracksData && (
+        <Box display={'flex'} justifyContent={'right'}>
           <AudioPlayer
             tracksData={tracksData} 
             defaultTrack={defaultTrack}
@@ -47,17 +27,18 @@ export default function Header(
             isOpenTrackList={isOpenTrackList}
             toggleTrackListView={toggleTrackListView}
           />
-        )}
+        </Box>
+      )}
         
-        <Nav
-          language={language} 
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-        />
-      </Box>
-    </>
+      <Nav
+        language={language}
+        onChange={onChange}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView}
+      />
+    </HeaderContainer>
   );
 }
 

@@ -1,8 +1,27 @@
 import styled from 'styled-components';
-import {space, layout, color} from 'styled-system';
+import {Box} from '../shared';
 import {theme} from '../theme';
+import mediaQuery from '../utils/mediaQuery';
 
-export const FooterWrapper = styled.div(
+const hasAudioPlayer = 
+  Boolean(props => (props.defaultTrack && props.tracksData));
+
+export const HeaderContainer = styled(Box)(
+  {
+    justifyContent: 'space-between',
+    backgroundColor: theme.colors.headerBackground,
+  },
+  mediaQuery({
+    display: ['block', 'block', 'flex'],
+    flexDirection: [
+      'unset',
+      'unset',
+      hasAudioPlayer ? 
+        'row-reverse' : 'initial',//keeps Nav to the left if no data
+    ],
+  })
+);
+export const FooterWrapper = styled(Box)(
   {
     fontSize: theme.fontSizes[0],
     textAlign: 'center',
@@ -10,8 +29,5 @@ export const FooterWrapper = styled.div(
     padding: theme.space[5],
     margin: theme.space[4],
     color: theme.colors.lightGray,
-  },
-  space,
-  layout,
-  color
+  }
 );

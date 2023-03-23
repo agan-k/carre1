@@ -3,8 +3,7 @@ import {
   PlayControl, 
   PauseControl, 
   SkipNextControl, 
-  SkipPreviousControl,
-  TrackListViewControl
+  SkipPreviousControl
 } from './components';
 import {ControlsContainer} from './styled';
 
@@ -15,10 +14,6 @@ export default function Controls(
     activeTrack,
     onChange,
     isPlaying,
-    isOpenTrackList,
-    toggleTrackListView,
-    isOpenNav, 
-    toggleNavView,
   }) {
   
   return (
@@ -45,12 +40,6 @@ export default function Controls(
         tracks={tracks}
         activeTrack={activeTrack}
         onChange={onChange} />
-      <TrackListViewControl 
-        isOpenTrackList={isOpenTrackList}
-        toggleTrackListView={toggleTrackListView}
-        isOpenNav={isOpenNav}
-        toggleNavView={toggleNavView}
-      />
     </ControlsContainer>
   );
 }

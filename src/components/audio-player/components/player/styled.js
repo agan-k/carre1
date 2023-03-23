@@ -5,8 +5,11 @@ import {theme} from '../../../../theme';
 export const PlayerContainer = styled(Box)(
   {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'end',
+    gap: theme.space[6],
     height: 'inherit',
+    paddingLeft: theme.space[3],
+    paddingRight: theme.space[3],
   }
 );
 export const CurrentTrack = styled(Text)(

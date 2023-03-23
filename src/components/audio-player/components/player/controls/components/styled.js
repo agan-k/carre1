@@ -6,9 +6,8 @@ const ControlsButton = styled(Button)(
   {
     color: theme.colors.primary,
     backgroundColor: theme.colors.background,
-    fontSize: theme.fontSizes[1],
-    paddingLeft: theme.space[3],
-    paddingRight: theme.space[3],
+    fontSize: theme.fontSizes[3],
+    padding: '0',
   }
 );
 export default ControlsButton;
