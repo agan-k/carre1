@@ -9,7 +9,7 @@ export const TracklistWrapper = styled.div(
     width: '100%',
     backgroundColor: theme.colors.background,
     paddingBottom: props => (props.isOpenTrackList ?
-      `${theme.space[4]}px` : '0'),
+      `${theme.space[1]}px` : '0'),
   },
   space,
   layout,

@@ -12,6 +12,7 @@ export const theme = {
     highlight: 'hsla(205, 100%, 40%, 0.125)',
     muted: '#f6f6f9',
     primary: '#07c',
+    primaryMuted: '#01528c',
     secondary: '#30c',
     text: '#000',
   },

@@ -6,8 +6,11 @@ export const CurrentTrackWrapper = styled(Text)(
   {
     alignSelf: 'center',
     paddingLeft: theme.space[3],
-    color: theme.colors.primary,
     fontSize: theme.fontSizes[0],
+    maxWidth: theme.space[8],
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
     fontStyle: 'italic',
+    cursor: 'pointer',
   }
 );

@@ -4,7 +4,6 @@ import {CurrentTrackWrapper} from './styled';
 
 export default function CurrentTrack(
   {
-    // isOpenTrackList,
     loading,
     activeTrack,
     toggleTrackListView,

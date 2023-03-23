@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import {Player, TrackList} from './components';
 import {controlAudio} from './components/utils';
 import {AudioPlayerContainer} from './styled';
+import {Box} from '../../shared';
 
 export default function AudioPlayer(
   {
@@ -32,16 +33,18 @@ export default function AudioPlayer(
   return (
     <AudioPlayerContainer isOpenTrackList={isOpenTrackList}>
       {activeTrack && (
-        <Player 
-          tracks={tracksData}
-          activeTrack={activeTrack}
-          onChange={onChange}
-          isPlaying={isPlaying}
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-        />
+        <Box border={'1px solid black'}>
+          <Player 
+            tracks={tracksData}
+            activeTrack={activeTrack}
+            onChange={onChange}
+            isPlaying={isPlaying}
+            isOpenTrackList={isOpenTrackList}
+            toggleTrackListView={toggleTrackListView}
+            isOpenNav={isOpenNav}
+            toggleNavView={toggleNavView}
+          />
+        </Box>
       )}
       {tracksData && (
         <TrackList

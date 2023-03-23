@@ -18,7 +18,7 @@ export default function Header(
   return(
     <HeaderContainer defaultTrack={defaultTrack} tracksData={tracksData}>
       {defaultTrack && tracksData && (
-        <Box display={'flex'} justifyContent={'right'}>
+        <Box display={'flex'} justifyContent={'end'}>
           <AudioPlayer
             tracksData={tracksData} 
             defaultTrack={defaultTrack}

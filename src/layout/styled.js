@@ -19,6 +19,8 @@ export const HeaderContainer = styled(Box)(
       hasAudioPlayer ? 
         'row-reverse' : 'initial',//keeps Nav to the left if no data
     ],
+    borderBottom: ['none', `1px solid ${theme.colors.primary}`],
+    marginBottom: ['none', theme.space[1]]
   })
 );
 export const FooterWrapper = styled(Box)(

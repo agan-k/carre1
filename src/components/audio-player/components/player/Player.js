@@ -20,7 +20,7 @@ export default function Player(
 
   return (
     <PlayerContainer>
-      <Box pl={3} display={'flex'}>
+      <Box display={'flex'}>
         <MusicalNotes 
           size={'10px'} 
           visibility={isPlaying ? 'visible' : 'hidden'}
