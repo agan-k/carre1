@@ -18,6 +18,8 @@ export const NavWrapper = styled('nav')(
     width: ['100%', 'unset'],
     paddingRight: ['0', theme.space[3]],
     paddingLeft: ['0', theme.space[2]],
+    paddingBottom: props => (props.isOpenNav ?
+      `${theme.space[4]}px` : '0'),
   }),
   space,
   layout,
