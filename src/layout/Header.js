@@ -29,7 +29,6 @@ export default function Header(
           />
         </Box>
       )}
-        
       <Nav
         language={language}
         onChange={onChange}

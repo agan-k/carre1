@@ -12,17 +12,20 @@ export const HeaderContainer = styled(Box)(
     backgroundColor: theme.colors.headerBackground,
   },
   mediaQuery({
-    marginBottom: ['none', '2px'],
-    borderBottom: ['none', `1px solid ${theme.colors.primary}`],
-    display: ['block', 'block', 'flex'],
+    marginBottom: ['none', '2px', '2px'],
+    borderBottom: 
+      [
+        'none', 
+        `1px solid ${theme.colors.primary}`,
+        `1px solid ${theme.colors.primary}`,
+      ],
+    display: ['block', 'block', 'block', 'flex'],
     flexDirection: [
       'unset',
       'unset',
       hasAudioPlayer ? 
         'row-reverse' : 'initial',//Nav to the right if data returns undefined
     ],
-    // borderBottom: ['none', `1px solid ${theme.colors.primary}`],
-    // marginBottom: ['none', theme.space[1]],
   })
 );
 export const FooterWrapper = styled(Box)(

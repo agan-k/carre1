@@ -11,15 +11,16 @@ export const NavWrapper = styled('nav')(
   },
   mediaQuery(
     {
-      display: ['block', 'flex'],
+      display: ['block', 'flex', 'flex'],
       alignItems: 'center',
-      height: [(props => (props.isOpenNav ? 'auto' : '0')), theme.space[5]],
-      position: ['absolute', 'initial'],
+      height: [(props => 
+        (props.isOpenNav ? 'auto' : '0')), theme.space[5], theme.space[5]],
+      position: ['absolute', 'initial', 'initial'],
       right: ['0'],
-      width: ['100%', 'unset'],
-      paddingRight: ['0', theme.space[3]],
+      width: ['100%', 'unset', 'unset'],
+      paddingRight: ['0', theme.space[3], theme.space[3]],
       borderBottom: [(props => (props.isOpenNav ?
-        `4px solid ${theme.colors.primaryMuted}` : 'none')), 'none'],
+        `4px solid ${theme.colors.primaryMuted}` : 'none')), 'none', 'none'],
       paddingBottom: props => (props.isOpenNav ?
         `${theme.space[1]}px` : '0'),
     }
@@ -32,7 +33,7 @@ export const NavWrapper = styled('nav')(
 );
 export const NavGroup = styled('ul')(
   mediaQuery({
-    display: ['block', 'flex'],
+    display: ['block', 'flex', 'flex'],
   }),
   space,
   layout,
@@ -51,11 +52,12 @@ export const NavItem = styled('li')(
     },
   },
   mediaQuery({
-    fontSize: [theme.fontSizes[2], theme.fontSizes[1]],
-    textAlign: ['right', 'center'],
-    padding: [`${theme.space[1]}px`, `${theme.space[2]}px`],
-    paddingLeft: ['', '0'],
-    borderTop: [`1px solid ${theme.colors.dimGray}`, 'none'],
+    fontSize: [theme.fontSizes[2], theme.fontSizes[1], theme.fontSizes[1]],
+    textAlign: ['right', 'center', 'center'],
+    padding: 
+      [`${theme.space[1]}px`, `${theme.space[2]}px`, `${theme.space[2]}px`],
+    paddingLeft: ['unset', '0', '0'],
+    borderTop: [`1px solid ${theme.colors.dimGray}`, 'none', 'none'],
     'a:any-link': {
       paddingLeft: '0',
     },
@@ -75,8 +77,8 @@ export const NavViewControl = styled(Button)(
     textAlign: 'right',
   },
   mediaQuery({
-    display: ['block', 'none'],
-    padding: [`${theme.space[2]}px`, '0'],
+    display: ['block', 'none', 'none'],
+    padding: [`${theme.space[2]}px`, '0', '0'],
   }),
   space,
   layout,

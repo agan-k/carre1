@@ -14,7 +14,7 @@ const ControlsButton = styled(Button)(
   },
   mediaQuery(
     {
-      fontSize: [theme.fontSizes[3], theme.fontSizes[2]],
+      fontSize: [theme.fontSizes[3], theme.fontSizes[2], theme.fontSizes[2]],
       
     }
   )
