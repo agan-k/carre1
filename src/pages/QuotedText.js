@@ -12,4 +12,5 @@ export default function QuotedText({children}) {
 
 QuotedText.propTypes = {
   children: PropTypes.string,
+  fontSize: PropTypes.string,
 };

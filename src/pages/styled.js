@@ -5,7 +5,6 @@ import mediaQuery from '../utils/mediaQuery';
 
 export const PageWrapper = styled(Box)(
   {
-    // width: '100%',
     paddingLeft: theme.space[3],
     paddingRight: theme.space[3],
   },

@@ -9,7 +9,7 @@ export const AudioPlayerContainer = styled.div(
     height: theme.space[5],
   },
   mediaQuery({
-    width: ['100%', '300px', '300px'],
+    width: ['100%', '100%', '300px', '300px'],
   }),
   space,
   layout,

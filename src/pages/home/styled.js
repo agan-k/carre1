@@ -5,18 +5,18 @@ import {theme} from '../../theme';
 
 export const NewsWrapper = styled(Box)(
   {
-    'p': {
-      margin: '0',
-      padding: '0',
-    },
+    // 'p': {
+    //   margin: '0',
+    //   padding: ,
+    // },
   },
   mediaQuery(
     {
       'p': {
-        margin: ['unset', theme.space[4], theme.space[5]],
-        marginTop: [theme.space[5], 'unset', 'unset'],
-        paddingLeft: ['unset', theme.space[5], theme.space[6]],
-        paddingRight: ['unset', theme.space[5], theme.space[6]],
+        // margin: ['unset', theme.space[4], theme.space[5]],
+        // marginTop: [theme.space[5], 'unset', 'unset'],
+        // paddingLeft: ['unset', theme.space[5], theme.space[6]],
+        // paddingRight: ['unset', theme.space[5], theme.space[6]],
       },
     }
   )

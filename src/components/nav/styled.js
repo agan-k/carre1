@@ -3,6 +3,8 @@ import {space, layout, color, border, typography, flexbox} from 'styled-system';
 import mediaQuery from '../../utils/mediaQuery';
 import {theme} from '../../theme';
 import {Button} from '../../shared';
+const closeNav = (props => 
+  (props.isOpenNav ? 'auto' : '0'));
 
 export const NavWrapper = styled('nav')(
   { 
@@ -11,11 +13,10 @@ export const NavWrapper = styled('nav')(
   },
   mediaQuery(
     {
-      display: ['block', 'flex', 'flex'],
+      display: ['block', 'block', 'flex', 'flex'],
       alignItems: 'center',
-      height: [(props => 
-        (props.isOpenNav ? 'auto' : '0')), theme.space[5], theme.space[5]],
-      position: ['absolute', 'initial', 'initial'],
+      height: [closeNav, closeNav, theme.space[5], theme.space[5]],
+      position: ['absolute', 'absolute', 'initial', 'initial'],
       right: ['0'],
       width: ['100%', 'unset', 'unset'],
       paddingRight: ['0', theme.space[3], theme.space[3]],
@@ -33,7 +34,7 @@ export const NavWrapper = styled('nav')(
 );
 export const NavGroup = styled('ul')(
   mediaQuery({
-    display: ['block', 'flex', 'flex'],
+    display: ['block', 'block', 'flex', 'flex'],
   }),
   space,
   layout,
@@ -77,8 +78,8 @@ export const NavViewControl = styled(Button)(
     textAlign: 'right',
   },
   mediaQuery({
-    display: ['block', 'none', 'none'],
-    padding: [`${theme.space[2]}px`, '0', '0'],
+    display: ['block', 'block', 'none', 'none'],
+    padding: [`${theme.space[2]}px`, `${theme.space[2]}px`, '0', '0'],
   }),
   space,
   layout,

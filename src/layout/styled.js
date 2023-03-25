@@ -13,6 +13,8 @@ export const HeaderContainer = styled(Box)(
   },
   mediaQuery({
     marginBottom: ['none', '2px', '2px'],
+    marginLeft: ['none', theme.space[3]],
+    marginRight: ['none', theme.space[3]],
     borderBottom: 
       [
         'none', 
