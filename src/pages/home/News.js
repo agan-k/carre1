@@ -4,6 +4,7 @@ import {
   PrismicRichText
 } from "@prismicio/react";
 import {NewsWrapper} from "./styled";
+import {HeadingSmall} from ".././../shared";
 
 export default function News() {
   const [language] = useOutletContext();
@@ -16,6 +17,7 @@ export default function News() {
   const hasNews = Boolean(news?.length !== 0);
   return(
     <NewsWrapper>
+      <HeadingSmall color={'primary'} mt={5}>News</HeadingSmall>
       {hasNews ? <PrismicRichText field={news} /> : ''}
     </NewsWrapper>
   );

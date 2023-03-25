@@ -5,8 +5,8 @@ import {theme} from '../../theme';
 export const LanguageSelectorButton = styled(Button)(
   {
     padding: theme.space[2],
-    paddingLeft: theme.space[5],
-    fontSize: theme.fontSizes[2],
+    paddingLeft: theme.space[4],
+    fontSize: theme.fontSizes[1],
     backgroundColor: theme.colors.background,
     color: theme.colors.primary,
   }

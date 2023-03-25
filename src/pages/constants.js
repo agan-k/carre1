@@ -3,7 +3,7 @@ export const pageCategoriesFrench = {
   BIO: 'Bio',
   PROJECTS: 'Projets',
   MUSIC: 'Musique',
-  TOUR_DATES: 'Tour Dates',
+  TOUR_DATES: 'Dates',
   PRESSKIT_CONTACT: 'Pro/Contact',
 };
 export const pageCategoriesEnglish = {
@@ -11,7 +11,7 @@ export const pageCategoriesEnglish = {
   BIO: 'Bio',
   PROJECTS: 'Projects',
   MUSIC: 'Music',
-  TOUR_DATES: 'Tour Dates',
+  TOUR_DATES: 'Dates',
   PRESSKIT_CONTACT: 'Press/Contact',
 };
 export const DEFAULT_LANGUAGE = 'french';
