@@ -74,12 +74,12 @@ export const NavViewControl = styled(Button)(
     backgroundColor: theme.colors.primaryMuted,
     border: `1px solid ${theme.colors.primary}`,
     color: 'black',
-    fontSize: theme.fontSizes[2],
     textAlign: 'right',
   },
   mediaQuery({
     display: ['block', 'block', 'none', 'none'],
     padding: [`${theme.space[2]}px`, `${theme.space[2]}px`, '0', '0'],
+    fontSize: [theme.fontSizes[2], theme.fontSizes[1], theme.fontSizes[1]],
   }),
   space,
   layout,
