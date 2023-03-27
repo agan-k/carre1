@@ -11,6 +11,7 @@ export const NavWrapper = styled('nav')(
     overflow: 'hidden',
     background: theme.colors.background,
     width: '100%',
+    zIndex: '999',
   },
   mediaQuery(
     {

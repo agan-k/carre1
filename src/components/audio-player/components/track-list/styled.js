@@ -11,6 +11,7 @@ export const TracklistWrapper = styled.div(
     backgroundColor: theme.colors.background,
     paddingBottom: props => (props.isOpenTrackList ?
       `${theme.space[1]}px` : '0'),
+    zIndex: '999',
   },
   space,
   layout,
