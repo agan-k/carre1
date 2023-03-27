@@ -54,16 +54,13 @@ export const NavItem = styled('span')(
     'a:any-link': {
       color: theme.colors.primary,
     },
-    'a:hover': {
-      color: theme.colors.muted,
-    },
   },
   mediaQuery({
     fontSize: [theme.fontSizes[2], theme.fontSizes[1], theme.fontSizes[1]],
     display: ['flex', 'flex', 'unset', 'unset'],
     justifyContent: ['end', 'end', 'unset'],
     padding: 
-      [`${theme.space[2]}px`, `${theme.space[2]}px`, `${theme.space[0]}px`],
+    [`${theme.space[2]}px`, `${theme.space[2]}px`, `${theme.space[0]}px`],
     borderTop: [
       `1px solid ${theme.colors.dimGray}`, 
       `1px solid ${theme.colors.dimGray}`, 
@@ -74,6 +71,9 @@ export const NavItem = styled('span')(
       display: ['block', 'block', 'unset'],
       width: [`100px`, `100px`, 'unset'],
       textAlign: ['right', 'right', 'unset'],
+    },
+    'a:hover': {
+      color: ['none', 'none', theme.colors.muted],
     },
   }),
   space,
