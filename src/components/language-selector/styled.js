@@ -11,12 +11,7 @@ export const LanguageSelectorButton = styled(Box)(
     fontSize: theme.fontSizes[1],
     backgroundColor: theme.colors.background,
     color: theme.colors.primary,
-  },
-  mediaQuery(
-    {
-      // paddingBottom: ['unset', '0'],
-    }
-  )
+  }
 );
 export const GlobeIcon = styled('span')(
   {
