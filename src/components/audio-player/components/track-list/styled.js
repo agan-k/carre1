@@ -4,6 +4,7 @@ import {theme} from '../../../../theme';
 
 export const TracklistWrapper = styled.div(
   {
+    position: 'absolute',
     height: props => (props.isOpenTrackList ? 'auto' : '0'),
     overflow: 'hidden',
     width: '100%',

@@ -8,8 +8,6 @@ const ControlsButton = styled(Button)(
     color: 'black',
     backgroundColor: theme.colors.primaryMuted,
     cursor: 'pointer',
-    padding: '0',
-    padding: theme.space[1],
     width: theme.space[5],
   },
   mediaQuery(

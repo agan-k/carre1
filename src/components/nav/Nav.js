@@ -2,7 +2,7 @@ import {useSinglePrismicDocument} from '@prismicio/react';
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import {routes} from '../../router';
-import {NavWrapper, NavGroup, NavItem} from './styled';
+import {NavWrapper, NavItem, LanguageSelectorWrapper} from './styled';
 import NavViewToggle from './NavViewToggle';
 import {LanguageSelector} from '../../components';
 import {BlackBorder} from '../../shared';
@@ -38,29 +38,20 @@ export default function Nav(
   });
   return (
     <>
-      <BlackBorder border={'1px solid black'}>
+      <BlackBorder p={2}>
         <NavViewToggle
           isOpenTrackList={isOpenTrackList}
           toggleTrackListView={toggleTrackListView}
           isOpenNav={isOpenNav}
           toggleNavView={toggleNavView}
         />
-
       </BlackBorder>
-      <NavWrapper
-        isOpenNav={isOpenNav}
-      >
-        <NavGroup>
-          {navLinks}
-        </NavGroup>
-        <NavGroup>
-          {socialLinks}
-        </NavGroup>
-        <NavGroup>
-          <NavItem>
-            <LanguageSelector language={language} onChange={onChange} />
-          </NavItem>
-        </NavGroup>
+      <NavWrapper isOpenNav={isOpenNav} role='navigation'>
+        <LanguageSelectorWrapper>
+          <LanguageSelector language={language} onChange={onChange} />
+        </LanguageSelectorWrapper>
+        {navLinks}
+        {socialLinks}
       </NavWrapper>
     </>
   );
