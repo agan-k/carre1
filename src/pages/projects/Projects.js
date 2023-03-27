@@ -1,8 +1,9 @@
 import {useOutletContext, useLocation} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
-import {Box} from "../../shared";
+import {Box, Text} from "../../shared";
 import {routes} from '../../router';
-import {PageTitle} from "../styled";
+import {PageTitle, PageWrapper} from "../styled";
+import {ProjectWrapper} from "./styled";
 
 export default function Projects() {
   const [language] = useOutletContext();
@@ -26,22 +27,25 @@ export default function Projects() {
     const hasPersonnel = Boolean(personnel.length !== 0);
 
     return(
-      <Box key={item.id}>
-        <PrismicRichText field={hasName ? name : ''} />
-        {hasImage ? 
-          <Box m={'0 auto'} width={'90%'}>
-            <img src={imageURL} width={'100%'}/>
-          </Box> : ''}
-        <PrismicRichText field={hasDescription ? description : ''} />
-        <PrismicRichText field={hasPersonnel ? personnel : ''} />
-      </Box>
+      <ProjectWrapper key={item.id}>
+        <Box flex={'1 0 40%'}>
+          {hasImage ? <img src={imageURL} width={'100%'}/> : ''}
+        </Box>
+        <Box pl={[0, 4]}>
+          <PrismicRichText field={hasName ? name : ''} />
+          <PrismicRichText field={hasDescription ? description : ''} />
+          <Text color={'primary'}>
+            <PrismicRichText field={hasPersonnel ? personnel : ''} />
+          </Text>
+        </Box>
+      </ProjectWrapper>
     );
   });
 
   return (
-    <Box p={4}>
+    <PageWrapper>
       <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
       {projects}
-    </Box>
+    </PageWrapper>
   );
 };

@@ -11,7 +11,7 @@ export const PageWrapper = styled(Box)(
 );
 export const PageTitle = styled(HeadingSmall)(
   {
-    color: theme.colors.primary,
+    color: theme.colors.primaryMuted,
     fontSize: theme.fontSizes[6],
     marginBottom: theme.space[4],
   }
