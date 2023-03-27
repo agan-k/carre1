@@ -12,7 +12,7 @@ export default function Pause({loading, onChange}) {
         (
           <ControlsButton
             onClick={() => onChange({playing: false})}>
-            {'| |'}
+            {'||'}
           </ControlsButton>
         ) 
     
