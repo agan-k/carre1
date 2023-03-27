@@ -32,7 +32,6 @@ export const FooterWrapper = styled(Box)(
     textAlign: 'center',
     borderTop: '1px solid gray',
     padding: theme.space[5],
-    margin: theme.space[4],
     color: theme.colors.lightGray,
   }
 );

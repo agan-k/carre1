@@ -1,9 +1,10 @@
 import {useOutletContext, useLocation} from "react-router-dom";
 import {useSinglePrismicDocument, PrismicRichText} from "@prismicio/react";
-import {Box} from "../../shared";
 import QuotedText from "../QuotedText";
 import {routes} from '../../router';
-import {PageTitle} from "../styled";
+import {PageTitle, PageWrapper} from "../styled";
+import {BioImageWrapper} from './styled';
+import {Box} from "../../shared";
 
 export default function Bio() {
   const [language] = useOutletContext();
@@ -26,14 +27,18 @@ export default function Bio() {
   const hasImage = Boolean(imageURL !== null);
 
   return(
-    <Box p={4}>
+    <PageWrapper>
       <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
+      {hasStatement ? <QuotedText fontSize={1} color={'primaryMuted'}>
+        {statement[0].text}
+      </QuotedText> : ''}
       {hasImage ? 
-        <Box m={'0 auto'} width={'70%'}>
-          <img src={imageURL} width={'100%'}/>
-        </Box> : ''}
-      {hasStatement ? <QuotedText>{statement[0].text}</QuotedText> : ''}
-      {hasBio ? <PrismicRichText field={bio} /> : ''}
-    </Box>
+        <BioImageWrapper width={2/5} m={4}>
+          <img src={imageURL} width={'100%'} />
+        </BioImageWrapper> : ''}
+      <Box pt={1}>
+        {hasBio ? <PrismicRichText field={bio} /> : ''}
+      </Box>
+    </PageWrapper>
   );
 };

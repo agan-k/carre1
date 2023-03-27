@@ -10,7 +10,7 @@ export const theme = {
     faintGray: '#efefef',
     dimGray: '#484848',
     highlight: 'hsla(205, 100%, 40%, 0.125)',
-    muted: '#f6f6f9',
+    muted: '#d4d4d6',
     primary: '#07c',
     primaryMuted: '#01528c',
     secondary: '#30c',
