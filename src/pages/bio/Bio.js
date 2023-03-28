@@ -3,8 +3,8 @@ import {useSinglePrismicDocument, PrismicRichText} from "@prismicio/react";
 import QuotedText from "../QuotedText";
 import {routes} from '../../router';
 import {PageTitle, PageWrapper, Loading} from "../styled";
-import {BioImageWrapper} from './styled';
-import {Box} from "../../shared";
+import {BioImageWrapper, BioWrapper} from './styled';
+import {theme} from '../../theme';
 
 export default function Bio() {
   const [language] = useOutletContext();
@@ -33,16 +33,20 @@ export default function Bio() {
         <Loading>loading...</Loading> :
         <PageWrapper>
           <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-          {hasStatement ? <QuotedText fontSize={1} color={'primaryMuted'}>
-            {statement[0].text}
-          </QuotedText> : ''}
+          {hasStatement ? 
+            <QuotedText 
+              fontSize={1} 
+              padding={[theme.space[4], theme.space[4], theme.space[5]]} 
+              color={'primaryMuted'}>
+              {statement[0].text}
+            </QuotedText> : ''}
           {hasImage ? 
-            <BioImageWrapper width={2/5} m={4}>
+            <BioImageWrapper>
               <img src={imageURL} width={'100%'} />
             </BioImageWrapper> : ''}
-          <Box pt={1}>
+          <BioWrapper>
             {hasBio ? <PrismicRichText field={bio} /> : ''}
-          </Box>
+          </BioWrapper>
         </PageWrapper>
       }
 

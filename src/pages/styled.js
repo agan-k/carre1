@@ -4,7 +4,7 @@ import {theme} from '../theme';
 
 export const Loading = styled(Box)(
   {
-    minHeight: '800px',
+    minHeight: '1800px',
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center',
@@ -12,7 +12,6 @@ export const Loading = styled(Box)(
 );
 export const PageWrapper = styled(Box)(
   {
-    minHeight: '800px',
     paddingLeft: theme.space[3],
     paddingRight: theme.space[3],
   }
@@ -28,5 +27,8 @@ export const QuotedTextWrapper = styled(Box)(
   {
     color: props => (theme.colors[props.color]),
     fontSize: props => (theme.fontSizes[props.fontSize]),
+    blockquote: {
+      margin: '0',
+    },
   }
 );

@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle(
       fontFamily: 'Verdana',
       background: theme.colors.background,
       color: theme.colors.muted,
-      'p': {
+      p: {
         lineHeight: '1.6',
       },
       ul: {
@@ -21,8 +21,13 @@ export const GlobalStyle = createGlobalStyle(
         padding: '0',
       },
       'a:any-link': {
-        color: theme.colors.lightGray,
-        textDecoration: 'none',
+        color: theme.colors.primary,
+      },
+      'a:hover': {
+        color: theme.colors.muted,
+      },
+      strong: {
+        color: theme.colors.primary,
       },
       blockquote: {
         margin: '20px',

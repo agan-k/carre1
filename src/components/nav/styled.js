@@ -56,6 +56,7 @@ export const NavItem = styled('span')(
   {
     display: 'block',
     'a:any-link': {
+      textDecoration: 'none',
       color: theme.colors.primary,
     },
   },
