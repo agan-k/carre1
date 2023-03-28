@@ -12,7 +12,7 @@ export const SourceWrapper = styled(Text)(
 );
 export const PresskitContactContainer = styled(Box)(
   {
-    borderLeft: `3px solid ${theme.colors.primary}`,
+    borderLeft: `3px solid ${theme.colors.primaryMuted}`,
     padding: theme.space[4],
   }
 );
