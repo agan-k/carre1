@@ -2,9 +2,17 @@ import styled from 'styled-components';
 import {HeadingSmall, Box} from '../shared';
 import {theme} from '../theme';
 
+export const Loading = styled(Box)(
+  {
+    minHeight: '800px',
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center',
+  }
+);
 export const PageWrapper = styled(Box)(
   {
-    height: '100%',
+    minHeight: '800px',
     paddingLeft: theme.space[3],
     paddingRight: theme.space[3],
   }

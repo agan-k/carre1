@@ -2,12 +2,13 @@ import {useOutletContext, useLocation} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
 import {Box, Text} from "../../shared";
 import {routes} from '../../router';
-import {PageTitle, PageWrapper} from "../styled";
+import {PageTitle, PageWrapper, Loading} from "../styled";
 import {ProjectWrapper} from "./styled";
 
 export default function Projects() {
   const [language] = useOutletContext();
   const [projectsData] = useAllPrismicDocumentsByType('projects');
+  const hasData = Boolean(projectsData !== undefined);
   const location = useLocation();
   const currentPage = routes.find(item =>  location.pathname === item.path);
   const pageTitleInActiveLanguage = 
@@ -43,9 +44,14 @@ export default function Projects() {
   });
 
   return (
-    <PageWrapper>
-      <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-      {projects}
-    </PageWrapper>
+    <>
+      {!hasData ? 
+        <Loading>loading...</Loading> :
+        <PageWrapper>
+          <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
+          {projects}
+        </PageWrapper>
+      }
+    </>
   );
 };

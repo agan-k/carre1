@@ -1,13 +1,9 @@
-import {useOutletContext} from "react-router-dom";
-import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
+import PropTypes from 'prop-types';
+import {PrismicRichText} from "@prismicio/react";
 import {Box} from "../../shared";
 import {AlbumsWrapper} from "./styled";
 
-export default function Albums() {
-  const [language] = useOutletContext();
-  const [albumsData] = useAllPrismicDocumentsByType('albums');
-  if(!albumsData) return;
-  
+export default function Albums({albumsData, language}) {
   const albums = albumsData?.map((item) => {
     const title = item.data.album_title;
     const personnel = item.data.album_personnel;
@@ -50,3 +46,8 @@ export default function Albums() {
 
   return albums;
 }
+
+Albums.propTypes = {
+  albumData: PropTypes.arrayOf(Object),
+  language: PropTypes.string,
+};
