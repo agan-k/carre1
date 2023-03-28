@@ -3,8 +3,12 @@ import {space, layout, color, border, typography, flexbox} from 'styled-system';
 import mediaQuery from '../../utils/mediaQuery';
 import {theme} from '../../theme';
 import {Box} from '../../shared';
+
 const closeNav = (props => 
   (props.isOpenNav ? 'auto' : '0'));
+
+const addPaddingToOpenNav = props => (props.isOpenNav ?
+  `${theme.space[4]}px` : '0');
 
 export const NavWrapper = styled('nav')(
   { 
@@ -27,8 +31,7 @@ export const NavWrapper = styled('nav')(
           `${theme.space[4]}px solid ${theme.colors.primary}` : 'none')),
         'none', 'none'],
       paddingRight: ['unset', 'unset', `${theme.space[4]}px`],
-      paddingBottom: props => (props.isOpenNav ?
-        `${theme.space[4]}px` : '0'),
+      paddingBottom: [addPaddingToOpenNav, addPaddingToOpenNav, 'unset'],
       borderTop: ['none', 'none'],
     }
   ),
