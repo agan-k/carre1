@@ -10,14 +10,12 @@ export const ProjectWrapper = styled(Box)(
     {
       position: 'relative',
       display: ['block', 'unset', 'flex', 'flex'],
-      // justifyContent: ['unset', 'unset', 'space-between'],
       img: {
         border: `1px solid ${theme.colors.primaryMuted}`,
       },
       h2: {
         margin: ['0'],
         fontSize: [theme.fontSizes[5], theme.fontSizes[5], theme.fontSizes[6]],
-        // background: theme.colors.background,
         color: [theme.colors.primary],
         position: ['absolute', 'absolute', 'initial'],
         top: ['-45px', theme.space[5], 'unset'],
