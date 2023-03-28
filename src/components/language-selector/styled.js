@@ -11,7 +11,15 @@ export const LanguageSelectorButton = styled(Box)(
     fontSize: theme.fontSizes[1],
     backgroundColor: theme.colors.background,
     color: theme.colors.primary,
-  }
+  },
+  mediaQuery(
+    {
+      cursor: ['none', 'none', 'pointer'],
+      ':hover': {
+        color: ['none', 'none', theme.colors.muted],
+      },
+    }
+  )
 );
 export const GlobeIcon = styled('span')(
   {
