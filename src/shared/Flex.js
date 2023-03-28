@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import {flexbox} from 'styled-system';
+import {flexbox, space} from 'styled-system';
 
 const Flex = styled('div')(
   {
     display: 'flex',
   },
-  flexbox
+  flexbox,
+  space
 );
 export default Flex;

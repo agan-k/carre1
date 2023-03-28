@@ -9,7 +9,7 @@ export const CurrentTrackWrapper = styled(Text)(
     paddingRight: theme.space[6],
     fontSize: theme.fontSizes[0],
     color: 'black',
-    maxWidth: theme.space[8],
+    maxWidth: theme.space[6],
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     fontStyle: 'italic',

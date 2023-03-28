@@ -21,8 +21,8 @@ export default function Player(
   return (
     <BlackBorder>
       <PlayerContainer>
-        <Flex>
-          <MusicalNotes 
+        <Flex pl={2}>
+          <MusicalNotes
             size={'10px'} 
             visibility={isPlaying ? 'visible' : 'hidden'}
           />
