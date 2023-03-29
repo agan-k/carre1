@@ -5,9 +5,10 @@ import {theme} from '../../../theme';
 export const SourceWrapper = styled(Text)(
   {
     textAlign: 'right',
-    fontWeight: '600',
+    fontWeight: theme.fontWeights.bold,
     fontStyle: 'italic',
-    fontSize: '14px',
+    fontSize: theme.fontSizes[2],
+    marginTop: theme.space[1],
   }
 );
 export const PresskitContactContainer = styled(Box)(
