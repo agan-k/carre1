@@ -7,8 +7,9 @@ import {PageWrapper} from "../styled";
 
 export default function Music() {
   const [language] = useOutletContext();
-  const [albumsData] = useAllPrismicDocumentsByType('albums');
-  const hasData = Boolean(albumsData !== undefined);
+  const [albumsData, {state}] = useAllPrismicDocumentsByType('albums');
+  const loading = Boolean(state === 'idle' && 'loading');
+  const error = Boolean(state === 'failed');
   const location = useLocation();
   const currentPage = routes.find(item =>  location.pathname === item.path);
   const pageTitleInActiveLanguage = 
@@ -16,12 +17,14 @@ export default function Music() {
 
   return (
     <>
-      {!hasData ? 
+      {loading ? 
         <Loading>loading...</Loading> : 
-        <PageWrapper>
-          <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-          <Albums albumsData={albumsData} language={language}/>
-        </PageWrapper>
+        error ? 
+          <Loading>Ups, something broke! &#129300;</Loading> : 
+          <PageWrapper>
+            <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
+            <Albums albumsData={albumsData} language={language}/>
+          </PageWrapper>
       }
     </>
   );

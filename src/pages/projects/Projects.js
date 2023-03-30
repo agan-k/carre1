@@ -7,8 +7,9 @@ import {ProjectWrapper} from "./styled";
 
 export default function Projects() {
   const [language] = useOutletContext();
-  const [projectsData] = useAllPrismicDocumentsByType('projects');
-  const hasData = Boolean(projectsData !== undefined);
+  const [projectsData, {state}] = useAllPrismicDocumentsByType('projects');
+  const loading = Boolean(state === 'idle' && 'loading');
+  const error = Boolean(state === 'failed');
   const location = useLocation();
   const currentPage = routes.find(item =>  location.pathname === item.path);
   const pageTitleInActiveLanguage = 
@@ -45,12 +46,14 @@ export default function Projects() {
 
   return (
     <>
-      {!hasData ? 
+      {loading ? 
         <Loading>loading...</Loading> :
-        <PageWrapper>
-          <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-          {projects}
-        </PageWrapper>
+        error ? 
+          <Loading>Ups, something broke! &#129300;</Loading> : 
+          <PageWrapper>
+            <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
+            {projects}
+          </PageWrapper>
       }
     </>
   );

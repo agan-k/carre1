@@ -8,8 +8,19 @@ import {Box} from '../../shared';
 
 export default function TourDates() {
   const [language] = useOutletContext();
-  const [shows] = useAllPrismicDocumentsByType('shows');
-  const hasData = Boolean(shows !== undefined);
+  const [shows, {state}] = useAllPrismicDocumentsByType('shows', 
+    {
+      orderings: [
+        {
+          field: 'my.shows.timestamp',
+          direction: 'desc',
+        },
+      ],
+    }
+  );
+  const loading = Boolean(state === 'idle' && 'loading');
+  const error = Boolean(state === 'failed');
+
   const location = useLocation();
   const currentPage = routes.find(item =>  location.pathname === item.path);
   const pageTitleInActiveLanguage = 
@@ -45,18 +56,20 @@ export default function TourDates() {
 
   return (
     <>
-      {!hasData ? 
+      {loading ? 
         <Loading>loading...</Loading> : 
-        <PageWrapper>
-          <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-          <Box 
-            display={['unset', 'unset', 'flex']}
-            flexWrap={'wrap'}
-            flex={'1 0 50%'}
-          >
-            {calendarCards}
-          </Box>
-        </PageWrapper>
+        error ? 
+          <Loading>Ups, something broke! &#129300;</Loading> : 
+          <PageWrapper>
+            <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
+            <Box 
+              display={['unset', 'unset', 'flex']}
+              flexWrap={'wrap'}
+              flex={'1 0 50%'}
+            >
+              {calendarCards}
+            </Box>
+          </PageWrapper>
       }
     </>
   );

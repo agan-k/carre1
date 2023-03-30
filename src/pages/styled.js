@@ -4,14 +4,18 @@ import {theme} from '../theme';
 
 export const Loading = styled(Box)(
   {
-    minHeight: '1800px',
+    minHeight: '800px',
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center',
+    color: theme.colors.primary,
+    fontWeight: theme.fontWeights.bold,
+    fontSize: theme.fontSizes[5],
   }
 );
 export const PageWrapper = styled(Box)(
   {
+    minHeight: '800px',
     paddingLeft: theme.space[3],
     paddingRight: theme.space[3],
   }
