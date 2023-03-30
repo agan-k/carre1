@@ -51,7 +51,8 @@ export default function TourDates() {
           <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
           <Box 
             display={['unset', 'unset', 'flex']}
-            justifyContent={'space-around'}
+            flexWrap={'wrap'}
+            flex={'1 0 50%'}
           >
             {calendarCards}
           </Box>
