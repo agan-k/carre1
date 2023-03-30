@@ -5,7 +5,6 @@ import mediaQuery from '../../utils/mediaQuery';
 
 export const CalendarCardWrapper = styled(Box)(
   {
-    marginTop: theme.space[5],
     a: {
       fontWeight: '700',
     },
