@@ -17,7 +17,7 @@ export const PressQuotes = () => {
     const hasQuote = Boolean(quote.length !== 0);
     const hasSource = Boolean(source.length !== 0);
     return (
-      <Box key={item.id} mb={4}>
+      <Box key={item.id} mb={2}>
         {hasQuote ? <QuotedText>{quote}</QuotedText> : ''}
         {hasSource ? <SourceWrapper>~ {source}</SourceWrapper> : ''}
       </Box>

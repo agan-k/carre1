@@ -9,6 +9,7 @@ export const SourceWrapper = styled(Text)(
     fontStyle: 'italic',
     fontSize: theme.fontSizes[2],
     marginTop: theme.space[1],
+    marginBottom: theme.space[5],
   }
 );
 export const PresskitContactContainer = styled(Box)(

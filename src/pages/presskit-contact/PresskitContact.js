@@ -13,16 +13,13 @@ export default function PresskitContact() {
   return (
     <PageWrapper minHeight={'800px'}>
       <PageTitle>{pageTitleInActiveLanguage}</PageTitle>
-      <Box display={['block', 'block', 'flex']}>
-        <Box flex={'1 0 30%'} p={['unset', 'unset', 6]}>
-          <HeadingSmall mb={2} color={'primary'}>Press</HeadingSmall>
-          <PressQuotes />
-        </Box>
+      <Box display={['block', 'block', 'flex']} mt={6}>
         <Box 
           display={'flex'} 
           flexDirection={'column'}
-          justifyContent={'space-around'}
-          flex={'1 0 30%'}>
+          justifyContent={'space-between'}
+          flex={'1 0 30%'}
+          ml={3}>
           <Box>
             <HeadingSmall mb={2} color={'primary'}>Booking</HeadingSmall>
             <Contact />
@@ -31,6 +28,10 @@ export default function PresskitContact() {
             <HeadingSmall mb={2} color={'primary'}>Downloads</HeadingSmall>
             <MediaDownload />
           </Box>
+        </Box>
+        <Box flex={'1 0 30%'} pr={7}>
+          <HeadingSmall mb={2} color={'primary'}>Press</HeadingSmall>
+          <PressQuotes />
         </Box>
       </Box>
     </PageWrapper>
