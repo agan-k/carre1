@@ -30,7 +30,8 @@ export const FooterWrapper = styled(Box)(
   {
     fontSize: theme.fontSizes[0],
     textAlign: 'center',
-    borderTop: '1px solid gray',
+    borderTop: `1px solid ${theme.colors.primaryMuted}`,
+    margin: theme.space[4],
     padding: theme.space[5],
     color: theme.colors.lightGray,
   }

@@ -8,12 +8,12 @@ export default function Footer() {
   return(
     <FooterWrapper>
       ©<span>{currentYear}</span> Dominique Carre
-      <Link to={'https://formversuscontent.com'}>
-        <Box display={'flex'} justifyContent={'center'}>
-          <Text color={'lightGray'}>site by &nbsp;</Text>
+      <Box display={'flex'} justifyContent={'center'}>
+        <Text color={'lightGray'}>site by &nbsp;</Text>
+        <Link to={'https://formversuscontent.com'}>
           <Text color={'primary'}>FormVsContent</Text>
-        </Box>
-      </Link>
+        </Link>
+      </Box>
     </FooterWrapper>
   );
 }
