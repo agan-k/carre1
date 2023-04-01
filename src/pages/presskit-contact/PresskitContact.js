@@ -19,18 +19,20 @@ export default function PresskitContact() {
           flexDirection={'column'}
           justifyContent={'space-between'}
           flex={'1 0 30%'}
-          ml={3}>
-          <Box>
+          ml={['unset', 'unset', 3]}>
+          <Box mb={[5, 5, 'unset']} >
             <HeadingSmall mb={2} color={'primary'}>Booking</HeadingSmall>
             <Contact />
           </Box>
-          <Box>
+          <Box mb={[5, 5, 'unset']} >
             <HeadingSmall mb={2} color={'primary'}>Downloads</HeadingSmall>
             <MediaDownload />
           </Box>
         </Box>
-        <Box flex={'1 0 30%'} pr={7}>
-          <HeadingSmall mb={2} color={'primary'}>Press</HeadingSmall>
+        <Box flex={'1 0 30%'} mb={[5, 5, 'unset']} pr={['unset', 'unset', 7]}>
+          <HeadingSmall mb={['unset', 'unset', 2]} color={'primary'}>
+            Press
+          </HeadingSmall>
           <PressQuotes />
         </Box>
       </Box>
