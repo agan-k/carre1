@@ -3,7 +3,6 @@ import {color, space, layout, typography, border} from 'styled-system';
 
 const Button = styled('button')(
   {
-    fontSize: '18px',
     border: 'none',
   },
   color, space, layout, typography, border);
