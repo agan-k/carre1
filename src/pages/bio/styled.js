@@ -10,10 +10,9 @@ export const BioImageWrapper = styled(Box)(
   },
   mediaQuery(
     {
-      marginLeft: [theme.space[2], theme.space[1], theme.space[1]],
-      marginRight: [theme.space[2], theme.space[2], theme.space[4]],
-      marginBottom: '0',
-      width: ['40%', '40%', '30%'],
+      margin: [theme.space[2], theme.space[2], theme.space[5]],
+      marginLeft: ['0', '0', theme.space[2],],
+      width: ['35%', '40%', '20%'],
     }
   )
 );
