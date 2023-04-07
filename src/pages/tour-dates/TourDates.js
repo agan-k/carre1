@@ -31,9 +31,11 @@ export default function TourDates() {
     const description = item.data.description;
 
     const lineup = item.data?.lineup?.map((item) =>
-      <Flex key={item.name}>
-        <Text fontWeight={'bold'}>{item.name}&nbsp;</Text>
-        <Text fontStyle={'italic'}> - {item.instrument}</Text>
+      <Flex key={item.name} flexWrap={'wrap'}>
+        <Text fontWeight={'bold'}>
+          {item.name}&nbsp;-&nbsp;
+        </Text>
+        <Text fontStyle={'italic'}>{item.instrument.toLowerCase()}</Text>
       </Flex>
     );
 
@@ -43,8 +45,7 @@ export default function TourDates() {
     const hasDescription = Boolean(description?.length !== 0);
     const hasLineup = Boolean(lineup?.length !== 0);
     const hasGoogleMap = Boolean(googleMap?.hasOwnProperty('url'));
-    console.log('here: ', lineup);
-    console.log(shows);
+
     return (
       <CalendarCardWrapper key={item.id}>
         {hasTime ? 
@@ -58,7 +59,7 @@ export default function TourDates() {
         {hasDescription ? 
           <PrismicRichText field={description} /> : ''}
         {hasLineup ? 
-          lineup : ''}
+          <Box my={4}>{lineup}</Box> : ''}
         {hasGoogleMap ? 
           <Link to={googleMap.url} target='_blank'>Directions</Link> : ''}
       </CalendarCardWrapper>
