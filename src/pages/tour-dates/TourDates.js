@@ -12,7 +12,7 @@ export default function TourDates() {
       orderings: [
         {
           field: 'my.shows.timestamp',
-          direction: 'desc',
+          direction: 'asc',
         },
       ],
     }
