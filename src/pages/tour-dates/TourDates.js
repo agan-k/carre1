@@ -1,10 +1,9 @@
 import {useOutletContext, useLocation, Link} from "react-router-dom";
 import {useAllPrismicDocumentsByType, PrismicRichText} from "@prismicio/react";
-import {Text, HeadingSmall} from '../../shared';
+import {Text, HeadingSmall, Box, Flex} from '../../shared';
 import {routes} from '../../router';
 import {PageTitle, PageWrapper, Loading} from "../styled";
 import {CalendarCardWrapper} from "./styled";
-import {Box} from '../../shared';
 
 export default function TourDates() {
   const [language] = useOutletContext();
@@ -30,12 +29,22 @@ export default function TourDates() {
     const time = item.data.timestamp;
     const venue = item.data.venue;
     const description = item.data.description;
+
+    const lineup = item.data?.lineup?.map((item) =>
+      <Flex key={item.name}>
+        <Text fontWeight={'bold'}>{item.name}&nbsp;</Text>
+        <Text fontStyle={'italic'}> - {item.instrument}</Text>
+      </Flex>
+    );
+
     const googleMap = item.data?.google_maps;
     const hasVenue = Boolean(venue?.length !== 0);
     const hasTime = Boolean(time !== null);
     const hasDescription = Boolean(description?.length !== 0);
+    const hasLineup = Boolean(lineup?.length !== 0);
     const hasGoogleMap = Boolean(googleMap?.hasOwnProperty('url'));
-
+    console.log('here: ', lineup);
+    console.log(shows);
     return (
       <CalendarCardWrapper key={item.id}>
         {hasTime ? 
@@ -48,6 +57,8 @@ export default function TourDates() {
           </HeadingSmall> : ''}
         {hasDescription ? 
           <PrismicRichText field={description} /> : ''}
+        {hasLineup ? 
+          lineup : ''}
         {hasGoogleMap ? 
           <Link to={googleMap.url} target='_blank'>Directions</Link> : ''}
       </CalendarCardWrapper>
