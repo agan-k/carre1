@@ -9,6 +9,9 @@ const ControlsButton = styled(Button)(
     backgroundColor: theme.colors.primaryMuted,
     cursor: 'pointer',
     width: theme.space[5],
+    ':hover': {
+      color: theme.colors.muted,
+    },
   },
   mediaQuery(
     {

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import {Text} from '../../../../../shared';
-import {CurrentTrackWrapper} from './styled';
+import {CurrentTrackWrapper, CurrentTrackText} from './styled';
 
 export default function CurrentTrack(
   {
@@ -19,9 +18,11 @@ export default function CurrentTrack(
   return (
     <CurrentTrackWrapper>
       {loading ? (
-        <Text>loading...</Text>
+        <CurrentTrackText>loading...</CurrentTrackText>
       ) : (
-        <Text onClick={() => handleClick()}>&#39;{currentTrack}&#39;</Text>
+        <CurrentTrackText cursor={'pointer'} onClick={() => handleClick()}>
+          &#39;{currentTrack}&#39;
+        </CurrentTrackText>
       )}
     </CurrentTrackWrapper>
   );
