@@ -3,22 +3,20 @@ import {Outlet} from "react-router-dom";
 import {ThemeProvider} from 'styled-components';
 import {theme, GlobalStyle} from './theme';
 import {DEFAULT_LANGUAGE, MISSING_TRACK_TITLE} from './pages/constants';
-import {useAllPrismicDocumentsByType} from "@prismicio/react";
-import {handleAudioPlayerData, isDefault} from "./utils";
+import {usePrismicDocumentsByType} from "@prismicio/react";
+import {handleMissingAudioData} from "./utils";
 import {Header, Footer} from "./layout";
 
 export default function App() {
-  const [audioData] = useAllPrismicDocumentsByType('audio_player_track');
+  const [data] = usePrismicDocumentsByType('audio_player');
+  const audioData = data?.results[0].data.tracks;
   const [tracksData, setTracksData] = useState();
-  const [defaultTrack, setDefaultTrack] = useState();
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
   const [isOpenNav, setIsNavOpen] = useState(false);
   const [isOpenTrackList, setIsOpenTrackList] = useState(false);
-  const isFrench = Boolean(language === 'french');
-  const siteDomain = isFrench ? 'DominiqueCarré.fr' : 'DominiqueCarre.com';
 
   const audioPlayerData = 
-    handleAudioPlayerData({audioData, missingTrackTitle: MISSING_TRACK_TITLE});
+    handleMissingAudioData({audioData, missingTrackTitle: MISSING_TRACK_TITLE});
 
   const onChange = (language) => {
     setLanguage(language);
@@ -34,7 +32,6 @@ export default function App() {
 
   useEffect(() => {
     setTracksData(audioPlayerData);
-    setDefaultTrack(audioPlayerData?.find(isDefault));
   }, [language, audioData]);
 
   return (
@@ -44,8 +41,6 @@ export default function App() {
         onChange={onChange}
         language={language}
         tracksData={tracksData}
-        defaultTrack={defaultTrack}
-        siteDomain={siteDomain}
         isOpenNav={isOpenNav}
         toggleNavView={toggleNavView}
         toggleTrackListView={toggleTrackListView}

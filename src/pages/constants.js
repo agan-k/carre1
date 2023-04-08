@@ -16,4 +16,3 @@ export const pageCategoriesEnglish = {
 };
 export const DEFAULT_LANGUAGE = 'french';
 export const MISSING_TRACK_TITLE = 'Missing track';
-export const DEFAULT_TRACK_NUMBER = 1;

@@ -1,3 +1,3 @@
-export {handleAudioPlayerData} from './utils';
+export {handleMissingAudioData} from './utils';
 export {isDefault} from './utils';
 export {mediaQuery} from './mediaQuery';

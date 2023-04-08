@@ -7,7 +7,6 @@ import {AudioPlayerContainer} from './styled';
 
 export default function AudioPlayer(
   {
-    defaultTrack, 
     tracksData, 
     isOpenNav, 
     toggleNavView,
@@ -15,7 +14,7 @@ export default function AudioPlayer(
     toggleTrackListView,
   }) {
   const [isPlaying, setIsPlaying] = useState();
-  const [activeTrack, setActiveTrack] = useState(defaultTrack);
+  const [activeTrack, setActiveTrack] = useState(tracksData[0]);
 
   const onChange = ({track = activeTrack, playing}) => {
     controlAudio({track, activeTrack});
@@ -31,18 +30,16 @@ export default function AudioPlayer(
 
   return (
     <AudioPlayerContainer isOpenTrackList={isOpenTrackList}>
-      {activeTrack && (
-        <Player 
-          tracks={tracksData}
-          activeTrack={activeTrack}
-          onChange={onChange}
-          isPlaying={isPlaying}
-          isOpenTrackList={isOpenTrackList}
-          toggleTrackListView={toggleTrackListView}
-          isOpenNav={isOpenNav}
-          toggleNavView={toggleNavView}
-        />
-      )}
+      <Player 
+        tracks={tracksData}
+        activeTrack={activeTrack}
+        onChange={onChange}
+        isPlaying={isPlaying}
+        isOpenTrackList={isOpenTrackList}
+        toggleTrackListView={toggleTrackListView}
+        isOpenNav={isOpenNav}
+        toggleNavView={toggleNavView}
+      />
       {tracksData && (
         <TrackList
           isPlaying={isPlaying}
@@ -60,7 +57,6 @@ export default function AudioPlayer(
 }
 
 AudioPlayer.propTypes = {
-  defaultTrack: PropTypes.object,
   tracksData: PropTypes.arrayOf(Object),
   isOpenNav: PropTypes.bool,
   toggleNavView: PropTypes.func,
