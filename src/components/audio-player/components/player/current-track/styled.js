@@ -6,8 +6,7 @@ export const CurrentTrackWrapper = styled(Box)(
   {
     alignSelf: 'center',
     paddingLeft: theme.space[3],
-    paddingRight: theme.space[6],
-    maxWidth: theme.space[6],
+    maxWidth: theme.space[8],
   }
 );
 export const CurrentTrackText = styled(Text)(
