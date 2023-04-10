@@ -1,30 +1,34 @@
 import PropTypes from 'prop-types';
-import {PrismicRichText} from "@prismicio/react";
-import {Box} from "../../shared";
-import {AlbumsWrapper} from "./styled";
+import {Box, Text, Flex} from "../../shared";
+import {AlbumsWrapper, LineupWrapper} from "./styled";
 
-export default function Albums({albumsData, language}) {
+export default function Albums({albumsData}) {
   const albums = albumsData?.map((item) => {
-    const title = item.data.album_title;
-    const personnel = item.data.album_personnel;
-    const descriptionFrench = 
-      item.data.french_album_description || [];
-    const descriptionEnglish = 
-      item.data.english_album_description_ || [];
-    const description = language === 'french' ?
-      descriptionFrench : descriptionEnglish;
+    const title = item.data.title;
+    const lineup = item.data.lineup.map((i, index) =>
+      <li key={i.name + index}>
+        <Flex flexWrap={'wrap'}>
+          <Text fontWeight={'bold'}>{i.name}&nbsp;</Text>
+          <Text fontStyle={'italic'}>
+              -&nbsp;{i.instrument.toLowerCase()}
+          </Text>
+        </Flex>
+      </li>
+    );
     const imageURL = item.data.album_image.url;
     const hasImage = Boolean(imageURL !== null);
-    const hasDescription = Boolean(description.length !== 0);
+    const hasLineup = Boolean(item.data.lineup.length !== 0);
+    const hasTitle = Boolean(item.data.title !== null);
+
     return(
       <AlbumsWrapper key={item.id}>
-        <PrismicRichText field={title.length !== 0 ? title : ''} /> 
+        {/* <PrismicRichText field={title !== null ? title : ''} />  */}
+        {hasTitle ? <h2>{title}</h2> : ''}
         <Box display={['block', 'block', 'flex']}>
           <Box flex={'1 0 40%'} p={['unset', 'unset', 4]}>
             {hasImage ? <img src={imageURL}/> : ''}
-            <PrismicRichText field={hasDescription ? description : ''} />
-            <PrismicRichText field={personnel.length !== 0 ? personnel : ''} />
           </Box>
+          {hasLineup ? <LineupWrapper>{lineup}</LineupWrapper> : ''}
           <Box 
             flex={'1 0 60%'}
           >
