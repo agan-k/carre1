@@ -8,15 +8,14 @@ export default function Albums({albumsData, language}) {
     const title = item.data.album_title;
     const personnel = item.data.album_personnel;
     const descriptionFrench = 
-      item.data.french_album_description_french || [];
+      item.data.french_album_description || [];
     const descriptionEnglish = 
-      item.data.english_album_description_english || [];
+      item.data.english_album_description_ || [];
     const description = language === 'french' ?
       descriptionFrench : descriptionEnglish;
     const imageURL = item.data.album_image.url;
     const hasImage = Boolean(imageURL !== null);
     const hasDescription = Boolean(description.length !== 0);
-
     return(
       <AlbumsWrapper key={item.id}>
         <PrismicRichText field={title.length !== 0 ? title : ''} /> 
