@@ -7,10 +7,10 @@ export default function Albums({albumsData}) {
     const title = item.data.title;
     const lineup = item.data.lineup.map((i, index) =>
       <li key={i.name + index}>
-        <Flex flexWrap={'wrap'}>
-          <Text fontWeight={'bold'}>{i.name}&nbsp;</Text>
+        <Flex flexWrap={'wrap'} maxWidth={['unset', 'unset', '80%']}>
+          <Text fontWeight={'bold'}>{i.name}&nbsp;-&nbsp;</Text>
           <Text fontStyle={'italic'}>
-              -&nbsp;{i.instrument.toLowerCase()}
+            {i.instrument.toLowerCase()}
           </Text>
         </Flex>
       </li>
@@ -22,13 +22,12 @@ export default function Albums({albumsData}) {
 
     return(
       <AlbumsWrapper key={item.id}>
-        {/* <PrismicRichText field={title !== null ? title : ''} />  */}
         {hasTitle ? <h2>{title}</h2> : ''}
         <Box display={['block', 'block', 'flex']}>
           <Box flex={'1 0 40%'} p={['unset', 'unset', 4]}>
             {hasImage ? <img src={imageURL}/> : ''}
+            {hasLineup ? <LineupWrapper>{lineup}</LineupWrapper> : ''}
           </Box>
-          {hasLineup ? <LineupWrapper>{lineup}</LineupWrapper> : ''}
           <Box 
             flex={'1 0 60%'}
           >

@@ -28,8 +28,8 @@ export const AlbumsWrapper = styled(Box)(
 export const LineupWrapper = styled('ul')(
   mediaQuery(
     {
-      marginTop: [theme.space[5], theme.space[7]],
-      marginBottom: [theme.space[3], theme.space[7]],
+      marginTop: [theme.space[5], theme.space[5]],
+      marginBottom: [theme.space[3], theme.space[5]],
     }
   )
 );
