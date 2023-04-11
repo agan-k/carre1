@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle(
     body: {
       margin: '0 auto',
       maxWidth: '1200px',
-      fontFamily: 'Verdana',
+      fontFamily: theme.fonts.body,
       background: theme.colors.background,
       color: theme.colors.muted,
       p: {

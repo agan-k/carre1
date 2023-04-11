@@ -5,15 +5,22 @@ import {AlbumsWrapper, LineupWrapper} from "./styled";
 export default function Albums({albumsData}) {
   const albums = albumsData?.map((item) => {
     const title = item.data.title;
-    const lineup = item.data.lineup.map((i, index) =>
-      <li key={i.name + index}>
-        <Flex flexWrap={'wrap'} maxWidth={['unset', 'unset', '80%']}>
-          <Text fontWeight={'bold'}>{i.name}&nbsp;-&nbsp;</Text>
-          <Text fontStyle={'italic'}>
-            {i.instrument.toLowerCase()}
-          </Text>
-        </Flex>
-      </li>
+    const lineup = item.data.lineup.map((i, index) => {
+      const instruments = i.instrument.split(' ');
+      return (
+        <li key={i.name + index}>
+          <Flex flexWrap={'wrap'} maxWidth={['unset', 'unset', '80%']}>
+            <Text fontWeight={'bold'}>{i.name}&nbsp;-&nbsp;</Text>
+            {instruments.map((instrument, index) => 
+              <Text key={instrument + index} fontStyle={'italic'}>
+                {instrument.toLowerCase()}&nbsp;
+              </Text>
+            )}
+          </Flex>
+        </li>
+      );
+
+    }
     );
     const imageURL = item.data.album_image.url;
     const hasImage = Boolean(imageURL !== null);

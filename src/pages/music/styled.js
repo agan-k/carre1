@@ -26,6 +26,9 @@ export const AlbumsWrapper = styled(Box)(
 
 );
 export const LineupWrapper = styled('ul')(
+  {
+    whiteSpace: 'nowrap',
+  },
   mediaQuery(
     {
       marginTop: [theme.space[5], theme.space[5]],
