@@ -15,17 +15,17 @@ export default function Projects() {
   const pageTitleInActiveLanguage = 
       currentPage.element.props.name[`${language}`];
   
-  const projects = projectsData?.map((item, index) => {
+  const projects = projectsData?.map((item) => {
 
-    const lineup = item.data.lineup.map((item) => {
-      const name = item.name || null;
-      const instrument = item.instrument || null;
+    const lineup = item.data.lineup.map((lineupItem, index) => {
+      const name = lineupItem.name || null;
+      const instrument = lineupItem.instrument || null;
       const hasName = Boolean(name !== null);
       const hasInstrument = Boolean(instrument !== null);
       const instrumentsArr = 
       hasInstrument ? instrument.split(' ') : null;
       return (
-        <Flex key={item.name + index} flexWrap={'wrap'}>
+        <Flex key={lineupItem.name + index} flexWrap={'wrap'}>
           {hasName ? <Text fontWeight={'bold'}>{name}&nbsp;-&nbsp;</Text> : ''}
           {hasInstrument ? 
             instrumentsArr.map((instrument, index) => 
