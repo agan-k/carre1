@@ -11,22 +11,33 @@ export default function Projects() {
   const loading = Boolean(state === 'idle' && 'loading');
   const error = Boolean(state === 'failed');
   const location = useLocation();
-  const currentPage = routes.find(item =>  location.pathname === item.path);
+  const currentPage = routes.find(item => location.pathname === item.path);
   const pageTitleInActiveLanguage = 
       currentPage.element.props.name[`${language}`];
   
-  const projects = projectsData?.map((item) => {
-    const lineup = item.data.lineup.map((item) =>
-      <Flex key={item.name} flexWrap={'wrap'}>
-        <Text fontWeight={'bold'}>
-          {item.name}
-        </Text>
-        {item.instrument ?
-          <Text fontStyle={'italic'}>
-            &nbsp;-&nbsp;{item.instrument.toLowerCase()}
-          </Text> : ''
-        }
-      </Flex>
+  const projects = projectsData?.map((item, index) => {
+
+    const lineup = item.data.lineup.map((item) => {
+      const name = item.name || null;
+      const instrument = item.instrument || null;
+      const hasName = Boolean(name !== null);
+      const hasInstrument = Boolean(instrument !== null);
+      const instrumentsArr = 
+      hasInstrument ? instrument.split(' ') : null;
+      return (
+        <Flex key={item.name + index} flexWrap={'wrap'}>
+          {hasName ? <Text fontWeight={'bold'}>{name}&nbsp;-&nbsp;</Text> : ''}
+          {hasInstrument ? 
+            instrumentsArr.map((instrument, index) => 
+              <Text key={instrument + index} fontStyle={'italic'}>
+                &nbsp;{instrument.toLowerCase()}
+              </Text>
+            )
+            : ''
+          }
+        </Flex>
+      );
+    }
     );
     const imageURL = item.data.project_image.url;
     const name = item.data.project;
