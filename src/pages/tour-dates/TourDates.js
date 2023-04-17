@@ -30,14 +30,27 @@ export default function TourDates() {
     const venue = item.data.venue;
     const description = item.data.description;
 
-    const lineup = item.data?.lineup?.map((item) =>
-      <Flex key={item.name} flexWrap={'wrap'}>
-        <Text fontWeight={'bold'}>
-          {item.name}&nbsp;-&nbsp;
-        </Text>
-        <Text fontStyle={'italic'}>{item.instrument.toLowerCase()}</Text>
-      </Flex>
-    );
+    const lineup = item.data.lineup.map((lineupItem, index) => {
+      const name = lineupItem.name || null;
+      const instrument = lineupItem.instrument || null;
+      const hasName = Boolean(name !== null);
+      const hasInstrument = Boolean(instrument !== null);
+      const instrumentsArr = 
+      hasInstrument ? instrument.split(' ') : null;
+      return (
+        <Flex key={lineupItem.name + index} flexWrap={'wrap'}>
+          {hasName ? <Text fontWeight={'bold'}>{name}&nbsp;-&nbsp;</Text> : ''}
+          {hasInstrument ? 
+            instrumentsArr.map((instrument, index) => 
+              <Text key={instrument + index} fontStyle={'italic'}>
+                &nbsp;{instrument.toLowerCase()}
+              </Text>
+            )
+            : ''
+          }
+        </Flex>
+      );
+    });
 
     const googleMap = item.data?.google_maps;
     const hasVenue = Boolean(venue?.length !== 0);

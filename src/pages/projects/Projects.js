@@ -14,7 +14,6 @@ export default function Projects() {
   const currentPage = routes.find(item => location.pathname === item.path);
   const pageTitleInActiveLanguage = 
       currentPage.element.props.name[`${language}`];
-  
   const projects = projectsData?.map((item) => {
 
     const lineup = item.data.lineup.map((lineupItem, index) => {
@@ -37,8 +36,8 @@ export default function Projects() {
           }
         </Flex>
       );
-    }
-    );
+    });
+
     const imageURL = item.data.project_image.url;
     const name = item.data.project;
     const descriptionFrench = item.data.project_description_french || [];
