@@ -25,11 +25,11 @@ export default function Projects() {
       hasInstrument ? instrument.split(' ') : null;
       return (
         <Flex key={lineupItem.name + index} flexWrap={'wrap'}>
-          {hasName ? <Text fontWeight={'bold'}>{name}&nbsp;-&nbsp;</Text> : ''}
+          {hasName ? <Text fontWeight={'bold'}>{name}&nbsp;</Text> : ''}
           {hasInstrument ? 
             instrumentsArr.map((instrument, index) => 
               <Text key={instrument + index} fontStyle={'italic'}>
-                &nbsp;{instrument.toLowerCase()}
+                -&nbsp;{instrument.toLowerCase()}
               </Text>
             )
             : ''
