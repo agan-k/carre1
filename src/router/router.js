@@ -6,11 +6,11 @@ import {
   Home, 
   Music, 
   TourDates, 
-  PresskitContact
+  PresskitContact,
 } from '../pages';
 import {
   pageCategoriesEnglish as english,
-  pageCategoriesFrench as french
+  pageCategoriesFrench as french,
 } from '../pages/constants';
 
 const router = createBrowserRouter([

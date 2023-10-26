@@ -1,7 +1,7 @@
 import {useOutletContext} from "react-router-dom";
 import {
   useSinglePrismicDocument, 
-  PrismicRichText
+  PrismicRichText,
 } from "@prismicio/react";
 import {validateEmail} from '../utilities';
 import {HideEmail} from "./HideEmail";
