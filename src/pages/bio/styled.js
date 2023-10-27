@@ -11,7 +11,7 @@ export const BioImageWrapper = styled(Box)(
   mediaQuery(
     {
       margin: [theme.space[2], theme.space[2], theme.space[5]],
-      marginLeft: ['0', '0', theme.space[2],],
+      marginLeft: ['0', '0', theme.space[2]],
       width: ['35%', '40%', '20%'],
     }
   )
